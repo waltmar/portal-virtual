@@ -1,1 +1,6 @@
-cachorro?
+<<<<<<< .mine
+deu certo não...=======
+cachorro?>>>>>>> .r2
+que cachorro o quê?
+
+KD a SENHA!!!
