@@ -1,0 +1,311 @@
+USE [Bio]
+GO
+/****** Object:  Table [dbo].[Reino]    Script Date: 07/01/2011 16:13:11 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Reino](
+	[id_item] [int] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[nome] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[pai] [int] NULL,
+ CONSTRAINT [PK_Reino] PRIMARY KEY CLUSTERED 
+(
+	[id_item] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+
+
+USE [Bio]
+GO
+/****** Object:  Table [dbo].[Filo]    Script Date: 07/01/2011 16:13:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Filo](
+	[id_item] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[pai] [int] NULL,
+ CONSTRAINT [PK_Filo] PRIMARY KEY CLUSTERED 
+(
+	[id_item] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+USE [Bio]
+GO
+ALTER TABLE [dbo].[Filo]  WITH CHECK ADD  CONSTRAINT [FK_Filo_Reino] FOREIGN KEY([pai])
+REFERENCES [dbo].[Reino] ([id_item])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+
+USE [Bio]
+GO
+/****** Object:  Table [dbo].[Classe]    Script Date: 07/01/2011 16:14:13 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Classe](
+	[id_item] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[pai] [int] NULL,
+ CONSTRAINT [PK_Classe] PRIMARY KEY CLUSTERED 
+(
+	[id_item] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+USE [Bio]
+GO
+ALTER TABLE [dbo].[Classe]  WITH CHECK ADD  CONSTRAINT [FK_Classe_Filo] FOREIGN KEY([pai])
+REFERENCES [dbo].[Filo] ([id_item])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+
+USE [Bio]
+GO
+/****** Object:  Table [dbo].[SubClasse]    Script Date: 07/01/2011 16:14:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[SubClasse](
+	[id_item] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[pai] [int] NULL,
+ CONSTRAINT [PK_Subclasse] PRIMARY KEY CLUSTERED 
+(
+	[id_item] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+USE [Bio]
+GO
+ALTER TABLE [dbo].[SubClasse]  WITH CHECK ADD  CONSTRAINT [FK_SubClasse_Classe] FOREIGN KEY([pai])
+REFERENCES [dbo].[Classe] ([id_item])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+
+
+USE [Bio]
+GO
+/****** Object:  Table [dbo].[Ordem]    Script Date: 07/01/2011 16:14:48 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Ordem](
+	[id_item] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[pai] [int] NULL,
+ CONSTRAINT [PK_Ordem] PRIMARY KEY CLUSTERED 
+(
+	[id_item] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+USE [Bio]
+GO
+ALTER TABLE [dbo].[Ordem]  WITH CHECK ADD  CONSTRAINT [FK_Ordem_Classe] FOREIGN KEY([pai])
+REFERENCES [dbo].[Classe] ([id_item])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+
+
+USE [Bio]
+GO
+/****** Object:  Table [dbo].[SubOrdem]    Script Date: 07/01/2011 16:15:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[SubOrdem](
+	[id_item] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[pai] [int] NULL,
+ CONSTRAINT [PK_Subordem] PRIMARY KEY CLUSTERED 
+(
+	[id_item] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+USE [Bio]
+GO
+ALTER TABLE [dbo].[SubOrdem]  WITH CHECK ADD  CONSTRAINT [FK_SubOrdem_Ordem] FOREIGN KEY([pai])
+REFERENCES [dbo].[Ordem] ([id_item])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+
+
+USE [Bio]
+GO
+/****** Object:  Table [dbo].[Familia]    Script Date: 07/01/2011 16:15:28 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Familia](
+	[id_item] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[pai] [int] NULL,
+ CONSTRAINT [PK_Familia] PRIMARY KEY CLUSTERED 
+(
+	[id_item] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+USE [Bio]
+GO
+ALTER TABLE [dbo].[Familia]  WITH CHECK ADD  CONSTRAINT [FK_Familia_Ordem] FOREIGN KEY([pai])
+REFERENCES [dbo].[Ordem] ([id_item])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+
+
+USE [Bio]
+GO
+/****** Object:  Table [dbo].[SubFamilia]    Script Date: 07/01/2011 16:16:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[SubFamilia](
+	[id_item] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[pai] [int] NULL,
+ CONSTRAINT [PK_Subfamilia] PRIMARY KEY CLUSTERED 
+(
+	[id_item] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+USE [Bio]
+GO
+ALTER TABLE [dbo].[SubFamilia]  WITH CHECK ADD  CONSTRAINT [FK_SubFamilia_Familia] FOREIGN KEY([pai])
+REFERENCES [dbo].[Familia] ([id_item])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+
+USE [Bio]
+GO
+/****** Object:  Table [dbo].[Genero]    Script Date: 07/01/2011 16:16:26 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Genero](
+	[id_item] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[pai] [int] NULL,
+ CONSTRAINT [PK_Genero] PRIMARY KEY CLUSTERED 
+(
+	[id_item] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+USE [Bio]
+GO
+ALTER TABLE [dbo].[Genero]  WITH CHECK ADD  CONSTRAINT [FK_Genero_Familia] FOREIGN KEY([pai])
+REFERENCES [dbo].[Familia] ([id_item])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+
+
+USE [Bio]
+GO
+/****** Object:  Table [dbo].[Especie]    Script Date: 07/01/2011 16:16:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Especie](
+	[id_item] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[pai] [int] NULL,
+ CONSTRAINT [PK_Especie] PRIMARY KEY CLUSTERED 
+(
+	[id_item] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+USE [Bio]
+GO
+ALTER TABLE [dbo].[Especie]  WITH CHECK ADD  CONSTRAINT [FK_Especie_Genero] FOREIGN KEY([pai])
+REFERENCES [dbo].[Genero] ([id_item])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+
+
+USE [Bio]
+GO
+/****** Object:  Table [dbo].[EpEspecifico]    Script Date: 07/01/2011 16:16:55 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[EpEspecifico](
+	[id_item] [int] NOT NULL,
+	[nome] [varchar](50) COLLATE Latin1_General_CI_AS NULL,
+	[pai] [int] NULL,
+ CONSTRAINT [PK_Epespecifico] PRIMARY KEY CLUSTERED 
+(
+	[id_item] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF

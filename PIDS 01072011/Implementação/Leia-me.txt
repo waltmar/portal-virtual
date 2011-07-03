@@ -1,0 +1,9 @@
+Programa feito em Eclipse Helio.
+nome do projeto: BioPIDS.
+
+Banco em SqlServer 2005- Crie um banco com o nome Bio, em seguida rode o script "Banco_Bio".
+
+nome do banco: Bio
+Login: Cally.af 
+Senha: cally
+Crie um usuário para o banco com este login ou então altere as configurações de usuário no arquivo "ConexaoSqlServer.java" do pacote "Conexoes" do projeto.

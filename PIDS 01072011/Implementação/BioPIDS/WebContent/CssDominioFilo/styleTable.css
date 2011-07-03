@@ -1,0 +1,61 @@
+table.helpT
+{ text-align: center;
+font-family: Verdana;
+font-weight: normal;
+font-size: 11px;
+overflow:scroll;
+color: #404040;
+width: 200px;
+background-color: #fafafa;
+border: 1px #6699CC solid;
+
+border-spacing: 0px; } 
+
+td.helpHed
+{ border-bottom: 2px solid #6699CC;
+border-left: 1px solid #6699CC;
+background-color: #BEC8D1;
+width: 220px;
+text-indent: 5px;
+font-family: Verdana;
+font-weight: bold;
+font-size: 11px;
+
+color: #404040; }
+
+td.helpBod
+{ border-bottom: 1px solid #9CF;
+border-top: 0px;
+border-left: 1px solid #9CF;
+border-right: 0px;
+width: 220px;
+text-align: left;
+text-indent: 10px;
+font-family: Verdana, sans-serif, Arial;
+font-weight: normal;
+font-size: 11px;
+color: #404040;
+background-color: #fafafa; }
+
+table.sofT
+{ text-align: center;
+font-family: Verdana;
+font-weight: normal;
+font-size: 11px;
+width: 220px;
+color: #404040;
+width: 580px;
+background-color: #fafafa;
+border: 1px #6699CC solid;
+border-collapse: collapse
+
+border-spacing: 0px; }
+
+#tabela
+{
+width:600px;
+height:150px;
+overflow:scroll;
+}
+.enviar { "excluir (1).gif"; border:0px; }
+</cript>
