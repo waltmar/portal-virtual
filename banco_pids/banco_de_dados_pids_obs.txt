@@ -1,0 +1,13 @@
+Obs: 
+localidade;
+coletor;
+determinador;
+
+Todos os cadastros serão armazenados em caixa alta. 
+remover espaço antes da frase, espaços duplos e espaços depois da palavra.
+tirar acendo e "ç".
+
+relatorios: especimes por localidade.
+especimes por coletor
+por regiao, 
+por taxonomia ect...
