@@ -1,0 +1,23 @@
+Essa pasta deverá conter os relatório de progresso semanal, sendo a nomenclatura dos arquivo seguinte a seguintes regras:
+* Nome: Relatorio_Acompanhamento_DD-MM-YYYY-a-DD-MM-YYYY-Situacao.odt
+** Onde:
+*** DD --> Dia com dois dígitos
+*** MM --> Mes com dois dígitos
+*** YYYY --> Ano com quatro dígitos 
+*** Situação --> Aberto, Pendente, Concluído
+**** Aberto --> é a situação do relatório de progresso semana durante a semana de execução.
+**** Pendente --> situação para o relatório de progresso que já passou a semana de execução mas ainda tem pendentes a ser realizado.
+**** Concluído --> Não existe atividades a serem realizadas que foram definidas nesse projeto.
+
+Dentro do arquivo deverá ser colocado na situação do projeto um dos valores:
+* Verde --> está dentro do planejado ou muito próximo
+* Amarelo --> está fora do planejado mas não atrapalhando o andamento de outras atividades devido as pendências dessa semana.
+* Vermelho --> está fora do planejado, e impedindo o andamento de outras atividades. 
+
+Situação --> Aberto, Pendente, Concluído(
+* Aberto --> é a situação da atividade durante a semana de execução.
+* Pendente --> situação da atividade que já passou a semana de execução mas ainda está pendente a execução.
+* Concluído --> Atividade finalizada.
+
+Atividades atribuídas a mais de um responsável só será alterada pelos gerentes do projeto.
+Atividades atribuídas individualmente poderá ser mudada a data de finalização e situação pelo responsável.

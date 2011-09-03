@@ -1,0 +1,2 @@
+Nessa pasta deverá ser colocada um arquivo para cada glossário do projeto e o responsável pelas informações levantadas.
+Sendo a nomeclatura do arquivo, nome_do_glossario.odt

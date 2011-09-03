@@ -1,0 +1,21 @@
+Deverá ser colocado nessa pasta as Pautas e Atas das reuniões que forem realizadas no projeto.
+O formato do arquivo deverá ser ODT e PDF para cada arquivo.
+Sendo que no nome do arquivo deverá serguir a nomeclatura:
+Para Pauta:
+Pauta_XX_DD_MM_YYYY.odt e
+Pauta_XX_DD_MM_YYYY.PDF
+onde :
+* XX --> número sequencia da pauta
+* DD --> dia com dois digitos do dia em que a reunião será marcada
+* MM --> mês com dois digitos do dia em que a reunião será marcada
+* YY --> Ano com quatro digitos do dia em que a reunião será marcada
+
+para Reunião:
+ATA_XX_DD_MM_YYYY.PDF
+onde :
+* XX --> número sequencia da reunião
+* DD --> dia com dois digitos do dia em que a reunião foi realizada
+* MM --> mês com dois digitos do dia em que a reunião foi realizada
+* YY --> Ano com quatro digitos do dia em que a reunião foi realizada
+
+

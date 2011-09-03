@@ -1,0 +1,3 @@
+pasta destinada a documentos oficiais relacionados ao projeto de pesquisa.
+Conteúdod essa pasta pode ser ODT ou PDF, sendo que os documentos dessa pasta só podem ser modificados ou adicionados pelos Gerentes do projeto
+Sendo eles: Guiliano Rangel, José Leonardo
