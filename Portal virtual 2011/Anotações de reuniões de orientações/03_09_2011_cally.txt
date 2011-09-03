@@ -1,0 +1,9 @@
+Foi discutido sobre a reunião do dia anterior (com as professoras do curso de biologia) que acabou trazendo ao projeto novos requisitos até então não identificados, como o cadastros e espécies, a aba de textos didáticos e o cadastro de locais físicos e grupos de especialidade. 
+Na reunião falamos sobre a mudança do banco de dados, atribuindo as abas de multimídia, taxonomia e bibliografia para a tabela de espécie, 
+Sendo que no cadastro, existirá na primeira janela uma opção de checkbox, para selecionar se o cadastro é uma matrix. Se não for, é necessário procurar a matrix em um campo de busca, para que os dados da matrix relacionados a espécie sejam carregados.
+Uma vez carregados, esse novo espécime pode ser cadastrado e os dados relacionados à espécie, alterados. 
+Discutimos também sobre parte da arquitetura na visão utilizando o primefaces e o facelets. Sendo que existirá um template gerérico para a reutilização deste, em todas as tabelas básicas. 
+Foi discutido também sobre a utilização de uma arquitetura de controle e persistência genécia será abrangente para todos os cadastros básicos.
+O cally e o Diego foram responsáveis por definir a arquitetura e definir as tecnologias que serão utilizadas para a implementação.
+O Diego comentou sobre o JPA2 como segunda opção de framework para a persistência. 
+No mais foram apresentados aos novos integrantes do grupo, parte dos protótipos. E foi proposto a leitura dos textos para melhor compreensão do projeto e seu escopo. 
