@@ -1,0 +1,5 @@
+Reunião dia 03/09/2011 - Início 11:10 (aproximado)
+
+Foi discutido sobre os protótipos já existente para a análise e compreensão do projeto. Através das telas foi passado o que já foi discutido no projeto através do Cally e solucionados alguns problemas, tais como: como será feito a associação de multimídia e bibliotecas das espécies; diferenciação de espécie de especime; parte do escopo do projeto e enfâse no que foi pedido para não aumentar ainda mais o escopo.
+Usou-se boa parte do tempo para entender a "taxonomia" da especime e como será feito o cadastro, após passado as informações foi informado aos desenvolvedores que o projeto está no CODE, como está sendo organizado os diretórios, as nomeclaturas e especificações de cada pasta dos diretórios.
+Ao termino disso, foi delegado atividades para os integrantes da equipe, em que todos deveram fazer a leitura do que já foi postado no CODE. No qual ficou para eu e o Cally definir a arquitetura do projeto e tecnologias. Foi discutido um pouco de como será o desenvolvimento do projeto para a reutilização do código, e suposições de qual tecnologias serão usadas tais como: primeface, JPA, hibernate, entre outras.
