@@ -1,0 +1,3 @@
+-Inicialmene foi discutido, se uma especime seria ligada a uma Taxinomia ou a especie, e ficou decidido que a nivel de banco de dados a Taxinomia seria equivalente a especie. Tambem foi discutido a criação de uma opção para duplicar uma especie, pois uma especime pode ser parecida com outra mas pode ser de outra especie, assim tomando-a como base para a criação de uma outra especie.
+-Foi delegado as atividaeds da semana.
+-Foi discutido as janelas de exibição dos cadastros, assim como seria feito seu codigo. Foi decidido que seria feito um codigo que serviria como base para as outras exibições, e o forma como os elementos seriam distribuidas na janela ficou a ser discutir melhor. 
