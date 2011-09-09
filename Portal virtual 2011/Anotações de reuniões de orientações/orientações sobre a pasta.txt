@@ -2,9 +2,9 @@ Nessa pasta deverá ser incluido um arquivo para cada integrante do grupo(Desenv
 Sendo que cada integrante deverá postar um arquivo na nomeclatura:
 DD_MM_YYYY_nomeIntegrante.txt
 onde:
-* DD --> Dia com dois dígitos
-* MM --> Mes com dois dígitos
-* YYYY --> Ano com quatro dígitos 
+* DD --> Dia com dois dígitos em que a reunião ocorreu
+* MM --> Mes com dois dígitos em que a reunião ocorreu
+* YYYY --> Ano com quatro dígitos  em que a reunião ocorreu
 * nomeIntegrante --> nome do integrante do grupo.
 
 Após cada reunião do grupo deverá ser feito um resumo do que o integrante abstraiu da reunião, que será utilizado como memória do projeto visando não se perder o que foi discutidos durante as reuniões, facilitando para todos como fonte de consulta e discussões futuras.
