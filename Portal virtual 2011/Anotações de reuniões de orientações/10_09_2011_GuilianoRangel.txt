@@ -1,0 +1,36 @@
+Data: 10/09/2011
+INI: 11:20
+FIM:
+
+Inicio com a dicussão sobre a estrutura da pasta.
+Revisão atividades delegadas.
+Definição da rquitetura junto com Diego e Cally, definição de hibernet e JPA. 
+Estudo de spring(3.6) para utilizar pelo menos a injeção de dependência. (Diego).
+Analisando spring secureity. ver para fazer nível de permissão sem utilizar isso e continuar o estudo.
+Uso de PrimeFace para visão. As técnologias firam então Hibernat(3.5) JPA(3.0). e Spring para 
+Deigo fazer um projeto de teste para que os demais do grupo possam fazer o uso da tecnologia. *** 
+discussão sobre a questão de ter dois itens com o mesmo nome, mas podem ser de níveis diferentes. foi discutido a questão sobre itens divididos 
+Definir glossários para os itens (Massa dágua, datum, epitetu especifico) --> definir glossário. *** 
+
+Identificação dos requisitos apartir da leitura dos documentos;
+Fernando.
+Viu o cadastro geral de exsicatas para poder ver no site, recadastrando as informações que já tem no site. viu sobre a hora quem coletou, o local.
+
+Thiago.
+identificou os tipos de usuários: pesquisador, administrador e usuário intermediário que pode cadastra alguma coisa, e usuário para poder pegar emprestado.
+identificou que o cadastro de permissões, mas não viu a questão de ter grupos para identificar o tipo de usuários.
+
+Diego.
+Tabelas básicas tá bem detalhado pelo cally.
+Ainda fala também do requisito de manter usuário. deve ter necessidade falando sobre a questão de especialidade (animais, plantas, etc). diferenciando o nível do usuário par apoder saber o que cadastra em cada usuário.
+Questiona diferenciação de animais, de plantas. questionado sobre a exsicatase para plantas e para os animais. 
+
+Cally falou que conversou com todos os reponsáveis pelos laboratórios para saber os itens básicos para o cadastro geral. já foi definido junto aos reponsáveis das áreas involvidas.
+
+Revisar a questão do que é obrigatório(campos) **** 
+
+Estavam presente: Cally, Thiago, Diego, Fernando, José Aparecido, Francis, Jhnoy, Emille.
+
+foi repassadas as atividades conforme o relatório progresso semnal(acompanhamento).
+
+Repassado para os desenvolvedores sobre o controle de tempo para as atividades.
