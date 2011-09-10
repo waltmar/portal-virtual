@@ -1,0 +1,12 @@
+Nessa pasta deverá ser incluído um arquivo para cada integrante do grupo(Desenvolvedores) por semana:
+Sendo que cada integrante deverá postar um arquivo na nomeclatura:
+MM_YYYY_nomeIntegrante.ods
+onde:
+* MM --> Mes com dois dígitos do inicio da semana
+* YYYY --> Ano com quatro dígitos  do inicio da semana
+* nomeIntegrante --> nome do integrante do grupo.
+
+Durante a semana deverá ser feito uma planilha por semana para cada integrantes registrando as atividades e o inicio da ação.
+
+
+
