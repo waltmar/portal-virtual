@@ -1,0 +1,54 @@
+<mockup version="1.0" skin="sketch" measuredW="1023" measuredH="770" mockupW="907" mockupH="770">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="116" y="0" w="907" h="770" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="130" y="170" w="873" h="563" measuredW="200" measuredH="178" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hrefs>especime_index%26bm%3Bespecime_index.bmml%26bm%3Bespecime_index.bmml%26bm%3Bespecime_index.bmml%2C%2C%2C</hrefs>
+        <selectedIndex>3</selectedIndex>
+        <text>Cadastro%20de%20Esp%E9cimes%0AManter%20Tabelas%20B%E1sicas%0AManter%20Usu%E1rios%0ARelat%F3rios</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="459" y="93" w="364" h="32" measuredW="331" measuredH="24" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Sistema%20de%20Cataloga%E7%E3o%20da%20Biodiversidade</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::ComboBox" x="321" y="253" w="377" h="-1" measuredW="90" measuredH="23" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>relatorio1</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="321" y="227" w="123" h="19" measuredW="123" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Escolha%20o%20relat%F3rio</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::DataGrid" x="321" y="309" w="653" h="402" measuredW="351" measuredH="196" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%5Cr%28job%20title%29%20%5E%2C%20Age%2C%20Nickname%2C%20Employee%0AGiacomo%20Guilizzoni%5CrFounder%20%26%20CEO%2C%2034%2C%20Peldi%2C%20%5Bx%5D%0AGuido%20Jack%20Guilizzoni%2C%204%2C%20The%20Guids%2C%20%5B%5D%0AMarco%20Botton%5CrTuttofare%2C%2031%2C%20%2C%20%5Bx%5D%0AMariah%20Maclachlan%5CrBetter%20Half%2C%2035%2C%20Patata%2C%20%5Bx%5D%0AValerie%20Liberty%5CrCOO%5C%2C%20WOW%21%20Division%2C%20%3A%29%2C%20Val%2C%20%5Bx%5D%0A%7B75L%2C%200R%2C%2025%2C%200C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::FieldSet" x="817" y="221" w="157" h="88" measuredW="200" measuredH="170" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Exportar%20relat%F3rio</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::IconLabel" x="843" y="250" w="-1" h="-1" measuredW="32" measuredH="45" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>DocPDFIcon%7Csmall</icon>
+        <text>PDF</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::IconLabel" x="905" y="249" w="-1" h="-1" measuredW="32" measuredH="45" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>DocExcelIcon%7Csmall</icon>
+        <text>XLS</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
