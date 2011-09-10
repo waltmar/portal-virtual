@@ -1,6 +1,6 @@
 Data: 10/09/2011
 INI: 11:20
-FIM:
+FIM: 12:36
 
 Inicio com a dicussão sobre a estrutura da pasta.
 Revisão atividades delegadas.
@@ -33,4 +33,6 @@ Estavam presente: Cally, Thiago, Diego, Fernando, José Aparecido, Francis, Jhno
 
 foi repassadas as atividades conforme o relatório progresso semnal(acompanhamento).
 
-Repassado para os desenvolvedores sobre o controle de tempo para as atividades.
+Repassado para os desenvolvedores sobre o controle de tempo para as atividades. que é necessário fazer o preenchimento baseado no exemplo do Diego.
+
+
