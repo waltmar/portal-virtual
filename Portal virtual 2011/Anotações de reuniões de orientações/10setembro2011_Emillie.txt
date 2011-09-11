@@ -1,0 +1,7 @@
+Reunião Projeto Virtual da Biodiversidade do Cerrado
+10/09/2011
+
+Foi discutido a respeito do entendimento dos participantes sobre os requisitos necessários pro sistema.   Fomos orientados  sobre o code e ficamos de ver com Cally a liberação do acesso ao SVN e é necessário que os participantes tenham acesso ao code para postar e ler os arquivos lá presentes.
+Foi discutido o requisito de cadastro de usuários e tipos e permissões dos mesmos. Diego e Cally falaram sobre as tecnologias que serão utilizadas no projeto, dentre elas o Hibernate 3.5, JPA 2.0, Spring 3.6 e o Spring Security, estando estes dois últimos ainda em análise por eles. Como IDE, foi definido que será utilizado o Eclipse.
+Conversamos também sobre alguns campos que serão comuns entre os 3 laboratórios existentes para efetuar o cadastro de amostras no sistema e também sobre como poderia ser tratado no sistema a questão de cadastro de nomes que são iguais mas possuem níveis diferentes de taxonomia.   
+Todos deverão elaborar um diagrama de Caso de Uso para melhor entendimento do sistema.
