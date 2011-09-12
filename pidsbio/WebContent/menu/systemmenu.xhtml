@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.prime.com.tr/ui">
+
+        <p:menu>  
+          
+                <p:submenu label="#{msg.menu}">  
+                    <p:menuitem value="#{msg.manterEspecimes}" action="#{MenuBean.especimes}" />
+                    <p:menuitem value="#{msg.cadastrosBasicos}" action="#{MenuBean.basicos}" /> 
+                    <p:menuitem value="#{msg.manterUsuarios}" action="#{MenuBean.usuarios}" />
+                    <p:menuitem value="#{msg.relatorios}" action="#{MenuBean.relatorios}" />
+                    <p:menuitem value="#{msg.configuracoes}" action="#{MenuBean.configuracoes}" />
+                </p:submenu>  
+               
+        </p:menu>  
+
+</ui:composition>

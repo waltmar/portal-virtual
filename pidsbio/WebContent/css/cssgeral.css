@@ -1,0 +1,9 @@
+@CHARSET "ISO-8859-1";
+
+em {
+	font-family: 'Arial';
+}
+
+.ui-widget {
+	font-size: 12px !important;
+}

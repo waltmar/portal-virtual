@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+	<h:form>
+	<h:panelGrid columns="2" style="margin-left: auto; margin-right: auto;">
+			<p:commandButton value="#{msg.salvar}"  actionListener="#{mBean.saveAction}"  update="contentPanel, mensagem"/>
+			<p:commandButton value="#{msg.pesquisar}" actionListener="#{mBean.researchAction}" immediate="true" update="contentPanel, mensagem" />	
+	</h:panelGrid>
+	</h:form>
+	
+</ui:composition>
