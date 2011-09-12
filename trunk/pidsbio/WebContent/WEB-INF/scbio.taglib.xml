@@ -1,0 +1,15 @@
+<?xml version="1.0"?>    
+<!DOCTYPE facelet-taglib PUBLIC "-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN" "facelet-taglib_1_0.dtd">
+<facelet-taglib>
+	<namespace>http://scbio.com.br/facelets</namespace>
+	<tag>
+		<tag-name>basicinput</tag-name>
+		<source>../commons/inputs/basicinput.xhtml</source>
+	</tag>
+	
+	<tag>
+		<tag-name>buttons</tag-name>
+		<source>../commons/buttons/buttonscrud.xhtml</source>
+	</tag>
+	
+</facelet-taglib>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:in="http://scbio.com.br/facelets">
+
+<ui:composition>
+
+	<ui:define name="contentview">
+	
+		<h:panelGrid>
+		
+			<h:panelGrid columns="2">
+			
+				<in:basicinput id="id" name="name" required="true"
+					address="#{mBean.id}" />
+					
+				<in:buttons />
+				
+			</h:panelGrid>
+			
+			<h:panelGrid columns="1">
+			
+				<ui:include src="../commons/tables/basictable.xhtml">
+					<ui:define name="columns">
+						<p:column headerText="name">
+							<h:outputText value="#{object.id}" />
+						</p:column>
+					
+					</ui:define>
+				</ui:include>
+
+			</h:panelGrid>
+		</h:panelGrid>
+	</ui:define>
+
+
+</ui:composition>
+
+</html>
