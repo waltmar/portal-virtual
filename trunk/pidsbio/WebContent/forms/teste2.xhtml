@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.prime.com.tr/ui"
-	template="/templates/basicpanel.xhtml">
-	
+	xmlns:in="http://scbio.com.br/facelets"
+	templates="/templates/page/template.xhtml">
+		
 	<ui:param name="id" value="reino" />
 	<ui:param name="name" value="#{msg.reino}" />
 	
-	<ui:define name="areaPanel">
+	<ui:define name="contentView">
+	
+
+	
 	
 	<ui:include src="/commons/crud/basiccrud.xhtml" />
+		
 	
-	</ui:define>
-	
+	</ui:define>  
 	
 </ui:composition>
