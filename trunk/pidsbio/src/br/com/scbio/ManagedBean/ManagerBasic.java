@@ -20,7 +20,7 @@ public class ManagerBasic extends GenericBean<Basic, Serializable>{
 	private static final long serialVersionUID = 1L;
 	private Basic basic;
 	private String valor;
-	
+	private List<Basic> list;
 
 	public String getValor() {
 		return valor;
@@ -30,14 +30,20 @@ public class ManagerBasic extends GenericBean<Basic, Serializable>{
 		this.valor = valor;
 	}
 
-	
-
 	public ManagerBasic() {
 		super();
-		setList(new ArrayList<String>());
+		setList(new ArrayList<Basic>());
 		
 	}
 	
+	public List<Basic> getList() {
+		return list;
+	}
+
+	public void setList(List<Basic> list) {
+		this.list = list;
+	}
+
 	public Basic getBasic() {
 		return basic;
 	}

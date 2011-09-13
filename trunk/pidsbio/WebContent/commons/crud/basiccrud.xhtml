@@ -16,7 +16,7 @@
 			<h:panelGrid columns="2">
 			
 				<in:basicinput id="#{id}" name="#{name}" required="true"
-					address="#{ManagerBasic.valor}" />
+					address="mBean.basic.valor" />
 					
 				<in:buttons />
 				
@@ -25,7 +25,7 @@
 				<ui:include src="../tables/basictable.xhtml">
 					<ui:define name="columns">
 						<p:column headerText="#{name}">
-							<h:outputText value="#{object.id}" />
+							<h:outputText value="#{object.valor}" />
 						</p:column>
 					</ui:define>
 				</ui:include>
