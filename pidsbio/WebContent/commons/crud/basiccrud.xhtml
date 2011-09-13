@@ -8,33 +8,34 @@
 
 <ui:composition>
 
-	<ui:define name="contentview">
+<ui:param name="tableTitle" value="#{name}" />
+
 	
-		<h:panelGrid>
+		<h:panelGrid id="panelcrud">
 		
 			<h:panelGrid columns="2">
 			
 				<in:basicinput id="#{id}" name="#{name}" required="true"
-					address="#{mBean.id}" />
+					address="#{ManagerBasic.valor}" />
 					
 				<in:buttons />
 				
-			</h:panelGrid>
+				<h:panelGrid columns="1">
 			
-			<h:panelGrid columns="1">
-			
-				<ui:include src="../commons/tables/basictable.xhtml">
+				<ui:include src="../tables/basictable.xhtml">
 					<ui:define name="columns">
 						<p:column headerText="#{name}">
 							<h:outputText value="#{object.id}" />
 						</p:column>
-					
 					</ui:define>
 				</ui:include>
 
+				</h:panelGrid>
 			</h:panelGrid>
+			
+			
 		</h:panelGrid>
-	</ui:define>
+
 
 
 </ui:composition>

@@ -7,9 +7,14 @@ public class ErrorException extends Exception{
 	 */
 	private static final long serialVersionUID = 1L;
 	private TypeErrors erro;
+	private String message;
 	public ErrorException(){}
-	public ErrorException(TypeErrors type, String msg){
-		super(msg);
+	public ErrorException(TypeErrors type){
+		super();
+		setErro(type);
+	}
+	public ErrorException(TypeErrors type, String message){
+		this.message = message;
 		setErro(type);
 	}
 	public TypeErrors getErro() {
@@ -18,6 +23,11 @@ public class ErrorException extends Exception{
 
 	public void setErro(TypeErrors erro) {
 		this.erro = erro;
+	}
+	
+	@Override
+	public String getMessage(){
+		return this.message;
 	}
 	
 }

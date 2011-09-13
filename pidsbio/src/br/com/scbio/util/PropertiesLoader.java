@@ -1,28 +1,45 @@
 package br.com.scbio.util;
 import java.io.IOException;  
 import java.io.InputStream;  
+import java.io.Serializable;
 import java.util.Properties;  
 
-import br.com.scbio.language.Marcador;
-
 
   
-public class PropertiesLoader {  
+public class PropertiesLoader implements Serializable{  
   
-    private Properties props;  
-    private String nomeDoProperties = "pt_br.properties";  
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Properties props;  
+    private String nomeDoProperties = "pt_br.properties";
+    private Class<?> classMarcador;
   
-    public PropertiesLoader(){  
-            props = new Properties();  
-            InputStream in = Marcador.class.getResourceAsStream(nomeDoProperties);  
+    public PropertiesLoader(Class<?> classMarcador){  
+            props = new Properties();
+            this.classMarcador = classMarcador;
+            InputStream in = classMarcador.getResourceAsStream(nomeDoProperties);  
             try{  
                     props.load(in);  
                     in.close();  
             }  
             catch(IOException e){e.printStackTrace();}  
     }
+    
+    public PropertiesLoader(Class<?> classMarcador, String nameProperties){
+    	 props = new Properties();
+         this.classMarcador = classMarcador;
+         InputStream in = classMarcador.getResourceAsStream(nameProperties);  
+         try{  
+                 props.load(in);  
+                 in.close();  
+         }  
+         catch(IOException e){e.printStackTrace();}
+    	
+    }
     public String getEndereco(){
-    	String e = Marcador.class.getResource(nomeDoProperties).toString();
+    	String e = this.classMarcador.getResource(nomeDoProperties).toString();
     	return e;
     }
   
