@@ -6,6 +6,14 @@
 		<tag-name>basicinput</tag-name>
 		<source>../commons/inputs/basicinput.xhtml</source>
 	</tag>
+	<tag>
+		<tag-name>genericinput</tag-name>
+		<source>../commons/inputs/genericInput.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>crud</tag-name>
+		<source>../commons/crud/basiccrud.xhtml</source>
+	</tag>
 	
 	<tag>
 		<tag-name>buttons</tag-name>

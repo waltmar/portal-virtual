@@ -7,7 +7,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.application.FacesMessage.Severity;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
-
 import br.com.scbio.exception.ErrorException;
 import br.com.scbio.exception.TypeErrors;
 import br.com.scbio.interfaces.IController;
@@ -22,90 +21,22 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 	 */
 	private static final long serialVersionUID = 1L;
 	public IController<T, oid> iControler;
-	private boolean panelEspecimes;
-	private boolean panelBasicos;
-	private boolean panelUsuarios;
-	private boolean panelRelatorios;
-	private boolean panelConfiguracoes;
-
+	private List<?> list;
+	 
 	public GenericBean() {
-		this.panelEspecimes = true;
-		this.panelBasicos = false;
-		this.panelUsuarios = false;
-		this.panelRelatorios = false;
-		this.panelConfiguracoes = false;
-
-	}
-
-	public void organizerPanel(boolean panel1, boolean panel2, boolean panel3,
-			boolean panel4, boolean panel5) {
-		this.panelEspecimes = panel1;
-		this.panelBasicos = panel2;
-		this.panelUsuarios = panel3;
-		this.panelRelatorios = panel4;
-		this.panelConfiguracoes = panel5;
-	}
-
-	public void especies() {
-		organizerPanel(true, false, false, false, false);
-	}
-
-	public void basicos() {
-		organizerPanel(false, true, false, false, false);
-	}
-	
-	public void usuarios() {
-		organizerPanel(false, false, true, false, false);
-	}
-	
-	public void relatorios() {
-		organizerPanel(false, false, false, true, false);
-	}
-	public void configuracoes() {
-		organizerPanel(false, false, false, false, true);
-	}
 	
 
-	public boolean isPanelEspecimes() {
-		return panelEspecimes;
 	}
 
-	public void setPanelEspecimes(boolean panelEspecimes) {
-		this.panelEspecimes = panelEspecimes;
+	public List<?> getList() {
+		return list;
 	}
 
-	public boolean isPanelBasicos() {
-		return panelBasicos;
+	public void setList(List<?> list) {
+		this.list = list;
 	}
 
-	public void setPanelBasicos(boolean panelBasicos) {
-		this.panelBasicos = panelBasicos;
-	}
-
-	public boolean isPanelUsuarios() {
-		return panelUsuarios;
-	}
-
-	public void setPanelUsuarios(boolean panelUsuarios) {
-		this.panelUsuarios = panelUsuarios;
-	}
-
-	public boolean isPanelRelatorios() {
-		return panelRelatorios;
-	}
-
-	public void setPanelRelatorios(boolean panelRelatorios) {
-		this.panelRelatorios = panelRelatorios;
-	}
-
-	public boolean isPanelConfiguracoes() {
-		return panelConfiguracoes;
-	}
-
-	public void setPanelConfiguracoes(boolean panelConfiguracoes) {
-		this.panelConfiguracoes = panelConfiguracoes;
-	}
-
+	
 	public IController<T, oid> getiControler() {
 		return iControler;
 	}
@@ -209,7 +140,20 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 
 	public abstract void newAction(ActionEvent actionEvent);
 
-	public abstract void saveAction(ActionEvent actionEvent);
+	public String saveAction() { 
+		before();
+		chooseOperation();   
+		 
+		return null;
+	}
+	
+	public void chooseOperation(){
+		
+	}
+	private void before() {
+		// TODO Auto-generated method stub
+		
+	}
 
 	public abstract void updateAction(ActionEvent actionEvent);
 
