@@ -1,0 +1,18 @@
+Reunião Projeto Virtual da Biodiversidade do Cerrado
+10/09/2011
+
+Deu se o início da reunião às 11:20 e término às 12:56.
+Foi discutido sobre os requisitos necessários para o sistema e que todos deverão formular um diagrama de caso de uso do sistema.
+Diego e Cally falaram a respeito das tecnologias que serão utilizadas no projeto e algumas que ainda não estão completamente definidas
+mas que ainda sofrerão uma melhor análise.
+As tecnologias definas são elas: Hibernat,JPA,Eclipse(Como IDE de desenvolvimento).
+Por definir Spring e o Spring Secutity
+Foi discutido a respeito do entendimento dos participantes sobre os requisitos necessários pro sistema.   
+Fomos orientados  sobre o code e ficamos de ver com Cally a liberação do acesso ao SVN e é necessário que 
+os participantes tenham acesso ao code para postar e ler os arquivos lá presentes.
+Foi discutido o requisito de cadastro de usuários e tipos e permissões dos mesmos. 
+Foi discutido ainda sobre alguns campos que fazem parte dos 3 laboratórios, como esses campos serão tratados pelo sistema, ficou meio
+obscuro a questão, mas será alvo de definição ainda.
+O Diego levantou a questão de alguns termos que não havia significado e ficou decidido que o Diego iria formular um glossário para tais
+itens.
+Também o Diego ficou de formular um tutorial de uso a respeito das tecnologias que serão utilizadas.
