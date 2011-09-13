@@ -1,8 +1,8 @@
 package br.com.scbio.ManagedBean;
 
 import java.io.Serializable;
-import java.util.List;
-
+import java.util.List; 
+  
 import javax.faces.application.FacesMessage;
 import javax.faces.application.FacesMessage.Severity;
 import javax.faces.context.FacesContext;
@@ -21,21 +21,14 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 	 */
 	private static final long serialVersionUID = 1L;
 	public IController<T, oid> iControler;
-	private List<?> list;
+
 	 
 	public GenericBean() {
 	
 
 	}
 
-	public List<?> getList() {
-		return list;
-	}
-
-	public void setList(List<?> list) {
-		this.list = list;
-	}
-
+	
 	
 	public IController<T, oid> getiControler() {
 		return iControler;
@@ -167,4 +160,7 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 		// TODO Auto-generated method stub
 
 	}
+	
+	public void loadObjectTable(Object object){}
+	public void setSelectObject(Object object){}
 }
