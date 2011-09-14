@@ -16,6 +16,11 @@
 	</tag>
 	
 	<tag>
+		<tag-name>crudancestor</tag-name>
+		<source>../commons/crud/basiccrudancestor.xhtml</source>
+	</tag>
+	
+	<tag>
 		<tag-name>buttons</tag-name>
 		<source>../commons/buttons/buttonscrud.xhtml</source>
 	</tag>

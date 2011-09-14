@@ -6,7 +6,7 @@
 	xmlns:p="http://primefaces.prime.com.tr/ui">
 	<h:form>
 	<h:panelGrid columns="2" style="margin-left: auto; margin-right: auto;">
-			<p:commandButton value="#{msg.salvar}"  actionListener="#{mBean.saveAction}"  update="contentPanel"/>
+			<p:commandButton value="#{msg.salvar}" immediate="true" update="panelcrud" actionListener="#{mBean.saveAction}"  />
 			<p:commandButton value="#{msg.pesquisar}" actionListener="#{mBean.researchAction}" immediate="true" update="contentPanel, mensagem" />	
 	</h:panelGrid>
 	</h:form>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui" template="basiccrud.xhtml">
+
+	<ui:define name="ancestorInput">
+		<h:panelGrid columns="3">
+			<h:outputLabel for="#{ancestor}" value="#{nameAncestor}" />
+			<h:selectOneMenu id="#{ancestor}" value="#{mBean.ancestor}"
+				required="true" requiredMessage="#{msg.obr}">
+				<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+					noSelectionOption="true" />
+				<f:selectItems value="#{combos.ancestor}" />
+			</h:selectOneMenu>
+			<p:message for="#{ancestor}" display="text" />
+		</h:panelGrid>
+	</ui:define>
+
+	<ui:define name="columnAncestor">
+
+		<p:column headerText="#{ancestor}">
+			<h:outputText value="#{object.ancestor}" />
+		</p:column>
+
+	</ui:define>
+
+
+</ui:composition>
