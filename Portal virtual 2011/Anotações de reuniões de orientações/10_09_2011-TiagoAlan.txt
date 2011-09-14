@@ -1,0 +1,31 @@
+Reunião  10/09
+
+Início =~ 11:00
+Fim =~    12:35
+
+Nessa reunião ficou definida a maioria das tecnologias que serão utilizadas, além das tecnologias já decididas em
+reunião anterior, as tecnologias decidas são:
+Hibernate 3.5 em conjunto com JPA 2.0, sendo Hibernate para conexão com o banco de dados
+                                       e JPA mais relacionado à estrutura
+Spring 3.6 para injeção de dependências, foi relatado que o Spring éuma ferramenta muito grande.
+Prime Faces
+
+Também foi sugerido o uso de Spring Security, no entanto devido a sua complexidade ele ainda está em análise
+Para que todos consigam entender as ferramentas, será feito um mini-projeto e tutoriais ensinando a utilizar a ferramenta
+
+
+Foi checado o cumprimento das atividades propostas na reunião passada, sendo que cada um falou sobre os requisitos que identificou
+no sistema, exceto o José Aparecido que não conseguiu acessar o Code e ler os documentos.
+
+
+Além das ferramentas, também foi discutido um pouco sobre a modelagem do banco de dados. Uma das questões foi se família e subfamília
+formaram uma ou duas tabelas, isso porque algumas famílias e subfamílias têm nomes iguais, o mesmo vale em relação a classe e subclasse.
+Por enquanto ainda prevalece a idéia inicial de existir 2 tabelas e não uma compartilhada.
+
+Foi identificado como requisito do sistema, a criação de perfis para o usuário, tais como, um administrador, um pesquisador, etc.
+E foi sugerido especificar ainda mais os perfis como por exemplo, um especialista de inseto cadastrar somente insetos, um especialista em plantas
+cadastrar plantas, etc.
+Foi exposto que há 3 lugares de armazenamento de exsicatas na UEG, e cada um armazena animais de diferentes categorias, o . No entanto o sistema deve
+atender os 3 locais de armazenamento ao mesmo tempo, ou seja, ele tem que ser genério aos três.
+
+Foi discutido sobre quais seriam os campos obrigatórios, segundo as informações e atas reunidas junto aos que fazem parte no projeto em biologia.
