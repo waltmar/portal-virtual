@@ -8,13 +8,33 @@
 
 <ui:composition>
 
-<ui:param name="tableTitle" value="#{name}" />
+	<ui:param name="tableTitle" value="#{name}" />
+	<ui:param name="mBean" value="#{ManagerBasic}" />
+	<ui:param name="nameAncestor" value="#{nameAncestor}" />
 
-	
-		<h:panelGrid id="panelcrud">
-		
-			<h:panelGrid columns="2">
+	<h:panelGrid id="panelcrud">
+
+		<h:panelGrid columns="3">
+
+			<ui:insert name="ancestorInput" />
+
+			<in:basicinput id="#{id}" name="#{name}" required="true"
+				address="#{ManagerBasic.valor}" />
+
+			<h:panelGrid columns="2"
+				style="margin-left: auto; margin-right: auto;">
+				<p:commandButton value="#{msg.salvar}" immediate="true"
+					update="panelcrud" actionListener="#{mBean.saveAction}" />
+				<p:commandButton value="#{msg.pesquisar}"
+					actionListener="#{mBean.researchAction}" immediate="true"
+					update="contentPanel, mensagem" />
+			</h:panelGrid>
+
 			
+<<<<<<< .mine
+		</h:panelGrid>
+		<h:panelGrid style="margin-right:auto; margin-left:auto;">
+=======
 				<in:basicinput id="#{id}" name="#{name}" required="true"
 					address="mBean.basic.valor" />
 					
@@ -22,19 +42,22 @@
 				
 				<h:panelGrid columns="1">
 			
+>>>>>>> .r121
 				<ui:include src="../tables/basictable.xhtml">
+
 					<ui:define name="columns">
+						<ui:insert name="columnAncestor" />
 						<p:column headerText="#{name}">
 							<h:outputText value="#{object.valor}" />
 						</p:column>
 					</ui:define>
-				</ui:include>
 
-				</h:panelGrid>
+				</ui:include>
 			</h:panelGrid>
-			
-			
-		</h:panelGrid>
+	</h:panelGrid>
+
+
+
 
 
 
