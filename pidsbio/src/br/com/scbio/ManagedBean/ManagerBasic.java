@@ -20,20 +20,33 @@ public class ManagerBasic extends GenericBean<Basic, Serializable>{
 	private static final long serialVersionUID = 1L;
 	private Basic basic;
 	private String valor;
-	private List<Basic> list;
+	private String ancestor;
+	protected List<Basic> list;
+	protected List combos;
 
-	public String getValor() {
-		return valor;
-	}
-
-	public void setValor(String valor) {
-		this.valor = valor;
-	}
+	
+	
 
 	public ManagerBasic() {
-		super();
-		setList(new ArrayList<Basic>());
+		list = new ArrayList<Basic>();
 		
+	}
+	
+
+	public String getAncestor() {
+		return ancestor;
+	}
+
+	public void setAncestor(String ancestor) {
+		this.ancestor = ancestor;
+	}
+
+	public List getCombos() {
+		return combos;
+	}
+
+	public void setCombos(List combos) {
+		this.combos = combos;
 	}
 	
 	public List<Basic> getList() {
@@ -44,17 +57,21 @@ public class ManagerBasic extends GenericBean<Basic, Serializable>{
 		this.list = list;
 	}
 
+	public String getValor() {
+		return valor;
+	}
+
+	public void setValor(String valor) {
+		this.valor = valor;
+	}
+
 	public Basic getBasic() {
 		return basic;
 	}
 	public void setBasic(Basic basic) {
 		this.basic = basic;
 	}
-	@Override
-	public void organizerPanel(boolean panel1, boolean panel2) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	@Override
 	public IController<Basic, Serializable> getIController() {

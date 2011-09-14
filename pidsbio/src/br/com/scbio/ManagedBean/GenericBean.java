@@ -1,8 +1,8 @@
 package br.com.scbio.ManagedBean;
 
 import java.io.Serializable;
-import java.util.List; 
-  
+import java.util.List;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.application.FacesMessage.Severity;
 import javax.faces.context.FacesContext;
@@ -13,11 +13,10 @@ import br.com.scbio.interfaces.IController;
 import br.com.scbio.interfaces.IManagedBean;
 import br.com.scbio.interfaces.IPageNavigation;
 
-public abstract class GenericBean<T extends Serializable, oid extends Serializable>
-		implements IManagedBean<T, oid>, IPageNavigation, Serializable {
+public abstract class GenericBean<T extends Serializable, oid extends Serializable>{
 
-	/**
-	 * 
+	/**  
+	 *   
 	 */
 	private static final long serialVersionUID = 1L;
 	public IController<T, oid> iControler;
