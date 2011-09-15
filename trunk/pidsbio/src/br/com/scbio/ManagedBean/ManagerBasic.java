@@ -22,7 +22,7 @@ public class ManagerBasic extends GenericBean<Basic, Serializable>{
 	private String valor;
 	private String ancestor;
 	protected List<Basic> list;
-	protected List combos;
+	protected List<String> combos;
 
 	
 	
@@ -31,6 +31,7 @@ public class ManagerBasic extends GenericBean<Basic, Serializable>{
 		list = new ArrayList<Basic>();
 		
 	}
+	
 	
 
 	public String getAncestor() {
@@ -41,11 +42,11 @@ public class ManagerBasic extends GenericBean<Basic, Serializable>{
 		this.ancestor = ancestor;
 	}
 
-	public List getCombos() {
+	public List<String> getCombos() {
 		return combos;
 	}
 
-	public void setCombos(List combos) {
+	public void setCombos(List<String> combos) {
 		this.combos = combos;
 	}
 	
