@@ -1,25 +1,34 @@
+import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 
+class EntityPersist implements Serializable{
 
-class GenericBean{
-	
-	private String id_item;
+	private static final long serialVersionUID = 1L;
 
-	public String getId_item() {
+	private float id_item;
+
+	public float getId_item() {
 		return id_item;
 	}
-	public void setId_item(String id_item) {
+
+	public void setId_item(float id_item) {
 		this.id_item = id_item;
 	}
+	
 	
 }
 
 
-class Livro extends GenericBean{
+
+class Livro extends EntityPersist{
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nome;
 	private String autor;
 	private String preco;
@@ -46,8 +55,12 @@ class Livro extends GenericBean{
 	
 }
 
-class Usuario extends GenericBean{
+class Usuario extends EntityPersist{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nome;
 	private String fone;
 	
@@ -66,7 +79,7 @@ class Usuario extends GenericBean{
 	
 }
 
-class MinhaQuery<T extends GenericBean> {
+class MinhaQuery<T extends EntityPersist> {
 	
 	/*
 	 Esta classe utiliza o conceito de reflexão
@@ -77,6 +90,7 @@ class MinhaQuery<T extends GenericBean> {
 		-Chama apenas métodos get de interesse.
 	 
 	 */
+	public MinhaQuery(){}
 	
 	public String CriarQueryCadastro(T entity){
 		
@@ -89,46 +103,62 @@ class MinhaQuery<T extends GenericBean> {
 			
 			Method listaMetodos[] = cls.getMethods(); //busca todos os métodos da classe
 			
-			query = query + " (";
 			
-			for (int i = 0; i < (listaMetodos.length - 1) ; i++) {
+			String subquery1= " (";
+			String subquery2= subquery1;
+			
+			for (int i = 0; i < listaMetodos.length  ; i++) {
 				
 				
 				Method m = (listaMetodos[i]);  
-				if (m.getName().contains("get") ) { 
-				String aux = (String) m.getName();
-				aux = aux.substring(3);
-				aux = aux.toLowerCase();
-				query = query + aux;// armazena o primeiro atributo da classe
-				query = query +", ";
-				}
-				
-			}
-			
-			query = query.substring(0, query.length()-2);//retira a ultima vírgula 
-			query = query + ")";
-			
-			query = query + " VALUES (";
-			
-			
-			for (int i = 0; i < listaMetodos.length; i++) {
-				 
-				Method m = (listaMetodos[i]);  
-				if (m.getName().contains("get") ) {// interessa somente os gets para pegar os atributos 		
+				if (m.getName().contains("get") ) {
 					
-						query = query + (String) m.invoke(entity, new Object[0]) ;// armazena o primeiro atributo da classe
-						query = query +", ";
+					String aux;
+					aux = (String) m.getName();
+					aux = aux.substring(3);
+					
+					
+					subquery1 = subquery1 + aux;
+					subquery1 = subquery1 +", ";
+					
+					if (!m.getName().contains("getClass")){
+						if (m.getReturnType().getSimpleName().equals("String")){
+							
+							subquery2 = subquery2 + "'"+(String) m.invoke(entity, new Object[0])+"'";
+							subquery2 = subquery2 +", ";
+						}
+						
+						if (m.getReturnType().getSimpleName().equals("float")){
+							subquery2 = subquery2 + (String) m.invoke(entity, new Object[0]) ;// armazena o primeiro atributo da classe
+							subquery2 = subquery2 +", ";
+						}
+					}
 				}
+				
 			}
+			
+			subquery1 = subquery1.toLowerCase();
+			subquery2 = subquery2.toLowerCase();
+			
+			subquery1 = subquery1.substring(0, subquery1.length()-9);//retira a ultima vírgula e o atributo class 
+			subquery1 = subquery1 + ")";
+			subquery2 = subquery2.substring(0, subquery2.length()-2);
+			subquery2 = subquery2 + ")";
+			
+			query = query + subquery1 +  " VALUES" + subquery2;
 			
 			}catch (Exception e) {}
 			
-			query = query.substring(0, query.length()-2);//retira a ultima vírgula 
-			query = query + ")";
 		return query; 
 	
 	
 	}
+	
+	
+	
+	
+	
+	
 	
 	public String CriarQueryExclusao (T entity){
 		
@@ -166,8 +196,8 @@ public static void main(String args[])  {
 		l.setNome("A arte da Guerra");
 		l.setPreco("1.99");
 		l.setAutor("Sun Tsu");
-		l.setId_item("007");
-		MinhaQuery<GenericBean> q = new MinhaQuery<GenericBean>();
+		l.setId_item((float) 007);
+		MinhaQuery<EntityPersist> q = new MinhaQuery<EntityPersist>();
 		String valor = q.CriarQueryCadastro(l);
 			
 		System.out.println(valor); 
@@ -175,8 +205,8 @@ public static void main(String args[])  {
 		Usuario u = new Usuario();
 		u.setNome("João");
 		u.setFone("114466");
-		u.setId_item("02");
-		
+		u.setId_item((float) 02);
+		 
 		valor = q.CriarQueryCadastro(u);
 		
 		System.out.println(valor);
