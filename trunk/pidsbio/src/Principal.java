@@ -31,7 +31,7 @@ class Livro extends EntityPersist{
 	private static final long serialVersionUID = 1L;
 	private String nome;
 	private String autor;
-	private String preco;
+	private  float preco;
 	
 	public String getNome() {
 		return nome;
@@ -45,10 +45,10 @@ class Livro extends EntityPersist{
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
-	public String getPreco() {
+	public  float getPreco() {
 		return preco;
 	}
-	public void setPreco(String preco) {
+	public void setPreco( float preco) {
 		this.preco = preco;
 	}
 	
@@ -91,19 +91,35 @@ class MinhaQuery<T extends EntityPersist> {
 	 
 	 */
 	public MinhaQuery(){}
+
+	private String getNameClass(T entity) {
+		// TODO Auto-generated method stub
+		return entity.getClass().getSimpleName();
+	}
 	
-	public String CriarQueryCadastro(T entity){
+	private Class<?> getClass(T entity) throws ClassNotFoundException {
+		// TODO Auto-generated method stub
+		Class<?> cls = Class.forName(entity.getClass().getSimpleName());
+		return cls;
+	}
+	
+	private String getQueryFields(Method listaMetodos[]) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public String CreateQuerySave(T entity){
 		
 		String query = "INSERT INTO ";
-		query = query + entity.getClass().getSimpleName();//insere o nome da tabela 
+		query = query + getNameClass(entity);//insere o nome da tabela 
+	
 		
 		try {  
-			
-			Class<?> cls = Class.forName(entity.getClass().getSimpleName());	
-			
+		
+			Class<?> cls = getClass(entity);
 			Method listaMetodos[] = cls.getMethods(); //busca todos os métodos da classe
 			
-			
+			query = query + getQueryFields(listaMetodos);
 			String subquery1= " (";
 			String subquery2= subquery1;
 			
@@ -124,12 +140,10 @@ class MinhaQuery<T extends EntityPersist> {
 					if (!m.getName().contains("getClass")){
 						if (m.getReturnType().getSimpleName().equals("String")){
 							
-							subquery2 = subquery2 + "'"+(String) m.invoke(entity, new Object[0])+"'";
+							subquery2 = subquery2 + "'"+ m.invoke(entity, new Object[0])+"'";
 							subquery2 = subquery2 +", ";
-						}
-						
-						if (m.getReturnType().getSimpleName().equals("float")){
-							subquery2 = subquery2 + (String) m.invoke(entity, new Object[0]) ;// armazena o primeiro atributo da classe
+						} else{
+							subquery2 = subquery2 +  m.invoke(entity, new Object[0]) ;// armazena o primeiro atributo da classe
 							subquery2 = subquery2 +", ";
 						}
 					}
@@ -153,12 +167,6 @@ class MinhaQuery<T extends EntityPersist> {
 	
 	
 	}
-	
-	
-	
-	
-	
-	
 	
 	public String CriarQueryExclusao (T entity){
 		
@@ -194,11 +202,11 @@ public static void main(String args[])  {
 
 		Livro l = new Livro();
 		l.setNome("A arte da Guerra");
-		l.setPreco("1.99");
+		l.setPreco((float) 1.99);
 		l.setAutor("Sun Tsu");
 		l.setId_item((float) 007);
 		MinhaQuery<EntityPersist> q = new MinhaQuery<EntityPersist>();
-		String valor = q.CriarQueryCadastro(l);
+		String valor = q.CreateQuerySave(l);
 			
 		System.out.println(valor); 
 		
@@ -207,7 +215,7 @@ public static void main(String args[])  {
 		u.setFone("114466");
 		u.setId_item((float) 02);
 		 
-		valor = q.CriarQueryCadastro(u);
+		valor = q.CreateQuerySave(u);
 		
 		System.out.println(valor);
 		
