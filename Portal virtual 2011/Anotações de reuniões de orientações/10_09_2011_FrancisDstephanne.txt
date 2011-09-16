@@ -1,0 +1,18 @@
+Reunião 10/09/2011 - Ínicio 11:20, Termino: 12:40
+
+No inicio da reunião o professor passou as orientações aos alunos que não estavam presentes na reunião anterior, orientações como está organnizado o SVN e algumas orientações que teriam ocorrido na reunião anterior.
+
+O Diego falou sobre as tecnologias que foram estudadas por ele onde ele ressaltou a nescessidade de usar Hibernate, JPA, primefaces, JSF e Spring (apenas algumas funcionalidades devido a complexidade, Diego deverá realizar um estudo mais aprofundado destas tecnologias para podermos utiliza-la melhor e fazer um tutorial para utilizar as tecnologias adotadas), Como IDE será usao o Eclipse.
+
+Cally deverá realizar um glossário com termos mais específicos da biologia para futuras consultas.
+
+na leitura feita pelos integrantes o Tiago identificou a nescessidade de criar usuarios com níveis de permição e diego complementou indicando a criação de usuarios com níveis de permissão baseando-se também na área de formação do usuário.
+
+Diego indagou se era nescessario existencia de dois campos: "codigo de identificação" e "ID",  o guiliano disse que era sim nescessario a existencia dos dois campos, e foi discutido também a utilização do campo  codigo como possível campo para pesquisa(o usuario realizará a pesquisa através deste).
+
+Foi definido que o "laborátorio de Informática II" será utilizado para as reuniões sempre que possivel.
+
+Diego deve postar uma planilha como modelo para que os integrantes a utilizem como modelo para controle de horas dedicadas ao projeto.
+
+
+Cada integrante deverá realizar um diagrama de caso de uso geral.
