@@ -1,5 +1,6 @@
 import java.io.Serializable;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 
@@ -103,65 +104,59 @@ class MinhaQuery<T extends EntityPersist> {
 		return cls;
 	}
 	
-	private String getQueryFields(Method listaMetodos[]) {
+	private String getQueryFields(T entity) throws ClassNotFoundException, IllegalArgumentException, IllegalAccessException, InvocationTargetException {
 		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	public String CreateQuerySave(T entity){
+		Class<?> cls = getClass(entity);
+		Method listaMetodos[] = cls.getMethods();
+		String subquery1= " (";
+		String subquery2= subquery1;
 		
-		String query = "INSERT INTO ";
-		query = query + getNameClass(entity);//insere o nome da tabela 
-	
-		
-		try {  
-		
-			Class<?> cls = getClass(entity);
-			Method listaMetodos[] = cls.getMethods(); //busca todos os métodos da classe
+		for (int i = 0; i < listaMetodos.length  ; i++) {
 			
-			query = query + getQueryFields(listaMetodos);
-			String subquery1= " (";
-			String subquery2= subquery1;
 			
-			for (int i = 0; i < listaMetodos.length  ; i++) {
+			Method m = (listaMetodos[i]);  
+			if (m.getName().contains("get") ) {
+				
+				String aux;
+				aux = (String) m.getName();
+				aux = aux.substring(3);
 				
 				
-				Method m = (listaMetodos[i]);  
-				if (m.getName().contains("get") ) {
-					
-					String aux;
-					aux = (String) m.getName();
-					aux = aux.substring(3);
-					
-					
-					subquery1 = subquery1 + aux;
-					subquery1 = subquery1 +", ";
-					
-					if (!m.getName().contains("getClass")){
-						if (m.getReturnType().getSimpleName().equals("String")){
-							
-							subquery2 = subquery2 + "'"+ m.invoke(entity, new Object[0])+"'";
-							subquery2 = subquery2 +", ";
-						} else{
-							subquery2 = subquery2 +  m.invoke(entity, new Object[0]) ;// armazena o primeiro atributo da classe
-							subquery2 = subquery2 +", ";
-						}
+				subquery1 = subquery1 + aux;
+				subquery1 = subquery1 +", ";
+				
+				if (!m.getName().contains("getClass")){
+					if (m.getReturnType().getSimpleName().equals("String")){
+						
+						subquery2 = subquery2 + "'"+ m.invoke(entity, new Object[0])+"'";
+						subquery2 = subquery2 +", ";
+					} else{
+						subquery2 = subquery2 +  m.invoke(entity, new Object[0]) ;// armazena o primeiro atributo da classe
+						subquery2 = subquery2 +", ";
 					}
 				}
-				
 			}
 			
-			subquery1 = subquery1.toLowerCase();
-			subquery2 = subquery2.toLowerCase();
-			
-			subquery1 = subquery1.substring(0, subquery1.length()-9);//retira a ultima vírgula e o atributo class 
-			subquery1 = subquery1 + ")";
-			subquery2 = subquery2.substring(0, subquery2.length()-2);
-			subquery2 = subquery2 + ")";
-			
-			query = query + subquery1 +  " VALUES" + subquery2;
-			
-			}catch (Exception e) {}
+		}
+		
+		subquery1 = subquery1.toLowerCase();
+		subquery2 = subquery2.toLowerCase();
+		
+		subquery1 = subquery1.substring(0, subquery1.length()-9);//retira a ultima vírgula e o atributo class 
+		subquery1 = subquery1 + ")";
+		subquery2 = subquery2.substring(0, subquery2.length()-2);
+		subquery2 = subquery2 + ")";
+		
+		 
+		
+		return subquery1 +  " VALUES" + subquery2;
+	}
+	
+	public String CreateQuerySave(T entity) throws ClassNotFoundException, IllegalArgumentException, IllegalAccessException, InvocationTargetException{
+		
+		String query = "INSERT INTO ";
+		query = query + getNameClass(entity); 
+		query = query + getQueryFields(entity);
 			
 		return query; 
 	
@@ -171,7 +166,7 @@ class MinhaQuery<T extends EntityPersist> {
 	public String CriarQueryExclusao (T entity){
 		
 		String query = "DELETE FROM ";
-		query = query + entity.getClass().getSimpleName();//insere o nome da tabela 
+		query = query + getNameClass(entity); //insere o nome da tabela 
 		query = query + " WHERE ";
 		try {  
 			
@@ -198,7 +193,7 @@ class MinhaQuery<T extends EntityPersist> {
 
 class Principal {
 
-public static void main(String args[])  {  
+public static void main(String args[]) throws IllegalArgumentException, ClassNotFoundException, IllegalAccessException, InvocationTargetException  {  
 
 		Livro l = new Livro();
 		l.setNome("A arte da Guerra");
