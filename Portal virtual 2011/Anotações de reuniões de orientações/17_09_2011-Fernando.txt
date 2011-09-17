@@ -1,0 +1,17 @@
+	Ø Foi feita uma apresentação dos diagramas de casos de uso.
+	
+	Ø Foi feita uma discussão sobre o que teria de informação no Portal, como por exemplo se é: aluno, pesquisador. Etc. A importância de fazer um divisão de perfil. Será definido juntamente com o pessoal da biologia.
+	
+	Ø Guiliano fez uma explicação sobre os problemas que podem ocorrer se não for levado em consideração o Portal neste momento.
+	
+	Ø Foi falada de possíveis requisitos não existente no sistema , mas que poderão ser requisitados.
+	
+	Ø Cally falou que foi comentado sobre terem imagens de épocas do anos diferentes.
+	
+	Ø Guiliano foi falado que será mudado o log de acesso, para uma auditoria completa de todas as alterações que foram feitas no sistema.
+	
+	Ø Foi comentado que seria interessante separar esta auditoria que uma base de dados independente. Pois quanto maior as alterações , maior seria a lentidão. E também o fato de que ao chegar a um certo tamanho seria feito um backup e zeraria o base de dados da auditoria.
+	
+	Ø Foi pedido que os diagramas do caso de uso fossem um pouco mais detalhados.
+	
+	Ø E como atividade semanal foi pedido a definição de requisito de Manter Usuário.
