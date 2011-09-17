@@ -1,0 +1,20 @@
+Data: 17/09/2011
+INI: 10:58
+FIM: 12:11
+
+INicio da apresentação dos diagramas geral de casos de uso.
+
+Discussão sobre o que mostrar quando for acessar o portal, ver o conteúdo por perfil(pesquisar, estudante de segundo gral, pesquisardor.)
+discutido que quando for ver ver um nível de detalhe e depois detalhar melhor. 
+
+Ficou definido a necessidade de ver com a equipe de biologia qual a melhor forma de fazer, utilianar um perfil no inicio, 
+
+Foi dito sobre as imagens relacionados a época do ano.
+
+foi falando que é necessário de auditorio que deverá ser melhor detalhado depois.
+
+foi identificado a necessidade do requisito de copia de segurança. 
+
+explicação sobre a definição de requisitos, explicado que é necessário descrever tudo o que se conhece sobre o requisito. e ressaltado que um requisito não gera apenas um caso de uso, e que um caso de uso pode atender vários requisitos.
+
+
