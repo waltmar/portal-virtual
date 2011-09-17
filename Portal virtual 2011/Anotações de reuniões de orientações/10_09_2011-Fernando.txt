@@ -1,0 +1,8 @@
+Ao inicio foi discutido sobre quais tecnologias seriam utilizadas para uso no projeto. Foi definida que seria usada Hibernate, JPA.
+E como IDE para desenvolvimento foi escohido o Eclipse.
+Foi feito um breve discursão sobre o etendimento dos integrantes do grupo sobre os requisitos do sistema.
+Foi comentado como seria o cadastro de usuarios e o novel de permissões que teria.
+Tambem foi discutido a reaproveitação do codigo para o uso de no programa.
+Foi solicitado um levantemaneto de campos comuns entre os três laboratórios.
+Ao fibnal Diego comentou que faria um glossário com os principais termos usado no projeto.
+E tambem um tutorial das teconologia que serão usadas.
