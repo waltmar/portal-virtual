@@ -1,0 +1,6 @@
+Na reunião foi discutido o que ficou como tarefa da semana passada.
+Na difinição de tecnologias, foram confirmados o Hibernate com jpa, e spring, com o spring security ainda em discussão. O diego e o Cally ficaram incumbidos de continuar a arquitetura e criar um tutorial das tecnologias para os participantes se familializarem com o que será utilizado na implementação.
+Foi discutido sobre a leitura e identificação de requisitos. 
+O Fernando falou sobre o requisito de importação dos outros sistemas para o nosso e sobre a distribuição destes dados para os pequisadores externos.
+O Tiago falou sobre os níveis de usuários que precisam ser identificados. 
+O Cally explicou sobre a forma genérica de catalogação, sendo que esta já havia sido discutida e confirmada pelos clientes, e ficou responsável por construir o glossário Glossário. 
