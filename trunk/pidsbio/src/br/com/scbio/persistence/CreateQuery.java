@@ -1,86 +1,13 @@
-import java.io.Serializable;
-import java.lang.reflect.Field;
+package br.com.scbio.persistence;
+
+
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import br.com.scbio.domain.EntityPersist;
 
-class EntityPersist implements Serializable{
-
-	private static final long serialVersionUID = 1L;
-
-	private float id_item;
-
-	public float getId_item() {
-		return id_item;
-	}
-
-	public void setId_item(float id_item) {
-		this.id_item = id_item;
-	}
-	
-	
-}
-
-
-
-class Livro extends EntityPersist{
-	
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private String nome;
-	private String autor;
-	private  float preco;
-	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getAutor() {
-		return autor;
-	}
-	public void setAutor(String autor) {
-		this.autor = autor;
-	}
-	public  float getPreco() {
-		return preco;
-	}
-	public void setPreco( float preco) {
-		this.preco = preco;
-	}
-	
-	
-}
-
-class Usuario extends EntityPersist{
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private String nome;
-	private String fone;
-	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getFone() {
-		return fone;
-	}
-	public void setFone(String fone) {
-		this.fone = fone;
-	}
-	
-}
-
-class MinhaQuery<T extends EntityPersist> {
+public class CreateQuery<T extends EntityPersist> {
 	
 	/*
 	 Esta classe utiliza o conceito de reflexão
@@ -91,7 +18,7 @@ class MinhaQuery<T extends EntityPersist> {
 		-Chama apenas métodos get de interesse.
 	 
 	 */
-	public MinhaQuery(){}
+	public CreateQuery(){}
 	
 	public String CreateQuerySave(T entity) throws ClassNotFoundException, IllegalArgumentException, IllegalAccessException, InvocationTargetException{
 		
@@ -206,43 +133,4 @@ class MinhaQuery<T extends EntityPersist> {
 		
 }
 
-class Principal {
-
-public static void main(String args[]) throws IllegalArgumentException, ClassNotFoundException, IllegalAccessException, InvocationTargetException  {  
-
-		Livro l = new Livro();
-		l.setNome("A arte da Guerra");
-		l.setPreco((float) 1.99);
-		l.setAutor("Sun Tsu");
-		//l.setId_item((float) 007);
-		MinhaQuery<EntityPersist> q = new MinhaQuery<EntityPersist>();
-		String valor = q.CreateQuerySave(l);
-			
-		System.out.println(valor); 
-		
-		Usuario u = new Usuario();
-		u.setNome("João");
-		u.setFone("114466");
-		//u.setId_item((float) 02);
-		 
-		valor = q.CreateQuerySave(u);
-		
-		System.out.println(valor);
-		
-		
-		valor = q.CriateQueryDelete(l);
-		
-		System.out.println(valor);
-		
-		valor = q.CriateQueryGetById(l);
-		
-		System.out.println(valor);	
-		
-		valor = q.CriateQueryGetAll(l);
-		
-		System.out.println(valor);
-	
-	}
-    
-}  
 

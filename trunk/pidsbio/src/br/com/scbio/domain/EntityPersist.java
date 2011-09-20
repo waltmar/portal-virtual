@@ -2,20 +2,18 @@ package br.com.scbio.domain;
 
 import java.io.Serializable;
 
-
-public class EntityPersist implements Serializable{
+public class EntityPersist implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private Long codigo;
+	private float id_item;
 
-	public Long getCodigo() {
-		return codigo;
+	public float getId_item() {
+		return id_item;
 	}
 
-	public void setCodigo(Long codigo) {
-		this.codigo = codigo;
+	public void setId_item(float id_item) {
+		this.id_item = id_item;
 	}
-	
-	
+
 }
