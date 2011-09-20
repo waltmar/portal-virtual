@@ -1,0 +1,11 @@
+Reunião Projeto Virtual da Biodiversidade do Cerrado
+17/09/2011
+
+- A reunião iniciou às 11:00 e terminou às 12:20
+- Foi discutido sobre a necessidade de se levantar mais informações do que poderá ser requisitado para o portal.
+- Foi falado pelo Cally a respeito da interação que terão os usuários em que as apresentações serão conforme a estação,isto gerou
+   uma percepção da necessidade de levantamento de requisito para essa funcionalidade.
+- Sobre segurança,levantou-se a necessidade de um sistema de auditoria, o que vai gerar também a criação
+   de mais um caso de uso e definir como serão os requisitos.Giulliano fez uma colocação que, o sistema deve ter uma base de dados separada do sistema de auditoria.
+- Definir o requisito que deve ser implementado para copia de segurança e também um caso de uso.
+- E para todos elaborarem a definição do requisito de "manter usuário"(O que é,o que faz,como funcionará).
