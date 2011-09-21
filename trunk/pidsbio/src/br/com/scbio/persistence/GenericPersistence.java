@@ -1,6 +1,7 @@
 package br.com.scbio.persistence;
 
 import java.beans.Statement;
+import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,86 +14,99 @@ import java.lang.reflect.InvocationTargetException;
 
 import com.sun.corba.se.pept.transport.Connection;
 
+class GenericPersistence<T extends EntityPersist> {
 
-
-public class GenericPersistence<T extends EntityPersist>  {
-	
 	private Connection con;
 	private PreparedStatement stmt;
 	private Statement st;
 	private ResultSet res = null;
-	private String query;	
+	private String query;
 	protected CreateQuery<?> createQuery;
-	
-	
-	public GenericPersistence(){
-		//createQuery = new CreateQuery<T>();
+
+	public GenericPersistence() {
+		// createQuery = new CreateQuery<T>();
 	}
-//--------------------------------------------------------------------//	
-	public void initConect () throws SQLException {  
-		
-		con = (Connection) ConectionSqlServer.ConectSQL();  
+
+	// --------------------------------------------------------------------//
+	public void initConect() throws SQLException {
+
+		con = (Connection) ConectionSqlServer.ConectSQL();
 
 	}
-	    
+
 	public void endConect() throws SQLException {
-		 	
+
 		con.close();
 		stmt.close();
-	} 
-//--------------------------------------------------------------------//
-	
-public void save(T entity){
-		
-	initConect();
-	EntityPersist entityPersist;
-	query = createQuery.CreateQuerySave(entity);
-	stmt = ((java.sql.Connection) con).prepareStatement(query);
-	
-	stmt.executeUpdate();
+	}
 
-	endConect();
+	// --------------------------------------------------------------------//
+
+	public void save(T entity) throws SQLException, ClassNotFoundException,
+			IllegalArgumentException, IllegalAccessException,
+			InvocationTargetException {
+
+		initConect();
+
+		CreateQuery<EntityPersist> createQuery = new CreateQuery<EntityPersist>();
+		query = createQuery.CreateQuerySave((EntityPersist) entity);
+		stmt = ((java.sql.Connection) con).prepareStatement(query);
+
+		stmt.executeUpdate();
+
+		endConect();
 
 	}
 
-public void update(T entity){
-	
-	initConect();
+	public void update(T entity) throws SQLException, ClassNotFoundException,
+			IllegalArgumentException, IllegalAccessException,
+			InvocationTargetException {
 
-	query = createQuery.CreateQuerUpdate(entity);
-	stmt = ((java.sql.Connection) con).prepareStatement(query);
-	
-	stmt.executeUpdate();
+		initConect();
 
-	endConect();
+		CreateQuery<EntityPersist> createQuery = new CreateQuery<EntityPersist>();
+		query = createQuery.CreateQueryUpdate((EntityPersist) entity);
+		stmt = ((java.sql.Connection) con).prepareStatement(query);
+
+		stmt.executeUpdate();
+
+		endConect();
 
 	}
 
-public void delete(T entity) throws SQLException {
+	public void delete(T entity) throws SQLException, ClassNotFoundException,
+			IllegalArgumentException, IllegalAccessException,
+			InvocationTargetException {
+
+		initConect();
+
+		CreateQuery<EntityPersist> createQuery = new CreateQuery<EntityPersist>();
+		query = createQuery.CreateQueryDelete((EntityPersist) entity);
+		stmt = ((java.sql.Connection) con).prepareStatement(query);
+
+		stmt.executeUpdate();
+
+		endConect();
+
+	}
+
+	public EntityPersist getById(T entity) throws SQLException, ClassNotFoundException,
+	IllegalArgumentException, IllegalAccessException,
+	InvocationTargetException {
 
 	initConect();
-
-	query = createQuery.CriateQueryDelete(entity);
-	stmt = con.prepareStatement(query);
-	stmt.executeUpdate();
-
-	endConect();
-
-}
 	
-public EntityPersist getById(T entity) throws SQLException {
-
-	initConect();
-	
-	query = createQuery.CriateQueryGetById(entity);
-	stmt = con.prepareStatement(query);
+	CreateQuery<EntityPersist> createQuery = new CreateQuery<EntityPersist>();
+	query = createQuery.CreateQueryGetById((EntityPersist) entity);
+	stmt = ((java.sql.Connection) con).prepareStatement(query);
 	
 	res = stmt.executeQuery();
 	
-	Class<?> cls = getClass(entity);
+	Class<?> cls = entity.getClass();
 	Method listMethods[] = cls.getMethods();
 	
-	EntityPersist e = new EntityPersist();
+	EntityPersist e;
+	e = (EntityPersist) cls.newInstance();
 	
 	while (res.next()) {
 		for (int i = 0; i < listMethods.length  ; i++) {
@@ -107,46 +121,48 @@ public EntityPersist getById(T entity) throws SQLException {
 
 	return e;
 }
-public Taxonomia buscarPorNome(Taxonomia t) throws SQLException {
 
-	iniciarConexao();
+	public EntityPersist buscarPorNome(EntityPersist t) throws SQLException {
 
-	query = "SELECT * FROM " + t.NomeTabela() + " WHERE nome = ? ";
-	stmt = con.prepareStatement(query);
-	stmt.setString(1, t.getNome());
-	res = stmt.executeQuery();
-	Taxonomia t1 = new Taxonomia();
-	while (res.next()) {
+		initConect();
 
-		t1.setId(Integer.toString(res.getInt("id_item")));
-		t1.setNome(res.getString("nome"));
-		t1.setPai(Integer.toString(res.getInt("pai")));
-	}
-	encerrarConexao();
+		// query = "SELECT * FROM " + t.NomeTabela() + " WHERE nome = ? ";
+		// stmt = con.prepareStatement(query);
+		// stmt.setString(1, t.getNome());
+		// res = stmt.executeQuery();
+		// EntityPersist t1 = new EntityPersist();
+		while (res.next()) {
 
-	return t1;
-}
+			// t1.setId(Integer.toString(res.getInt("id_item")));
+			// t1.setNome(res.getString("nome"));
+			// t1.setPai(Integer.toString(res.getInt("pai")));
+		}
+		endConect();
 
-public ArrayList<Taxonomia> todosOsItens(Taxonomia t) throws SQLException {
-
-	iniciarConexao();
-
-	query = "Select * from " + t.NomeTabela();
-	ArrayList<Taxonomia> lista = new ArrayList<Taxonomia>();
-	stmt = con.prepareStatement(query);
-	res = stmt.executeQuery();
-
-	while (res.next()) {
-		Taxonomia t1 = new Taxonomia();
-		t1.setId(Integer.toString(res.getInt("id_item")));
-		t1.setNome(res.getString("nome"));
-		t1.setPai(Integer.toString(res.getInt("pai")));
-		lista.add(t1);
+		return t;
 	}
 
-	encerrarConexao();
+	public ArrayList<EntityPersist> todosOsItens(EntityPersist t)
+			throws SQLException {
 
-	return lista;
+		initConect();
+
+		query = "Select * from " + t;
+		ArrayList<EntityPersist> lista = new ArrayList<EntityPersist>();
+		stmt = ((java.sql.Connection) con).prepareStatement(query);
+		res = stmt.executeQuery();
+
+		while (res.next()) {
+			EntityPersist t1 = new EntityPersist();
+			// t1.setId(Integer.toString(res.getInt("id_item")));
+			// t1.setNome(res.getString("nome"));
+			// t1.setPai(Integer.toString(res.getInt("pai")));
+			lista.add(t1);
+		}
+
+		endConect();
+
+		return lista;
+	}
+
 }
-
-}	

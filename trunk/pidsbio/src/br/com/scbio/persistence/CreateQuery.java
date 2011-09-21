@@ -1,13 +1,11 @@
 package br.com.scbio.persistence;
 
-
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import br.com.scbio.domain.EntityPersist;
 
-public class CreateQuery<T extends EntityPersist> {
+class CreateQuery<T extends EntityPersist> {
 	
 	/*
 	 Esta classe utiliza o conceito de reflexão
@@ -30,27 +28,27 @@ public class CreateQuery<T extends EntityPersist> {
 	
 	}
 	
-	public String CreateQuerUpdate(T entity) throws ClassNotFoundException, IllegalArgumentException, IllegalAccessException, InvocationTargetException{
+	public String CreateQueryUpdate(T entity) throws ClassNotFoundException, IllegalArgumentException, IllegalAccessException, InvocationTargetException{
 		
 		return "INSERT INTO " + getNameClass(entity) + getQueryFields(entity);
 	
 	}
 
-	public String CriateQueryDelete (T entity) throws ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+	public String CreateQueryDelete (T entity) throws ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
 		
 		return "DELETE FROM " + getNameClass(entity) + " WHERE " + queryById(entity);
 	
 	}
 	
-	public String CriateQueryGetAll(T entity) throws ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+	public String CreateQueryGetAll(T entity) throws ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
 		
 		return "SELECT * FROM " + getNameClass(entity);
 		
 	}
 	
-	public String CriateQueryGetById(T entity) throws ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+	public String CreateQueryGetById(T entity) throws ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
 		
-		return CriateQueryGetAll(entity) + " WHERE " + queryById(entity);
+		return CreateQueryGetAll(entity) + " WHERE " + queryById(entity);
 		
 	}	
 	
@@ -125,12 +123,7 @@ public class CreateQuery<T extends EntityPersist> {
 		}
 		return null;
 	}
-	
-	
-	
-	
+
 	
 		
 }
-
-
