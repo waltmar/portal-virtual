@@ -1,7 +1,15 @@
+import java.beans.Statement;
 import java.io.Serializable;
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import br.com.scbio.conection.ConectionSqlServer;
+
+
+import com.sun.corba.se.pept.transport.Connection;
 
 
 class EntityPersist implements Serializable{
@@ -80,7 +88,7 @@ class Usuario extends EntityPersist{
 	
 }
 
-class MinhaQuery<T extends EntityPersist> {
+class CreateQuery<T extends EntityPersist> {
 	
 	/*
 	 Esta classe utiliza o conceito de reflexão
@@ -91,7 +99,7 @@ class MinhaQuery<T extends EntityPersist> {
 		-Chama apenas métodos get de interesse.
 	 
 	 */
-	public MinhaQuery(){}
+	public CreateQuery(){}
 	
 	public String CreateQuerySave(T entity) throws ClassNotFoundException, IllegalArgumentException, IllegalAccessException, InvocationTargetException{
 		
@@ -198,12 +206,50 @@ class MinhaQuery<T extends EntityPersist> {
 		}
 		return null;
 	}
-	
-	
-	
-	
+
 	
 		
+}
+
+class GenericPersistence<T extends EntityPersist>  {
+	
+	private Connection con;
+	private PreparedStatement stmt;
+	private Statement st;
+	private ResultSet res = null;
+	private String query;	
+	protected CreateQuery<?> createQuery;
+	
+	
+	public GenericPersistence(){
+		//createQuery = new CreateQuery<T>();
+	}
+//--------------------------------------------------------------------//	
+	public void initConect () throws SQLException {  
+		
+		con = (Connection) ConectionSqlServer.ConectSQL();  
+
+	}
+	    
+	public void endConect() throws SQLException {
+		 	
+		con.close();
+		stmt.close();
+	} 
+//--------------------------------------------------------------------//
+	
+public void save(T entity) throws SQLException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException, InvocationTargetException{
+		
+	initConect();
+	CreateQuery<EntityPersist> createQuery = new CreateQuery<EntityPersist>();
+	query = createQuery.CreateQuerySave((EntityPersist) entity);
+	stmt = ((java.sql.Connection) con).prepareStatement(query);
+	 
+	stmt.executeUpdate();
+
+	endConect();
+
+	}
 }
 
 class Principal {
@@ -215,7 +261,7 @@ public static void main(String args[]) throws IllegalArgumentException, ClassNot
 		l.setPreco((float) 1.99);
 		l.setAutor("Sun Tsu");
 		//l.setId_item((float) 007);
-		MinhaQuery<EntityPersist> q = new MinhaQuery<EntityPersist>();
+		CreateQuery<EntityPersist> q = new CreateQuery<EntityPersist>();
 		String valor = q.CreateQuerySave(l);
 			
 		System.out.println(valor); 
