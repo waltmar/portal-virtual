@@ -1,4 +1,4 @@
-Foram apresentados os diagrama de casos de uso referentes a semana anterior.
+Foram apresentados os diagramas de casos de uso referentes a semana anterior.
 Foi discutido sobre os requisitos que ainda faltam.
 Foi discutido também da importância de especificar a saída das informações do portal, para verificar se não está faltando dados para o requisito de manter Espécimes. 
 Ex: Os professores querem um passeio virtual por épocas do ano. Caso isso seja necessário, haverá alterações no campo de multimídia.
