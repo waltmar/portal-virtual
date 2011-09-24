@@ -1,0 +1,94 @@
+Data: 24/09/2011
+INI: 11:00
+FIM: 12:56
+
+Revisão junto com o Cally do documento de especificação de Requisitos.
+
+Desenvolvedores presentes: Fernando, Cally, Francis, Fernando, José Aparecido, Tiago Alan. Diego.
+
+Leitura da definição do requisito do Fernando.
+Anotação: usuário não pode ser excluído devendo ser inativado e registrado essa data.
+Validar questão do perfil do usuário(rever essa informação junto com os demais).
+
+Tiago faz a leitura da sua definição do requisito.
+## Questão do requisito de dados(os dados do usuário).
+* Log da açãoes
+
+
+Diego e Cally não fizeram a definição previamente, 
+Diego fala sobre o que o sistema via ter.
+* Tipos de usuários(grupos), 
+* administrador pode fazer o cadastro de usuário.
+* por termo de abertura, o controle de Empréstimo ter o controle dações de empréstimo e devolução.
+* Dados do cadastro de usuário: Nome, usuário, senha, e login, telefone para contato.
+* Informações para busca, nome e login.
+* Alteração de dados. o usuário logado pode fazer algumas alterações nas suas informações o usuário pode mudar o nome e senha.
+* A remoção de usuário só poderia ser removido pelo usuário(sendo que tem que ficar registrado isso em um outro base de dados).
+* Durante o cadastro dever ter o registro de quando foi feito e por quem foi feito)
+* Logs de alteração e exclusão.
+* Fala também da questão do log de acesso e das ações que o usuário vai fazer no sistema.
+* As informações de log não são vistas pelo usuário dito detalhes de implementação usando aspect.
+
+Cally.
+* Nível de acesso configurável no lugar de ter níveis pré-cadastrados.
+* 
+
+
+Diego falta do cadastro de tipos de usuários.
+fala sobre o cadastro das ações que seria realizados pelo usuário, e isso seria associado ao usuário.
+
+
+Francis 
+Leitura do documento de especificação.
+
+José
+Questiona quem é o usuário aluno definido pelo francis.
+o aluno não é o que terá acesso.(alunos que irão acessar ao portal).
+
+Cally diz o que é melhor ter a questão de ter cadastro de níveis de acesso, 
+
+
+* Jose questiona , qual a finalidade do usuário?
+Qual a finalidade do usuário aluno?
+Cally alunos que são só acesso de visualizar, mas também tem alunos que poderia cadastrar.
+
+* Deigo coloca a necessidade das restrições para a senha do usuário, 
+
+* Francis, coloca a questão de trabalhar com a facilidade de definir as informações do usuário, mas lembrar que o sistema deve ser fácil de acessar evitando colocar restrições que não compliquem para o usuário, lembrando a questão do nível dos usuários que estão envolvidos no projeto.
+
+
+* Guiliano:
+(Questão de perfil de acesso, definição de cadastro de níveis de acesso(padrões de acesso)).
+
+* Requisito de auditoria(Manter ações do Tiago é um novo requisitos).
+
+
+Guiliano.
+Cadastro usuário, vai fazer a categorização, do usuário.
+sistema tem que ter o atributo CPF, as não tem como ser obrigatório.
+Definição de categoria tem atributos, obrigatório do campo CPF.(RN)
+Nome do usuário (varchar(100))
+CPF do tipo inteiro. atributo obrigatório conforme a categoria do usuário.
+Login e senha.(login não diferencia maiusculo de minusculo)
+e-mail: sendo o telefone ou e-mail obrigatório.
+telefone:mas com mascara livre com possibilidade de cadastrar até dois.
+Para o modulo de cadastro o necessidade de um usuário é obrigatório.
+
+Definido que o acesso ao sistema livre sem autenticação. as ações que são necessárias autenticar.
+
+no cadastro do usuário deverá ter como confirmar a senha digitada igual duas vezes.
+
+senha deverá ter pelo menos 6 dígitos.sendo que só aceitar valores alfanumericos, letras e senha.
+
+Usuário, Inativar.
+o cadastro de usuário deverá anter um histórico do estado do usuário(ativo, inativo).
+
+* controle de acesso.(requisitos).
+
+detalhes de ações em um cadastro(CRUD)
+* Acessar.
+* Incluir(salvar)
+* Alterar(salvar)
+* Excluir
+* Pesquisar/Listar
+
