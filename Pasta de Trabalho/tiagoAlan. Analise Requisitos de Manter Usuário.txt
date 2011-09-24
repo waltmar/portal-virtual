@@ -1,0 +1,57 @@
+		MANTER USUÁRIO
+
+Funcional:
+     Listar todos os dados refente aos usuários: Nome, RG, Org.Exp, CPF, Email,
+Telefone, Celular, Endereço, Data de Nascimento, Data de cadastro, Perfil (se é ou n administrador)
+Nível de acesso,[Orientador], classe (se é estagiário, bolsista, voluntário, contratado), orientadores.
+[valor da bolsa]
+     Fazer consultas de usuários pelo nome rg ou cpf ou níveis de permissão ou perfil ou classe ou orientador.
+     Usuários só serão exibidos após consultas. Mas também pode-se consultar todos usuários
+     O Sistema irá armazenar logs de acesso do usuário, que horas ele acessou,
+	quanto tempo ele usou o sistema e que ações forma feitas por ele
+     Editar os dados referente ao usuário.
+     Excluir dados referente ao usuário
+     Cadastrar usuários.
+     O sistema terá níveis de acesso que dirão o quais tabelas ele poderá alterar.
+     
+    O sistema aceitará dois perfis de usuários:
+      Funcionário: Cadastra todos os dados correspondentes ao seu nível de acesso
+                   e visualiza suas informações
+      Administrador: Cadastra todos os dados e Mantem todos usuários, é o único capaz
+                     de acrescentar, remover ou editar usuários.
+    Usuários só serão cadastrados por administradores
+    Somente o administrador poderá visualisar usuários.
+
+        
+
+
+
+             Manter Ações do Usuário
+
+      Toda vez que qualquer usuário fizer uma ação no banco de dados, o sistema deverá armazenar as ações
+     em uma Base de Dados.
+      A cada ação será armazenado o Usuário que fez a ação, A ação (Adição, exclusão, alteração), o dado antes de ser alterado,
+     o dado depois de ser alterado ou o dado que será armazenado, data e hora em que a ação foi executada, ip do computador (?)
+             (Quem fez, O que fez, Quando fez) 
+      Nada será armazenado caso haja apenas visualização/consultas.  
+      Para exibir as ações deverá ser feito uma consulta por data, hora, peíodo (entre tal e tal data, tal e tal hora), ação,
+      ip.
+      A consulta poderá ser feita sem filtro
+      Depois de fazer consulta, o administrador poderá visualizar as ações ou excluí-las
+      O Sistema também terá a opção de excluir todas as ações consultadas.
+      [Após um {tempo} os será feito um backup dos dados os dados serão excluídos, no entanto o administrador poderá
+         mudar de base de dados.]
+
+      Não Funcional:
+        Os dados serão armazenado em uma base de dados diferente da de Manter Usuário.
+
+
+
+
+Os dados classe (estagiário, bolsista, voluntário) e data de cadastro, foram colocados por causa
+de uma interpretação das seguintes linhas do arquivo proposta aprovada edital 64.pdf:
+ 
+"processos de catalogação e digitalização do acervo. As coleções científicas da UEG 
+(herbário, insetos, fósseis, vertebrados)  serão digitalizadas pelos bolsistas graduandos 
+de Biologia, Biblioteconomia  e do ensino médio, com a orientação dos professores  e 
+orientação/ suporte da equipe de tecnologia. O acervo do banco de dados será analisado "
