@@ -1,0 +1,10 @@
+O processo de Manter Usuário é constituido de: 
+-Cadastramento de novos usários atraves de um ou mais administradores, onde os dados serão passados ao administrador ele terá a responsabilidade de fazer o cadastramento deste usuário. 
+-Remover usuários, nocaso deste usuário ficar inativo ou este pedir o desligamento do sitema, o usuário terá todos os seus dados retirados do sistema, e em uma eventual volta ao sistema esta pessoa precisará ser recadastrada. 
+-Aterar Usuário, o adminitrador terá total controle sobre as informações dos usuários, podendo diante requisição do usuário, alterar as informações, assim mantendo todas as informações atualizadas.
+-Cadastramento de Níveis de Permissão, cada usuário terá um nível de permissão, mas para este serem setados eles devem ser cadastrados, esta responsabilidade fica a cargo do administrador.
+-A prícipio haverão estes níveis:
+	-Administrador, este nível tem total controle sobre tudo.
+	-Usuário, este nível terá acesso apenas a exibição de espécimes. Qualquer outro requisição deve ser passada a administração para analise.
+	-Pesquisador, este nível terá acesso a toda parte de Manter Espécimes, ou seja: Cadastrar espécimes, Remover Especime, alterar espécime e cadastramento de textos didáticos e multimídia. A parte de manter usúario continua a cargo do administrador.
+-Outros Níveis de Permissão poderão ser adicionados no andamento do projeto. Mendiante a necessidade.
