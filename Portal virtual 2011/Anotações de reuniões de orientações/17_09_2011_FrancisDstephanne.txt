@@ -1,0 +1,11 @@
+
+Emillie deu a ideia de criar tipos de perfil (estudante Ensino medio ou pesquisador). Onde um usario de nivel medio visualiza informações basicas e resumidas enaquanto um usuario pesquisador tem acesso a maiores detalhes que também estão disponiveis a usuario de nivel medio caso queiram acessar, Alternando entre as visões.
+
+Guiliano ressaltou a nescessidade de ter uma visão geral de todo o sistema tanto para o portal quanto para o sistema...
+
+cally falou que o pessoal quer um sistema que durante o passeio virtual seja possivel ver um sistema que exiba imagem para o periodo da "seca" e "chuva".
+
+Guiliano fala sobre a auditoria que deve ser "pesada" irá ser substitudo do log, ressaltando que auditoria interfere na rapidez do sistema e foi falado também que deve ser feito a copia de segurança que já foi citada nos templates.
+
+guiliano ressaltou a nescessidade da confirmação de alteração de dados(incluir, alterar, excluir).
+
