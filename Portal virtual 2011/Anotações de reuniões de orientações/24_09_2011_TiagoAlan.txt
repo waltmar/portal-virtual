@@ -1,0 +1,52 @@
+Reunião dia 24/09/2011
+início: =~ 11:20
+término: =~ 13:00
+
+Fernando e tiago apresentaram os requesitos de usuário. Diego falou sobre o requisito
+Cally também falou sobre os requisitos, sobre como serão feito os níveis de acesso.
+Sugeriu fazer níveis de acesso configuráveis.
+O arquivo do Fancis foi lido pelo Guiliano.
+José também falou sobre sua opinião.
+Foi levantado a importância de definir um padrão de senha para o usuário.
+Guiliano falou sobre a diferença entre a categorização e o nível de permissão.
+também falou sobre a quantidade de dados necessários para o usuário, ter somente o que precisa,
+evitando também não ser de menos.Foi questianado se o CPF é obrigatório, e se é chave primária.
+
+
+Definido:
+
+ter:
+Nome com 100 posições de VARCHAR
+Categorias
+CPF não obrigatório exceto alguns casos. E tipo inteiro
+Definição de categoria tem atributos, um atributo é um booleano que diz se CPF é obrigatório.
+     Regra de negócio: se na categoria o campo booleano diz que o cpf deve ser obrigatório, então ele será
+obrigatório
+Login     (não case sensetive)
+Senha     (com mais de 6 dígitos) (só caracteres alfanuméricos) (case sensitive)
+email    (Ou email ou telefone obrigatório)
+Telefone  () - Não multivalorado, mas com suporte (uma string maior) para cadastrar mais de um telefone
+               mas com máscara livre.
+Campos que digam se usuárioAtivo está usuárioInativo.
+
+
+
+Explicação de regras de negócio, são restrição
+Foi alertado se sobre o nome ter 100 varChar vai criar impacto no relatório. Pode haver nome abreviedo.
+Todo mundo pode visualizar os dados das tabelas do portal, exceto usuário.
+Na primeira fase do projeto, até para visualizar o usuário deve ter login e senha.
+E falou sobre colocar um campo para ativo e inativo, gerenciado os períodos
+de ativação e inativação.
+Só serão visualizados os campos que podem ser acessados pelo usuário.
+Foi sugerido pelo Diego usar orientação orientada a aspecto para logs.
+Foi atribuido como tarefa para todos intregantes definir o requesito controle de acesso para a próxima semana.
+Foi falado um pouco sobre esse requisito.
+
+
+ORIENTAÇÃO ORIENTADA A ASPECTO
+    Deixo código mais limpo.
+    Disparando um método toda vez que determinados métodos for chamado sem que o método seja chamado
+       via código
+    Separar as coisas. Você programa algo e anexa o outro 'aspecto'.
+    'Aspectos' entra por cima, sem aparecer no código.
+    No entanto há impacto no desempenho etc.
