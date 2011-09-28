@@ -6,29 +6,29 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.event.ActionEvent;
-import br.com.scbio.domain.Basic;
+import br.com.scbio.domain.EntityPersist;
 import br.com.scbio.exception.ErrorException;
 import br.com.scbio.interfaces.IController;
 
 @ManagedBean(name="ManagerBasic")
-public class ManagerBasic extends GenericBean<Basic, Serializable>{
+public class ManagerBasic extends GenericBean<EntityPersist, Serializable>{
 
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Basic basic;
+	
 	private String valor;
 	private String ancestor;
-	protected List<Basic> list;
+	
 	protected List<String> combos;
 
 	
 	
 
 	public ManagerBasic() {
-		list = new ArrayList<Basic>();
+		
 		
 	}
 	
@@ -50,13 +50,7 @@ public class ManagerBasic extends GenericBean<Basic, Serializable>{
 		this.combos = combos;
 	}
 	
-	public List<Basic> getList() {
-		return list;
-	}
-
-	public void setList(List<Basic> list) {
-		this.list = list;
-	}
+	
 
 	public String getValor() {
 		return valor;
@@ -64,20 +58,6 @@ public class ManagerBasic extends GenericBean<Basic, Serializable>{
 
 	public void setValor(String valor) {
 		this.valor = valor;
-	}
-
-	public Basic getBasic() {
-		return basic;
-	}
-	public void setBasic(Basic basic) {
-		this.basic = basic;
-	}
-	
-
-	@Override
-	public IController<Basic, Serializable> getIController() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
@@ -108,6 +88,14 @@ public class ManagerBasic extends GenericBean<Basic, Serializable>{
 	public void researchAction(ActionEvent actionEvent) {
 		// TODO Auto-generated method stub
 		
+	}
+
+
+
+	@Override
+	public IController<EntityPersist, Serializable> getIController() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
