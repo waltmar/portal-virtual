@@ -2,10 +2,11 @@ package br.com.scbio.persistence;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 
 import br.com.scbio.domain.EntityPersist;
 
-class CreateQuery<T extends EntityPersist> {
+public class CreateQuery<T extends EntityPersist> {
 	
 	/*
 	 Esta classe utiliza o conceito de reflexão
@@ -24,7 +25,7 @@ class CreateQuery<T extends EntityPersist> {
 		query  = query.replaceAll(", id_item", "");
 		query  = query.replaceAll(", 0.0", "");
 		
-		return "INSERT INTO " + getNameClass(entity)+ query;
+		return "INSERT INTO " + getNameClass(entity) + query;
 	
 	}
 	
@@ -55,12 +56,12 @@ class CreateQuery<T extends EntityPersist> {
 		
 	private String getNameClass(T entity) {
 		// TODO Auto-generated method stub
-		return entity.getClass().getSimpleName();
+		return entity.getClass().getSimpleName().toLowerCase();
 	}
 	
 	private Class<?> getClass(T entity) throws ClassNotFoundException {
 		// TODO Auto-generated method stub
-		Class<?> cls = Class.forName(entity.getClass().getSimpleName());
+		Class<?> cls =  entity.getClass();
 		return cls;
 	}
 	
@@ -122,6 +123,22 @@ class CreateQuery<T extends EntityPersist> {
 			}
 		}
 		return null;
+	}
+	
+	public ArrayList<String> getSets(T entity){
+		
+		ArrayList<String> list = new ArrayList<String>();
+		Class<?> cls = entity.getClass();
+		Method listaMetodos[] = cls.getMethods();
+		for (int i = 0; i < listaMetodos.length  ; i++) {
+			Method m = (listaMetodos[i]);  
+			String aux = m.getName();
+			if (aux.contains("set") ) {
+				list.add(aux);
+			}
+		}
+		return list;
+		
 	}
 
 	

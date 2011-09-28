@@ -10,8 +10,8 @@ public class ConectionSqlServer {
         try {  
            
             String driver ="net.sourceforge.jtds.jdbc.Driver";
-			String url = "jdbc:jtds:sqlserver://localhost:1433/Bio";
-			String usuario = "Cally.af";
+			String url = "jdbc:jtds:sqlserver://localhost:1433/bio";
+			String usuario = "cally.af";
 			String senha = "cally";
 			Class.forName(driver); 
 

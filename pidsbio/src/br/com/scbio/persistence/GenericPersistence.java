@@ -1,8 +1,8 @@
 package br.com.scbio.persistence;
 
 import java.beans.Statement;
-import java.io.Serializable;
 import java.lang.reflect.Method;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,11 +12,9 @@ import br.com.scbio.conection.ConectionSqlServer;
 import br.com.scbio.domain.EntityPersist;
 import java.lang.reflect.InvocationTargetException;
 
-import com.sun.corba.se.pept.transport.Connection;
+public class GenericPersistence<T extends EntityPersist> {
 
-class GenericPersistence<T extends EntityPersist> {
-
-	private Connection con;
+	protected Connection con;
 	private PreparedStatement stmt;
 	private Statement st;
 	private ResultSet res = null;
@@ -30,7 +28,7 @@ class GenericPersistence<T extends EntityPersist> {
 	// --------------------------------------------------------------------//
 	public void initConect() throws SQLException {
 
-		con = (Connection) ConectionSqlServer.ConectSQL();
+		con = ConectionSqlServer.ConectSQL();
 
 	}
 
@@ -89,38 +87,46 @@ class GenericPersistence<T extends EntityPersist> {
 		endConect();
 
 	}
+	
 
-	public EntityPersist getById(T entity) throws SQLException, ClassNotFoundException,
-	IllegalArgumentException, IllegalAccessException,
-	InvocationTargetException {
+	public EntityPersist getById(T entity) throws SQLException,
+			ClassNotFoundException, IllegalArgumentException,
+			IllegalAccessException, InvocationTargetException,
+			InstantiationException, NoSuchMethodException, SecurityException {
 
-	initConect();
-	
-	CreateQuery<EntityPersist> createQuery = new CreateQuery<EntityPersist>();
-	query = createQuery.CreateQueryGetById((EntityPersist) entity);
-	stmt = ((java.sql.Connection) con).prepareStatement(query);
-	
-	res = stmt.executeQuery();
-	
-	Class<?> cls = entity.getClass();
-	Method listMethods[] = cls.getMethods();
-	
-	EntityPersist e;
-	e = (EntityPersist) cls.newInstance();
-	
-	while (res.next()) {
-		for (int i = 0; i < listMethods.length  ; i++) {
-			Method m = (listMethods[i]);
-			if (m.getName().contains("set") ) {
-				m.invoke(entity, res.getObject(m.getName());
-			}
-			e.setId_item(res.getFloat("id_item"));
+		initConect();
+
+		CreateQuery<EntityPersist> createQuery = new CreateQuery<EntityPersist>();
+		query = createQuery.CreateQueryGetById((EntityPersist) entity);
+		stmt = ((java.sql.Connection) con).prepareStatement(query);
+
+		res = stmt.executeQuery();
+
+		Class<?> cls = entity.getClass();
 		
-	}
-	endConect();
+		ArrayList<String> list = new ArrayList<String>();
+		list= createQuery.getSets(entity);
 
-	return e;
-}
+		EntityPersist e;
+		e = (EntityPersist) cls.newInstance();
+
+		while (res.next()) {
+			
+			
+			for (int i = 0; i< list.size(); i++) {
+				
+				Object aux = res.getObject((list.get(i+1).substring(3)).toLowerCase());
+				
+				Method m = cls.getMethod(list.get(i), cls);
+				m.invoke(e, aux);
+			
+			}
+		}
+
+		endConect();
+
+		return e;
+	}
 
 	public EntityPersist buscarPorNome(EntityPersist t) throws SQLException {
 
