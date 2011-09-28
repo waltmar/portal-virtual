@@ -1,0 +1,16 @@
+Reunião 24/09/2011 Início às 11:30h
+
+A reunião se iniciou com o Guiliano pedindo para os integrantes lerem o que foi feito sobre os requisitos do usuário, iniciado pelo Fernando que leu o seu documento e isso passou por todos integrantes, sendo que o mais relevante falado foi sobre os níveis de acesso.
+Após todos discutirem o Guiliano iniciou falando sobre a idéia de cadastro de usuário que deve conter:
+Categorização dos mesmos (professor, aluno, etc) que seria apenas uma forma para categorizar os grupos utilizadores do sistemas. No Cadastro deste deve conter o mínimo de informações, somente o necessário para não sobrecarregar o sistema.
+O usuário terá os seguintes atributos: 
+CPF (int) (possível login dependendo da categorização do usuário, por exemplo, se for professor, o login já vira o CPF), mas esse atributo não deve ser obrigatório. Haverá alguma regra de negócio para definir se o CPF deve ser digitado ou não (dependendo do tipo de categoria do usuário)
+nome (varchar100)
+login (varchar30) sem diferenciar maiuscula de minuscula (casesensitive) obrigatório
+senha (varchar30) no mínimo 6 caracteres alfanumericos e obrigatório
+email e telefone sendo que um dos 2 deve ser obrigatório e sem mascara
+campos de confirmar senha
+
+Foi discutido ainda que o acesso ao sistema é livre, não é necessário fazer o login para visualizar os dados, mas as funcionalidades do sistema que deve ser necessário se logar para obté-las, sendo que se não estiver logado nem aparece a informação.
+
+Durante a discusão surgiu o assunto de requisitos de permissão para controlar o acesso ao sistema e ficou definido para os integrantes pensarem e trazer na proxima reunião.
