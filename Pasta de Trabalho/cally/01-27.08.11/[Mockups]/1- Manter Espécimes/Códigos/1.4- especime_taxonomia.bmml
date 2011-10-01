@@ -1,0 +1,233 @@
+<mockup version="1.0" skin="sketch" measuredW="1067" measuredH="770" mockupW="907" mockupH="770">
+  <controls>
+    <control controlID="133" controlTypeID="com.balsamiq.mockups::ComboBox" x="620" y="505" w="-1" h="-1" measuredW="100" measuredH="23" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ComboBox</text>
+      </controlProperties>
+    </control>
+    <control controlID="134" controlTypeID="com.balsamiq.mockups::Label" x="537" y="316" w="118" h="24" measuredW="120" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ep%EDteto%20espec%EDfico</text>
+      </controlProperties>
+    </control>
+    <control controlID="135" controlTypeID="com.balsamiq.mockups::Label" x="439" y="317" w="52" h="24" measuredW="55" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Esp%E9cie</text>
+      </controlProperties>
+    </control>
+    <control controlID="136" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="160" y="0" w="907" h="770" measuredW="450" measuredH="400" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="137" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="174" y="170" w="873" h="563" measuredW="200" measuredH="199" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>Cadastro%20de%20Esp%E9cimes%0AManter%20Tabelas%20B%E1sicas%0AManter%20Usu%E1rios%0ARelat%F3rios%0AConfigura%E7%E3o</text>
+      </controlProperties>
+    </control>
+    <control controlID="138" controlTypeID="com.balsamiq.mockups::TabBar" x="346" y="234" w="695" h="493" measuredW="523" measuredH="100" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hrefs>especime_coleta%26bm%3Bespecime_coleta.bmml%26bm%3Bespecime_coleta.bmml%26bm%3Bespecime_coleta.bmml%2Cespecime_geografia%26bm%3Bespecime_geografia.bmml%26bm%3Bespecime_geografia.bmml%26bm%3Bespecime_geografia.bmml%2Cespecime_taxonomia%26bm%3Bespecime_taxonomia.bmml%26bm%3Bespecime_taxonomia.bmml%26bm%3Bespecime_taxonomia.bmml%2Cespecime_multimidia_imagem%26bm%3Bespecime_multimidia_imagem.bmml%26bm%3Bespecime_multimidia_imagem.bmml%26bm%3Bespecime_multimidia_imagem.bmml%2Cespecime_bibliografia.e.outros%26bm%3Bespecime_bibliografia.e.outros.bmml%26bm%3Bespecime_bibliografia.e.outros.bmml%26bm%3Bespecime_bibliografia.e.outros.bmml</hrefs>
+        <selectedIndex>2</selectedIndex>
+        <text>Coleta%2C%20Geografia%2C%20Taxonomia%2C%20Multim%EDdia%2C%20Bibliografia%20e%20outros...</text>
+      </controlProperties>
+    </control>
+    <control controlID="139" controlTypeID="com.balsamiq.mockups::PointyButton" x="927" y="679" w="99" h="-1" measuredW="72" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>especime_multimidia_imagem%26bm%3Bespecime_multimidia_imagem.bmml%26bm%3Bespecime_multimidia_imagem.bmml%26bm%3Bespecime_multimidia_imagem.bmml</href>
+        <text>Pr%F3ximo</text>
+      </controlProperties>
+    </control>
+    <control controlID="165" controlTypeID="com.balsamiq.mockups::DataGrid" x="445" y="577" w="281" h="84" measuredW="229" measuredH="84" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Determinador%2C%20Data%2C%20%0Adeterminador1%2C%20data1%2C%20remover%0Adeterminador2%2Cdata2%2C%20remover%0A%7B75L%2C%2020L%2C%2020L%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="166" controlTypeID="com.balsamiq.mockups::Label" x="355" y="553" w="-1" h="-1" measuredW="90" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Determinador</text>
+      </controlProperties>
+    </control>
+    <control controlID="167" controlTypeID="com.balsamiq.mockups::ComboBox" x="445" y="550" w="-1" h="-1" measuredW="100" measuredH="23" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ComboBox</text>
+      </controlProperties>
+    </control>
+    <control controlID="168" controlTypeID="com.balsamiq.mockups::DateChooser" x="556" y="550" w="-1" h="-1" measuredW="89" measuredH="25" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%20/%20%20/%20%20%20%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="169" controlTypeID="com.balsamiq.mockups::TextInput" x="835" y="550" w="183" h="-1" measuredW="79" measuredH="26" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Some%20text</text>
+      </controlProperties>
+    </control>
+    <control controlID="170" controlTypeID="com.balsamiq.mockups::Label" x="752" y="552" w="-1" h="-1" measuredW="75" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Imprecis%E3o</text>
+      </controlProperties>
+    </control>
+    <control controlID="173" controlTypeID="com.balsamiq.mockups::Button" x="545" y="176" w="-1" h="-1" measuredW="83" measuredH="31" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>especime_coleta%26bm%3Bespecime_coleta.bmml%26bm%3Bespecime_coleta.bmml%26bm%3Bespecime_coleta.bmml</href>
+        <icon>PlusBigIcon%7Csmall</icon>
+        <text>Novo</text>
+      </controlProperties>
+    </control>
+    <control controlID="174" controlTypeID="com.balsamiq.mockups::Button" x="667" y="175" w="-1" h="-1" measuredW="112" measuredH="31" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>especime_pesquisar%26bm%3Bespecime_pesquisar.bmml%26bm%3Bespecime_pesquisar.bmml%26bm%3Bespecime_pesquisar.bmml</href>
+        <icon>SearchIcon%7Csmall</icon>
+        <text>Pesquisar</text>
+      </controlProperties>
+    </control>
+    <control controlID="175" controlTypeID="com.balsamiq.mockups::Button" x="645" y="549" w="-1" h="-1" measuredW="81" measuredH="28" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Adicionar</text>
+      </controlProperties>
+    </control>
+    <control controlID="177" controlTypeID="com.balsamiq.mockups::FieldSet" x="355" y="281" w="678" h="257" measuredW="200" measuredH="170" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Taxonomia%20do%20Esp%E9cime</text>
+      </controlProperties>
+    </control>
+    <control controlID="178" controlTypeID="com.balsamiq.mockups::Label" x="362" y="309" w="-1" h="-1" measuredW="42" measuredH="21" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Reino</text>
+      </controlProperties>
+    </control>
+    <control controlID="179" controlTypeID="com.balsamiq.mockups::Label" x="364" y="330" w="-1" h="-1" measuredW="29" measuredH="21" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Filo</text>
+      </controlProperties>
+    </control>
+    <control controlID="180" controlTypeID="com.balsamiq.mockups::Label" x="700" y="350" w="-1" h="-1" measuredW="79" measuredH="21" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sub-Classe</text>
+      </controlProperties>
+    </control>
+    <control controlID="181" controlTypeID="com.balsamiq.mockups::Label" x="364" y="351" w="-1" h="-1" measuredW="50" measuredH="21" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Classe</text>
+      </controlProperties>
+    </control>
+    <control controlID="182" controlTypeID="com.balsamiq.mockups::Label" x="364" y="399" w="-1" h="-1" measuredW="52" measuredH="21" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Fam%EDlia</text>
+      </controlProperties>
+    </control>
+    <control controlID="183" controlTypeID="com.balsamiq.mockups::Label" x="364" y="423" w="-1" h="-1" measuredW="52" measuredH="21" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>G%EAnero</text>
+      </controlProperties>
+    </control>
+    <control controlID="184" controlTypeID="com.balsamiq.mockups::Label" x="364" y="446" w="-1" h="-1" measuredW="55" measuredH="21" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Esp%E9cie</text>
+      </controlProperties>
+    </control>
+    <control controlID="185" controlTypeID="com.balsamiq.mockups::Label" x="364" y="376" w="-1" h="-1" measuredW="50" measuredH="21" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ordem</text>
+      </controlProperties>
+    </control>
+    <control controlID="186" controlTypeID="com.balsamiq.mockups::Label" x="700" y="398" w="-1" h="-1" measuredW="81" measuredH="21" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sub-Fam%EDlia</text>
+      </controlProperties>
+    </control>
+    <control controlID="187" controlTypeID="com.balsamiq.mockups::Label" x="700" y="375" w="-1" h="-1" measuredW="79" measuredH="21" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sub-Ordem</text>
+      </controlProperties>
+    </control>
+    <control controlID="188" controlTypeID="com.balsamiq.mockups::Label" x="752" y="580" w="-1" h="-1" measuredW="92" measuredH="21" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Observa%E7%F5es%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="189" controlTypeID="com.balsamiq.mockups::ComboBox" x="419" y="328" w="275" h="-1" measuredW="100" measuredH="23" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ComboBox</text>
+      </controlProperties>
+    </control>
+    <control controlID="190" controlTypeID="com.balsamiq.mockups::ComboBox" x="470" y="474" w="324" h="-1" measuredW="100" measuredH="23" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ComboBox</text>
+      </controlProperties>
+    </control>
+    <control controlID="191" controlTypeID="com.balsamiq.mockups::ComboBox" x="419" y="305" w="275" h="-1" measuredW="100" measuredH="23" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ComboBox</text>
+      </controlProperties>
+    </control>
+    <control controlID="192" controlTypeID="com.balsamiq.mockups::ComboBox" x="419" y="351" w="275" h="-1" measuredW="100" measuredH="23" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ComboBox</text>
+      </controlProperties>
+    </control>
+    <control controlID="193" controlTypeID="com.balsamiq.mockups::ComboBox" x="779" y="397" w="245" h="-1" measuredW="100" measuredH="23" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ComboBox</text>
+      </controlProperties>
+    </control>
+    <control controlID="194" controlTypeID="com.balsamiq.mockups::TextArea" x="752" y="601" w="215" h="57" measuredW="200" measuredH="140" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Some%20text%0AA%20second%20line%20of%20text</text>
+      </controlProperties>
+    </control>
+    <control controlID="195" controlTypeID="com.balsamiq.mockups::ComboBox" x="419" y="398" w="275" h="-1" measuredW="100" measuredH="23" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ComboBox</text>
+      </controlProperties>
+    </control>
+    <control controlID="196" controlTypeID="com.balsamiq.mockups::ComboBox" x="419" y="421" w="275" h="-1" measuredW="100" measuredH="23" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ComboBox</text>
+      </controlProperties>
+    </control>
+    <control controlID="197" controlTypeID="com.balsamiq.mockups::ComboBox" x="419" y="444" w="275" h="-1" measuredW="100" measuredH="23" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ComboBox</text>
+      </controlProperties>
+    </control>
+    <control controlID="198" controlTypeID="com.balsamiq.mockups::ComboBox" x="779" y="348" w="245" h="-1" measuredW="100" measuredH="23" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ComboBox</text>
+      </controlProperties>
+    </control>
+    <control controlID="199" controlTypeID="com.balsamiq.mockups::ComboBox" x="419" y="374" w="275" h="-1" measuredW="100" measuredH="23" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ComboBox</text>
+      </controlProperties>
+    </control>
+    <control controlID="200" controlTypeID="com.balsamiq.mockups::Label" x="364" y="477" w="106" h="23" measuredW="102" measuredH="21" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Esp.%20Espec%EDfico</text>
+      </controlProperties>
+    </control>
+    <control controlID="201" controlTypeID="com.balsamiq.mockups::ComboBox" x="779" y="374" w="245" h="-1" measuredW="100" measuredH="23" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ComboBox</text>
+      </controlProperties>
+    </control>
+    <control controlID="202" controlTypeID="com.balsamiq.mockups::Label" x="364" y="503" w="-1" h="-1" measuredW="39" measuredH="21" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Autor</text>
+      </controlProperties>
+    </control>
+    <control controlID="203" controlTypeID="com.balsamiq.mockups::ComboBox" x="470" y="503" w="324" h="-1" measuredW="100" measuredH="23" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ComboBox</text>
+      </controlProperties>
+    </control>
+    <control controlID="204" controlTypeID="com.balsamiq.mockups::Label" x="492" y="94" w="364" h="32" measuredW="331" measuredH="24" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Sistema%20de%20Cataloga%E7%E3o%20da%20Biodiversidade</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

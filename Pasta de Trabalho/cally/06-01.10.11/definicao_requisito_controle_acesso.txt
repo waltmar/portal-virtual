@@ -1,0 +1,15 @@
+
+O controle de acesso se dará da seguinte forma:
+
+Cada acesso de nível de permissão será feito por módulos do sistema.
+
+Cada módulo terá permissões para cadastro, alteração e exclusão/ou inativação, que será definido no momento de cadastro deste usuário.
+
+Haverá também níveis predefindos de acesso: 
+
+Administrador - Acesso total ao sistema.
+Manter total - Acesso de cadastro de tabelas básicas e de espécimes.
+Manter espécimes - Acesso ao cadastro de espécimes apenas.
+Manter espécimes/ Sem alteração - Acesso ao cadastro de espécimes sem a possibilidade de excluir ou alterar um registro.
+
+
