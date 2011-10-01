@@ -1,0 +1,15 @@
+Foi feita a revisão do documento de especificação de requisitos
+
+Em seguida foi realizada a leitura da definição de requisitos os desenvolvedores.
+Foi dito sobre a necessidade de guardar a data de inativação do usuário.
+E realizada o log de ações.
+Foi definido de os níveis de acesso não podem estar relacionados com o tipo de usuário.
+Somente o usuário poderá realizar o cadastro de usuários.
+Foram definidas as informações necessárias para o cadastro de usuário:
+Nome, senha, login, telefone, e email.
+O usuário poderá fazer alterações nas suas informações de login e senha.
+
+Foi discutido também sobre o nível de acesso e auditoria, que seriam um outros requisitos a serem definidos.
+
+Foi definido o tipo dos dados e o detalhamento das ações (CRUD).
+*Foi comentado sobre as informações que seriam gerais para a tabela de usuário do sistema inteiro.
