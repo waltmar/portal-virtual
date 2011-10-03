@@ -1,0 +1,9 @@
+A reunião foi breve. Foi cobrado que todos postassem as anotações referentes às reuniões, incluindo esta.
+Nesta reunião foram adiadas as tarefas passadas e pedido que todos conversassem com o Diego para
+criação/atualização do requisito de controle de acesso, segundo o que o Guiliano tinha conversado com ele.
+
+
+
+Foi exposto que haverá a necessidade de se armazenar dados da área de química para pesquisadores relacionados a
+essa área, tais como que benefício medicinal tal planta pode servir, etc. Diante disso, o Diego sugeriu que
+o sistema tivesse capacidade de criar campos novos que o usuário solicitasse.
