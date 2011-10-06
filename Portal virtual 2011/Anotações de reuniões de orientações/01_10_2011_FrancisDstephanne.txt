@@ -1,0 +1,2 @@
+ Foi realizada uma rápida reunião. Foram adiadasas entregas das anotações e atividades e foi dito que todos deveriam procurar o diego para discutir acerca do requisito de controle de acesso.
+ Foi também apresentado a nescessidade de armazenamento de dados da área de quimica que irá gerar novos requisitos e talvez telas.
