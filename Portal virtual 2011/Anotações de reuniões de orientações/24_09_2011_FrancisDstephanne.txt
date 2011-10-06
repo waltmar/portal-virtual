@@ -1,0 +1,10 @@
+ Foram relembradas as especificações de requisitos.
+
+ Foi realizada a leitura das definições de requisitos de cada desenvolvedor.
+ Fiquei concordado que o tipo de usuario nao irá restringir ao usuario o nivel de acesso.
+ O tipo de usuário será utilizado para facilitar principalmente pesquisas futuras no banco.
+ somente administrador poderá realizar cadastro e alterções de usuários.
+ Um usuário não poderá ser excluido, apenas inativado e deve ser armazenada a data de inativação desse usuário.
+ Foram definidas as informações nescessarias para o cadastro de usuário com preocupação em não pedir campos desnecessarios ou que o usuario tenha dificuldade em fornecer a fim de evitar "lixo" no banco de dados.
+ também foi decidido que não será nescessario fazer logon no sistema para visualizar algumas informações, mas as funcionalidades do sistema que requererem o logon não estarão visiveis a fim de manter a segurança do sistema.
+ O login não será caseSensitive.
