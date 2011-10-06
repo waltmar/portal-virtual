@@ -1,4 +1,4 @@
-
+﻿
 Nome: Guiliano Rangel Alves.
 Função: Gerente(Bolsista)
 Telefones: (62) 9109-8802(cel), (62) 3318-9656(casa), (62) 3310-6672(serviço, evitar)
@@ -51,3 +51,7 @@ link lattes: http://lattes.cnpq.br/8397858144378559
 MSN: diego160291@msn.com
 
 
+  Nome: Francis D'stephanne Pereira Santos 
+Função: Desenvolvedor(Voluntário)
+Telefones: 9803-1090(celular-vivo),(62)8551-7623(celular-OI)
+E-mail: dstephanne02@hotmail.com/dstephanne@gmail.com
