@@ -1,0 +1,26 @@
+          Controle de Acesso
+
+
+    O Sistema só permitirá que usuários previamente cadastrados acessem o sistema
+    Quando o administrador cadastrar um usuário ele dará um perfil para o usuário.
+    Inicialmente o sistema permitirá o seguintes perfis:
+    
+    1)Usuário Comum - Visualiza todas tabelas do sistema, exceto as de usuario e de auditoria (logs)
+    2)Funcionário Relator - Gera Relatórios de todas tabelas visualizadas
+    3)Funcionário de Espécime - Cadastra Espécimes
+    4)Funcionário de Tabelas Básicas- Cadastras as tabelas básicas
+    5)Funcionário de Espécies - Cadastra novas Espécies
+    6)Administrador de Usuários - Mantêm usuário e gera auditoria
+    7)Administrador do Sistema - Pode visualizar e gerar relatórios de auditoria (dos logs).
+    
+    Os perfis estão enumerados em níveis, um nível maior quer dizer que ele pode fazer tudo que o 
+    nível abaixo dele pode fazer.
+
+    O Sistema exibirá somente as ações que o usuário pode fazer, ou seja, Depois de fazer login só será exibido
+       as opções de consulta de cada tabela, no entanto os ícones ou botões para editar, deletar serão desabilitadas
+       também serão desabilitadas as opções de cadastrar, tabela espécimes, etc e gerar relatórios de usuários e logs,
+                caso o usuário não tenha tais permissões.
+       Caso acesse um usuário funcionário, os ícones e menus referentes ao nível de acesso serão habilitados
+       e os não referentes ao seu nível de acesso desabilitados.
+       Os usuários de nível abaixo de 6 (Administrador de Usuários) não visualizarão usuários, no entanto cada usuário,
+       não importa o nível, poderá visualizar e alterar seus dados pessoais, execto seu nível de acesso.

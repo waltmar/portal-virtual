@@ -6,8 +6,7 @@
     Também dirá quais serão os níveis de acesso
     Por padrão: Todos usuários cadastrados poderão visualizar quaisquer tabelas.
     Quando cadastrado será atribuído seu nível de acesso.
-    Todos poderão gerar relatórios, execto relatórios de usuários e logs 
-    
+    Todos poderão visualizar e alterar seus dados pessoais.
 
     O Sistema exibirá somente as ações que o usuário pode fazer, ou seja, Depois de fazer login só será exibido
        as opções de consulta de cada tabela, no entanto os ícones ou botões para editar, deletar serão desabilitadas
@@ -22,9 +21,24 @@
          um nível de permissão que dirá se o administrador poderá visualizar usuários, editar usuários, remover
          usuário, gerar relatórios de usuários, gerar relatórios de logs.
 
-    Os níveis de acesso para os funcionários serão:
-       - Alterar Usuário
+    
+    Os níveis de acesso serão criados pelo usuário Administrador, e cada nível corresponderá a um perfil,
+    Quando o administrador for cadastrar um perfil ele dirá quais tabelas o usuário poderá ou não alterar, etc.
+    Dessa forma o sistema será flexível em relação aos níveis de acesso. Haverá um módulo de permissões que deverá
+    ser consultado antes da página ser carregada
 
-Usuário - Visualiza.
-Funcionário - Mantem Tabelas básicas, Mantém Espécies, Mantem Espécime, Gera Relatórios
-Administrador - Visualiza Usuários, Mantém usuários, Gera Relatórios de usuários
+    Para usuário terá os seguintes opções:
+          Gerar Relatórios da tabelas a, b, c, d, e ...
+    
+    Para funcionários,  terá as seguintes opções:
+          Cadastrar tabelas a, b, c, d, e, ....
+          Alterar   ""
+          Gerar Relatórios das tabelas a,b,c, d, e, f........
+    
+    Para Administrador:
+          Cadastrar tabelas a, b, c, d, e, ....
+          Gerar Relatórios das tabelas a,b,c, d, e, f........
+          Visualizar usuários comuns, Visualizar funcionários, Visualizar Administradores
+          Gerar Relatórios de usuários comuns, Gerar Relatórios de funcionários, Gerar Relatórios de administradores
+          Cadastrar Usuários Comuns, Cadastrar Funcionário, Cadastrar Administrador.
+          Alterar "",                Alterar     ""       ,  ""
