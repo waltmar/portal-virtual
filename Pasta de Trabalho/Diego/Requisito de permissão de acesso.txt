@@ -1,0 +1,9 @@
+Requisito - Permissão de acesso (Níveis de Acesso)
+
+Para acessar o sistema, qualquer um que entre no site poderá visualizar os dados do mesmo, menos o de usuários, para qualquer ação além disso é necessário efetuar login.
+Cada usuário terá um nível de permissão associado a ele mesmo que dará permissões para efetuar consulta / cadastro / exclusão / editação para cada caso de uso. Isso será feito atribuindo níveis de usuário que serão cadastrados pelo administrador do banco de dados ou a pessoa que mantém o sistema.
+Isso trará uma flexibilidade para o software na questão de inclusão de novos casos de uso que deve fazer uma restrinção maior de acesso para as pessoas que acessarem o sistema.
+Cada nível de permissão será herdado do usuário primário (User) que terá apenas permissão de visualizar os dados cadastrados no banco de dados, exceto o de usuário, e não poderá fazer nenhuma alteração/edição. A partir desse nível teremos outros mais específicos que atribuirá a permissão de cadastrar/excluir/editar caso seja necessário.
+Inicialmente é necessário fazer o User, um User2 que poderá fazer o cadastro e edição dos dados e um UserAdministrador que herdará as funções do User2 e poderá ainda excluir os dados, e todas ações, menos a do usuário primário (User) deverão ser registradas em log.
+Para esse requisito fica em aberto a criação de um caso de uso separado para fazer novos cadastros de níveis.
+O controle de acesso será feito por uma classe que verificará o nível de permissão de cada usuário e deixará prosseguir com o processo ou não.
