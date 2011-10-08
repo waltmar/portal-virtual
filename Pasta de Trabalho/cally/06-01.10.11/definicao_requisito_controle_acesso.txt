@@ -1,15 +1,21 @@
-
 O controle de acesso se dará da seguinte forma:
 
-Cada acesso de nível de permissão será feito por módulos do sistema.
+Todo usuário, mesmo sem login, pode acessar e visualizar todos os módulos, Exceto o de usuários. 
+No momento em que o usuário realiza uma ação de cadastrar, alterar ou excluir, o sistema pedirá login e senha ao usuário. Ao logar, ele terá acesso ao nível especificado pela sua conta e continuará a ação anteriormente requisitada (caso o nível de acesso permitir a ação).
 
-Cada módulo terá permissões para cadastro, alteração e exclusão/ou inativação, que será definido no momento de cadastro deste usuário.
+O administrador será o responsável por realizar os cadastros dos usuários no sistema, bem como selecionar seus respectivos níveis de permissão, no momento do cadastro.
+
+O administrador também pode alterar os cadastros dos usuários e seus níveis de permissão. Após esta alteração, será guardado o histórico de permissões deste usuário.
+
+Cada acesso de nível de permissão será configurado por módulos do sistema.
+
+Cada módulo terá permissões para cadastro, alteração e exclusão/ou inativação.
 
 Haverá também níveis predefindos de acesso: 
 
 Administrador - Acesso total ao sistema.
-Manter total - Acesso de cadastro de tabelas básicas e de espécimes.
-Manter espécimes - Acesso ao cadastro de espécimes apenas.
+Manter total - Acesso de cadastro de tabelas básicas e de espécimes com direito à cadastro,alteração, busca e exclusão.
+Manter espécimes - Acesso ao cadastro de espécimes apenas com alteração, busca e exclusão.
 Manter espécimes/ Sem alteração - Acesso ao cadastro de espécimes sem a possibilidade de excluir ou alterar um registro.
 
 
