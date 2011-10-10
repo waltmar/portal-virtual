@@ -1,2 +1,0 @@
-Anotações durante as correções
-* Na especificação geral de requisitos foi ditos que vai ter log de tudo o que é feito(limpados no fechamento anual)
