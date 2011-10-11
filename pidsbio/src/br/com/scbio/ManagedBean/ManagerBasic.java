@@ -21,6 +21,7 @@ public class ManagerBasic extends GenericBean<EntityPersist, Serializable>{
 	
 	private String valor;
 	private String ancestor;
+	protected List<?> list;
 	
 	protected List<String> combos;
 
@@ -29,7 +30,7 @@ public class ManagerBasic extends GenericBean<EntityPersist, Serializable>{
 
 	public ManagerBasic() {
 		
-		
+		list = new ArrayList<String>();
 	}
 	
 	
@@ -51,6 +52,18 @@ public class ManagerBasic extends GenericBean<EntityPersist, Serializable>{
 	}
 	
 	
+
+	public List<?> getList() {
+		return list;
+	}
+
+
+
+	public void setList(List<?> list) {
+		this.list = list;
+	}
+
+
 
 	public String getValor() {
 		return valor;
