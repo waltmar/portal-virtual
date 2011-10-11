@@ -1,0 +1,48 @@
+Reunião dia 08/10
+
+Início =~ 11:15
+Término =~ 13:20
+
+
+
+-> O usuário só pode alterar senha, email e telefone.
+Categoria só serve para o definir se tem ou não CPF e para aparecer no relatório.
+O controle de acesso serão feitos por perfis que o usuário pode alterar
+Não será feito agora o controle de acesso, no entanto o sistema estará pronto para implementar todos
+o controle de acesso, no entanto o requisito deve estar pronto.
+
+Discussão do requisito manter espécime
+  Foi sugerido que a ordem, classe, filo, etc, da taxonomia sejão armazendas no banco de dados em uma só tabela, em que cada linha informará, o nível
+    e a propriedade pai da taxinomia, por exemplo a taxonomia do reino Animalia, e o Filo cordado ficaria parecida com essa:
+
+    Id_Tax   |  Nivel    | Pai  | Nome
+
+    1        |  1(Reino  | NULL | Animalia
+    2        |  2(Filo)  | 1    | Cordado
+
+   Foi discutido também a questão da subclasse e subfamília que em alguns casos existe, outros não, no entanto sempre vem de um nível superior.
+   Essas informações de classificação, ainda não estão claras e precisará de se reunir com pessoas do curso de biologia para esclarecimentos 
+   Somente o campo do reino é obrigatório e haverá casos em que o catalogador não saberá classificar a excicata.
+   Diante disso  o sistema mostrará na hora do cadastro informações, multimedias, etc sobre o que foi selecionado, ou seja, o sistema deverá
+  auxiliar na catalogação. No design, o auxilio a catagolação poderá ser exibido apertando um botão reticência,
+  depois da família, especie, etc. Essas informações serão exibidas baseadas naquilo que já foi informado.
+ 
+ 
+  Tem que ter descrição/Características em cada classe, filo, etc. ex: Ave é um animal do reino tal que possiu a descrição,
+  ou características tal.
+  
+  Foi discutido sobre casos de exceção como o onitorrinco que não tem bico mas não é ave, no entanto ele tem uma família específica dele na qual se colocará
+   as caraterísca dele
+  
+  
+  O sistema poderá auxiliar na catalogação usando um sistema de busca de cadastro de características,
+  As características serão exibidas a partir dos dados do reino até o nível mais abaixo
+  
+  
+  Pode haver um campo (de classe, ordem) de 'não classificado', exceto no reino para facilitar nos casos em que o catalogador não sabe quem cadastrou.
+  
+  
+  Quando for dectado um cadastro de espécie igual na matriz, em relação aos reinos, etcs, será mostrada as
+   informações das espécies e o usuário decidirá se virará duas espécies ou não
+  
+  Para cadastro será usado escopo de sessão
