@@ -126,7 +126,7 @@ public class GenericPersistence<T extends EntityPersist> {
 		endConect();
 
 		return e;
-	}
+	}  
 
 	public EntityPersist buscarPorNome(EntityPersist t) throws SQLException {
 
