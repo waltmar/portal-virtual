@@ -4,17 +4,18 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.prime.com.tr/ui"
-	template="/templates/basicpanel.xhtml">
-	
-	<ui:param name="id" value="reino" />
-	<ui:param name="name" value="#{msg.reino}" />
+	xmlns:in="http://scbio.com.br/facelets"
+	template="/templates/basicrecords/templateabasBasico/finaltemplateAbas.xhtml">
+		
+	<ui:param name="mBean" value="ManagerBasic" />
 
+	<ui:define name="contentTaxonomia">
 	
-	<ui:define name="areaPanel">
-	
-	<ui:include src="/commons/crud/basiccrud.xhtml" />
-	
+		<in:crud id="reino" name="#{msg.reino}" />
+		
 	</ui:define>
 	
-	
 </ui:composition>
+
+
+
