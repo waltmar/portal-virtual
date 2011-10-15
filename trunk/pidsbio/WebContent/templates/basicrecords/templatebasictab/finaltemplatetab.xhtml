@@ -8,9 +8,10 @@
 
 <ui:composition template="templateBasics.xhtml">
 	<ui:define name="coleta">
-		<h:panelGrid columns="1">
-			<ui:include src="/menu/basic/coletamenu.xhtml" />
-		</h:panelGrid>
+
+		<ui:include src="/menu/basic/coletamenu.xhtml" />
+		<ui:insert name="contentColeta" />
+
 	</ui:define>
 	<ui:define name="geografia">
 
