@@ -6,20 +6,14 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:c="http://java.sun.com/jstl/core"
 	xmlns:p="http://primefaces.prime.com.tr/ui">
-	
+
 	<h:panelGrid columns="3" style="text-align:left;">
 
-				<h:panelGrid columns="3" style="text-align:left;">
-
-				<h:outputLabel for="#{id}" value="#{name}"/>
-				<p:inputText size="30" id="#{id}" value="#{address}"
-					required="#{required}" requiredMessage="#{msg.obr}"/>
-					<p:message for="#{id}" display="text" />
-
-			</h:panelGrid>
-				
-				
+		<h:outputLabel for="#{id}" value="#{name}" />
+		<p:inputText size="30" id="#{id}" value="#{address}"
+			required="#{required}" requiredMessage="#{msg.obr}" />
+		<p:message for="#{id}" display="text" />
 
 	</h:panelGrid>
-	
-</ui:composition> 
+
+</ui:composition>

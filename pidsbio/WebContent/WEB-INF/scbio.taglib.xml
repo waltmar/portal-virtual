@@ -7,22 +7,33 @@
 		<source>../commons/inputs/basicinput.xhtml</source>
 	</tag>
 	<tag>
-		<tag-name>genericinput</tag-name>
-		<source>../commons/inputs/genericInput.xhtml</source>
+		<tag-name>numberinput</tag-name>
+		<source>../commons/inputs/numberinput.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>comboinput</tag-name>
+		<source>../commons/inputs/comboinput.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>obsinput</tag-name>
+		<source>../commons/inputs/obsinput.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>dateinput</tag-name>
+		<source>../commons/inputs/dateinput.xhtml</source>
 	</tag>
 	<tag>
 		<tag-name>crud</tag-name>
 		<source>../commons/crud/basiccrud.xhtml</source>
 	</tag>
-	
 	<tag>
 		<tag-name>crudancestor</tag-name>
 		<source>../commons/crud/basiccrudancestor.xhtml</source>
 	</tag>
-	
+
 	<tag>
 		<tag-name>buttons</tag-name>
 		<source>../commons/buttons/buttonscrud.xhtml</source>
 	</tag>
-	
+
 </facelet-taglib>
