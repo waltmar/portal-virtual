@@ -3,7 +3,6 @@ package br.com.scbio.ManagedBean;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.event.ActionEvent;
 import br.com.scbio.domain.EntityPersist;
