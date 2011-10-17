@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+
+	<p:fieldset legend="#{name}">
+	
+		<h:panelGrid columns="1" style="text-align:left;">
+
+			<h:panelGrid columns="2">
+			
+				<p:inputText size="30" id="#{id}" value="#{address}" />
+
+				<p:commandButton immediate="true" value="#{msg.adicionar}"
+					id="#{idButton}" action="#{action}"
+					update="contentPanel" />
+					
+			</h:panelGrid>
+
+			<p:dataTable var="object" value="#{list}">
+			
+				<p:column>
+					<h:outputText value="#{valorList}" />
+				</p:column>
+				
+			</p:dataTable>
+
+		</h:panelGrid>
+
+	</p:fieldset>
+	
+</ui:composition>

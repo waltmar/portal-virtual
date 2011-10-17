@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+
+	<h:panelGrid columns="4" style="text-align:left;">
+		
+		<h:outputLabel for="#{id}" value="#{name}" />
+		<p:spacer width="#{spacer}"  height="0px"/>
+		<p:calendar id="#{id}" size="9" value="#{address}" required="#{required}" requiredMessage="#{msg.obr}"/>
+		<p:message for="#{id}" display="text" />
+
+	</h:panelGrid>
+
+</ui:composition>
