@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:in="http://scbio.com.br/facelets">
+
+	<ui:param name="mBean" value="ManagerSpecimens" />
+
+		<h:panelGrid>
+
+			<h:panelGrid columns="3">
+
+				<in:numberinput name="#{msg.codigoCatalogo}" mask="999999"
+					id="codigoCatalogo" required="true"
+					address="#{bean.codigoCatalogo}" />
+
+				<in:numberinput name="#{msg.codigoColeta}" mask="999999"
+					id="codigoColeta" required="true" address="#{bean.codigoColeta}" />
+
+				<in:dateinput name="#{msg.dataColeta}" id="dataColeta"
+					required="true" address="#{bean.dataColeta}" />
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="2">
+
+				<in:comboinput name="#{msg.estagioDesenvolvimento}" 
+					id="estagioDesenvolvimento" required="true"
+					address="#{bean.estagioDesenvolvimento}" />
+ 
+				<in:comboinput name="#{msg.fenologia}" id="fenologia" 
+					required="true" address="#{bean.fenologia}" />
+
+				<in:comboinput name="#{msg.metodo}" id="metodo" spacer="115px"
+					address="#{bean.metodo}" />
+
+				<in:comboinput name="#{msg.sexo}" id="sexo" spacer="28px"
+					address="#{bean.sexo}" />
+
+				<in:comboinput name="#{msg.tipoMontagem}" id="tipoMontagem" spacer="51px"
+					address="#{bean.tipoMontagem}" />
+
+				<in:numberinput name="#{msg.numeroIndividuos}" mask="99"
+					id="numeroIndividuos" required="true"
+					address="#{bean.numeroIndividuos}" />
+
+			</h:panelGrid>
+
+			<in:collectortable name="#{msg.coletores}" id="coletores" 
+					address="#{bean.coletor}" idButton="saveColetor" action="action" list="list" valorList="list"/>
+			 
+			<in:obsinput name="#{msg.obs}" id="obsColeta" 
+					address="#{bean.obsColeta}" />
+					
+		</h:panelGrid>
+
+</ui:composition>
+
+
+

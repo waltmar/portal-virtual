@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:in="http://scbio.com.br/facelets">
+
+	<ui:param name="mBean" value="ManagerSpecimens" />
+
+
+	<h:panelGrid>
+
+		<p:fieldset legend="#{msg.taxonomiaEspecime}">
+
+			<h:panelGrid columns="1">
+
+				<in:comboinput name="#{msg.reino}" id="reino" required="true"
+					address="#{bean.reino}" />
+
+				<in:comboinput name="#{msg.filo}" id="filo" required="true"
+					address="#{bean.filo}" />
+
+				<h:panelGrid columns="2">
+
+					<in:comboinput name="#{msg.classe}" id="classe" required="true"
+						address="#{bean.classe}" />
+
+					<in:comboinput name="#{msg.subClasse}" id="subClasse"
+						required="true" address="#{bean.subClasse}" />
+
+					<in:comboinput name="#{msg.ordem}" id="ordem" required="true"
+						address="#{bean.ordem}" />
+
+					<in:comboinput name="#{msg.subOrdem}" id="subOrdem" required="true"
+						address="#{bean.subOrdem}" />
+
+					<in:comboinput name="#{msg.familia}" id="familia" required="true"
+						address="#{bean.familia}" />
+
+					<in:comboinput name="#{msg.subFamilia}" id="subFamilia"
+						required="true" address="#{bean.subFamilia}" />
+
+				</h:panelGrid>
+
+				<in:comboinput name="#{msg.genero}" id="genero" required="true"
+					address="#{bean.genero}" />
+
+				<in:basicinput name="#{msg.epEspecifico}" id="epEspecifico"
+					required="true" address="#{bean.epEspecifico}" />
+
+				<in:comboinput name="#{msg.autor}" id="autor" required="true"
+					address="#{bean.autor}" />
+
+			</h:panelGrid>
+
+		</p:fieldset>
+
+		<h:panelGrid columns="2">
+		
+			<h:panelGrid columns="1">
+
+				<in:collectortable name="#{msg.determinadores}" id="determinadores"
+					address="#{bean.determinador}" idButton="saveDeterminador"
+					action="action" list="list" valorList="list" />
+
+				<in:dateinput name="#{msg.dataDeterminacao}" id="dataDeterminacao"
+					required="true" address="#{bean.dataDeterminacao}" />
+
+			</h:panelGrid>
+			
+			<h:panelGrid columns="1">
+
+			<in:basicinput name="#{msg.imprecisao}" size="3" id="imprecisao"
+				required="true" address="#{bean.imprecisao}" />
+
+			<in:obsinput name="#{msg.obs}" id="obsTaxonomia"
+				address="#{bean.obsTaxonomia}" />
+			
+			</h:panelGrid>
+			
+		</h:panelGrid>
+
+	</h:panelGrid>
+
+
+</ui:composition>
+
+
+
