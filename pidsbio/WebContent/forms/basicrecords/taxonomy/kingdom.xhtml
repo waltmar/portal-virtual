@@ -6,15 +6,16 @@
 	xmlns:p="http://primefaces.prime.com.tr/ui"
 	xmlns:in="http://scbio.com.br/facelets"
 	template="/templates/basicrecords/templatebasictab/finaltemplatetab.xhtml">
-		
+
 	<ui:param name="mBean" value="ManagerBasic" />
 
 	<ui:define name="contentTaxonomia">
-	
-		<in:crud id="reino" name="#{msg.reino}" />
-		
+
+		<center>
+			<in:crud id="reino" name="#{msg.reino}" />
+		</center>
 	</ui:define>
-	
+
 </ui:composition>
 
 

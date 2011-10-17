@@ -9,11 +9,11 @@ import br.com.scbio.exception.ErrorException;
 
 public interface IManagedBean<T extends Serializable, oid extends Serializable>{
 	
-	public void save(T entity) throws ErrorException;
-	public void delete(T entity) throws ErrorException;
-	public void update (T entity)throws ErrorException;
-	public T getById(T entity,oid id) throws ErrorException;
-	public List<T> getAll(T entity) throws ErrorException;
-	public void getByFinger(T entity) throws ErrorException;
+	public void save() throws ErrorException;
+	public void delete() throws ErrorException;
+	public void update ()throws ErrorException;
+	public T getById(oid id) throws ErrorException;
+	public List<T> getAll() throws ErrorException;
+	public T getByFinger(T entity) throws ErrorException;
 	
 }
