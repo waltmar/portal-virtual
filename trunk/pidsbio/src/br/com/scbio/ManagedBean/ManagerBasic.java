@@ -21,11 +21,7 @@ public class ManagerBasic extends GenericBean<EntityPersist, Serializable>{
 	private String valor;
 	private String ancestor;
 	protected List<?> list;
-	
 	protected List<String> combos;
-
-	
-	
 
 	public ManagerBasic() {
 		
@@ -33,7 +29,6 @@ public class ManagerBasic extends GenericBean<EntityPersist, Serializable>{
 	}
 	
 	
-
 	public String getAncestor() {
 		return ancestor;
 	}
@@ -90,22 +85,34 @@ public class ManagerBasic extends GenericBean<EntityPersist, Serializable>{
 		
 	}
 
-	@Override
-	public void deleteAction(ActionEvent actionEvent) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void researchAction(ActionEvent actionEvent) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
 
 	@Override
 	public IController<EntityPersist, Serializable> getIController() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+	@Override
+	public Object getModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public EntityPersist getDomain() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public Object loadCombos() {
 		// TODO Auto-generated method stub
 		return null;
 	}

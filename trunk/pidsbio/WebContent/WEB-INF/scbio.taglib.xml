@@ -2,6 +2,7 @@
 <!DOCTYPE facelet-taglib PUBLIC "-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN" "facelet-taglib_1_0.dtd">
 <facelet-taglib>
 	<namespace>http://scbio.com.br/facelets</namespace>
+	
 	<tag>
 		<tag-name>basicinput</tag-name>
 		<source>../commons/inputs/basicinput.xhtml</source>
@@ -22,6 +23,14 @@
 		<tag-name>dateinput</tag-name>
 		<source>../commons/inputs/dateinput.xhtml</source>
 	</tag>
+	
+	
+	<tag>
+		<tag-name>collectortable</tag-name>
+		<source>../commons/tables/collectortable.xhtml</source>
+	</tag>
+	
+	
 	<tag>
 		<tag-name>crud</tag-name>
 		<source>../commons/crud/basiccrud.xhtml</source>

@@ -6,13 +6,13 @@ public class EntityPersist implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private float id_item;
+	private Long id_item;
 
-	public float getId_item() {
+	public Long getId_item() {
 		return id_item;
 	}
 
-	public void setId_item(float id_item) {
+	public void setId_item(Long id_item) {
 		this.id_item = id_item;
 	}
 
