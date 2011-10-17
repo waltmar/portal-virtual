@@ -7,7 +7,9 @@
 	xmlns:p="http://primefaces.prime.com.tr/ui">
 
 <ui:composition template="templatespecimens.xhtml">
-
+	
+	<ui:param name="mBean" value="ManagerSpecimens" />
+	
 	<ui:define name="tabView">
 
 		<p:wizard nextLabel="#{msg.proximo}" backLabel="#{msg.anterior}">

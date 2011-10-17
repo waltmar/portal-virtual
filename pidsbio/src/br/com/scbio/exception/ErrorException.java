@@ -8,7 +8,9 @@ public class ErrorException extends Exception{
 	private static final long serialVersionUID = 1L;
 	private TypeErrors erro;
 	private String message;
+	
 	public ErrorException(){}
+	
 	public ErrorException(TypeErrors type){
 		super();
 		setErro(type);
