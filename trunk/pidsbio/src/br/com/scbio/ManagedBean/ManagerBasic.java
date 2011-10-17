@@ -67,23 +67,7 @@ public class ManagerBasic extends GenericBean<EntityPersist, Serializable>{
 		this.valor = valor;
 	}
 
-	@Override
-	public void newAction(ActionEvent actionEvent) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void updateAction(ActionEvent actionEvent) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void cancelAction(ActionEvent actionEvent) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 
 	@Override
@@ -113,6 +97,49 @@ public class ManagerBasic extends GenericBean<EntityPersist, Serializable>{
 
 	@Override
 	public Object loadCombos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void save() throws ErrorException {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void delete() throws ErrorException {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void update() throws ErrorException {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public EntityPersist getById(Serializable id) throws ErrorException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<EntityPersist> getAll() throws ErrorException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public EntityPersist getByFinger(EntityPersist entity)
+			throws ErrorException {
 		// TODO Auto-generated method stub
 		return null;
 	}
