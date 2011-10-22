@@ -1,0 +1,12 @@
+Data: 08/10/2011
+INI: 11:14
+FIM: 13:03
+
+Discussão sobre o requisito de usuário,
+ficando definido que o usuário só pode modificar os seguintes dados; e-mail, senha e telefone, 
+O administrador pode modificar tudo.
+O usuário só pode modificar o seu.
+
+Definiçãos
+Definição do requisito de manter especime.
+
