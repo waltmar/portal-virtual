@@ -1,0 +1,77 @@
+O sistema irá catalogar todas espécimes.
+Para cadastrar uma espécime é necessário cadastrar as tabelas básicas e todas espécies
+O cadastro será em um ambiente web em que haverá um formulário que irá sugerir 
+que todos os dados sejam referente a espécime sejam cadastradas, eles são
+ 
+*Dados da Coleta
+ - Coletor (deverá ser obrigatório)
+ - Método; 
+ - Tipo de montagem; 
+ - Fenologia; 
+ - Estágio de desenvolvimento; 
+ - Observações
+ 
+*Dados da Espécie
+ - Reino; obrigatório.
+ - Filo
+ - Classe
+ - Sub. Classe;
+ - Ordem
+ - Sub. Ordem;
+ - Família
+ - Sub. Família;
+ - Gênero;
+ - Espécie;
+ - Epíteto Específico.
+
+O usuário pode preencher os campos na ordem que quiser, mas ao escolher um campo de nível mais baixos, os de cima são 
+automaticamente preenchidos. A medida que um campo é preencido, os debaixos são liberados.
+
+Caso não o usuário não queira preencher um campo, não obrigatório, ele poderá escolher a opção 'Não Catalogado'
+O usuário poderá cadastrar novas taxonomias nessa tela. Caso a taxonomia não exista, ela é adicionada
+Ao se preencher um dos campos, aparecerá do seu lado um botão '...' que ao ser clicado abrirá uma janela poupup contento todas informações
+referentes ao campo escolhido (etc cadastrados), isso inclui característica, multimídias, etc, conforme definido em outro requisito.
+Tais informações serão exibidas em abas. Também haverá outro botão que abrirá uma janela que mostrará até x [Definir número] espécies
+pertencente aos campo prenchidos, além de um campo para busca para todas espécies que pertencem ao atributo dos campos escolhidos (reino Animalia,
+reino cordadopor exemplo),. Esse campo para busca terá a mesma características do campo de busca do requesitos Manter Espécie, só que já haverá
+um filtro paras os campos já preenchidos. Haverá um campo para pesquisa por características, que tentará descobrir as taxonomias
+baseadas nas características mencionadas. Também poderá ser colocada uma espécie existente como base, através dela, mostrará as informações
+sobre as taxonomias semelhantes. Após selecionado serão mostradas todas informações das taxonomias e espécies existente. 
+{
+Quando criado uma nova taxonomia, na tela de manter espécime, como será garantido que as características dessa nova taxonomia
+serão atribuidas de uma maneira correta, para ter uma boa catalogação?
+}
+Ao se tentar cadastrar uma nova espécie, aparecerá uma tela para adição de características e assim finalizar o cadastro.
+
+*Dados da Localização
+ -País; obrigatório.
+ -Estado; obrigatório.
+ -Município; obrigatório.
+ -Localidade; obrigatório, esta composta de:
+   Latitude, longitude, altitude, profundidade, precisão (todos obrigatórios)
+ -Datum;
+ -Massa D’água.
+ -Observações
+
+*Dados relacionados à química
+-
+-
+-
+-
+-
+-
+*Espaço para outros dados
+-
+-
+-
+-
+
+
+O sistema será bastante flexível, exigindo que poucos campos sejam obrigatórios, os campos obrigatórios serão apenas:
+-
+
+O sistema não cadastrará uma espécime que possua todos os seguintes dados iguais:
+Espécie (dados de taxonomia) , Coleta (dados da coleta) e dados da localização, para evitar que acidentalmente
+alguém cadastre uma espécime duas vezes.
+Ao final do cadastro, irá ser exibido todos os dados referentes a espécime cadastrada e solicitar uma
+confirmação ao usuário.
