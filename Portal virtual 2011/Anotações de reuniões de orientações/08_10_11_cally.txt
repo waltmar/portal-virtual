@@ -1,0 +1,17 @@
+Foi definido que o usuário poderá alterar apenas as senha, email e telefone.
+
+Sobre o requisito de manter espécime
+
+Foi discutido se os sub-itens de taxonomia estariam ligados aos itens posteriores ou não. ex: o item de sub-classe estaria ligado com o ordem ou apenas o de classe.
+Para sanar o problema, foi sugerido pelo Guiliano a idéia de usar apenas uma tabela, com o nível em que o item taxonômico está, se ele poderá ser nulo ou não e o id de seu pai.
+
+A reunião prosseguiu com a idéia de um requisito para suporde ao pesquisador no reconhecimento da taxonomia do espécime. 
+
+Foi considerado como um critério importante ao sistema, sendo que este suporte se daria usando os dados previamente cadastrados.
+
+Pois, tendo o problema de se identificar uma matriz, seria interessante uma ferramenta que desse suporte a identificação taxonômica. 
+
+Montrando por exemplo, em cada item taxonômico, uma breve descrição, ou a possibilidade de uma mineração de dados para verificar quais registros se encontram em situações semelhantes aos do cadastro atual. Com a opção de agrupar em uma mesma espécie, ou separar este registro em espécies diferentes. Evitando a duplicação de matrizes no banco de dados.
+
+Foi discutido também a mudança nos cadastros básicos de taxonomia. sendo que apenas o nome do item taxonômico não seria o suficiente para o portal virtual. 
+portanto, o cadastro deveria contar com itens de característica, e uma breve descrição, de cunho didático, sobre o item em questão.
