@@ -4,24 +4,23 @@ import java.io.Serializable;
 import java.util.List;
 import br.com.scbio.interfaces.IController;
 import br.com.scbio.interfaces.IManagedBean;
-import br.com.scbio.interfaces.IPageNavigation;
 
 import br.com.scbio.util.PropertiesLoader;
 
 public abstract class GenericBean<T extends Serializable, oid extends Serializable>
-		implements IManagedBean<T, oid>, IPageNavigation, Serializable {
+		implements IManagedBean<T, oid>,Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long ialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 	private boolean panelRegister;
 	private boolean panelSearch;
-
 	private boolean panelButtons;
-	private List<?> list;
 	protected T objectDomain;
-	private Object comboModel;
+	//atributo usado para receber valores para as lists
+	private String item;
+
 
 	private PropertiesLoader properties;
 
@@ -66,11 +65,7 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 
 	// ------------------//----------------------------------------------------
 
-	public abstract Object getModel();
-
 	public abstract T getDomain();
-
-	public abstract Object loadCombos();
 
 	public abstract IController<T, oid> getIController();
 
@@ -100,13 +95,6 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 		this.panelButtons = panelButtons;
 	}
 
-	public List<?> getList() {
-		return list;
-	}
-
-	public void setList(List<?> list) {
-		this.list = list;
-	}
 
 	public T getObjectDomain() {
 		return objectDomain;
@@ -116,14 +104,6 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 		this.objectDomain = objectDomain;
 	}
 
-	public Object getComboModel() {
-		return comboModel;
-	}
-
-	public void setComboModel(Object comboModel) {
-		this.comboModel = comboModel;
-	}
-
 	public PropertiesLoader getProperties() {
 		return properties;
 	}
@@ -131,5 +111,14 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 	public void setProperties(PropertiesLoader properties) {
 		this.properties = properties;
 	}
+
+	public String getItem() {
+		return item;
+	}
+
+	public void setItem(String item) {
+		this.item = item;
+	}
+	
 
 }
