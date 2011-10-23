@@ -6,6 +6,9 @@
 	xmlns:p="http://primefaces.prime.com.tr/ui"
 	xmlns:in="http://scbio.com.br/facelets">
 
+<ui:param name="bean" value="#{ManagerSpecimens.objectDomain.collect}" />
+<ui:param name="mBean" value="#{ManagerSpecimens}" />
+
 		<h:panelGrid>
 
 			<h:panelGrid columns="3">
@@ -45,9 +48,12 @@
 					address="#{bean.numeroIndividuos}" />
 
 			</h:panelGrid>
-
+			<p:commandButton immediate="true" value="#{msg.adicionar}"
+					id="TESTE1" action="#{ManagerSpecimens.addCollector}"
+					update="contentPanel" />
+					
 			<in:collectortable name="#{msg.coletores}" id="coletores" 
-					address="#{bean.coletor}" idButton="saveColetor" action="action" list="list" valorList="list"/>
+					address="#{ManagerSpecimens.collector.nome}" idButton="saveCollector" action="#{ManagerSpecimens.addCollector}" list="#{ManagerSpecimens.objectDomain.collect.coletores}" valorList="#{object.nome}"/>
 			 
 			<in:obsinput name="#{msg.obs}" id="obsColeta" 
 					address="#{bean.obsColeta}" />

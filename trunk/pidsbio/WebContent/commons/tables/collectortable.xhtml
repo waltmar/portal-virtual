@@ -8,29 +8,28 @@
 	xmlns:p="http://primefaces.prime.com.tr/ui">
 
 	<p:fieldset legend="#{name}">
-	
-		<h:panelGrid columns="1" style="text-align:left;">
 
-			<h:panelGrid columns="2">
-			
-				<p:inputText size="30" id="#{id}" value="#{address}" />
+		<h:panelGrid columns="2" style="text-align:left;">
 
-				<p:commandButton immediate="true" value="#{msg.adicionar}"
-					id="#{idButton}" action="#{action}"
-					update="contentPanel" />
-					
-			</h:panelGrid>
+
+
+			<p:inputText size="30" id="#{id}" value="#{address}" />
+
+			<p:commandButton immediate="true" value="#{msg.adicionar}"
+				id="#{idButton}" action="#{action}" update="contentPanel" />
+
+
 
 			<p:dataTable var="object" value="#{list}">
-			
+
 				<p:column>
 					<h:outputText value="#{valorList}" />
 				</p:column>
-				
+
 			</p:dataTable>
 
 		</h:panelGrid>
 
 	</p:fieldset>
-	
+
 </ui:composition>
