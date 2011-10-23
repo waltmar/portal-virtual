@@ -78,28 +78,12 @@ public class ManagerBasic extends GenericBean<EntityPersist, Serializable>{
 
 
 
-
-	@Override
-	public Object getModel() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-
 	@Override
 	public EntityPersist getDomain() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-
-
-	@Override
-	public Object loadCombos() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 
 	@Override
