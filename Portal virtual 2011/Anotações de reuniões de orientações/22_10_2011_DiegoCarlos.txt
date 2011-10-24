@@ -1,0 +1,15 @@
+Reunião 22/10/2011 - Início - 11:10
+
+A reunião se iniciou com o informe que terá que ser definido os templates para a documentação e que teremos que iniciar o preenchimento dos mesmo, e que para os casos de uso teremos que fazer o:
+- diagrama de atividades;
+- detalhamento do caso de uso;
+- diagrama de caso de uso;
+- especificação de banco de dados;
+- prototipo de interface; Sendo que o de especificação de programa será feito somente para alguns casos de uso, os mais complexo que necessitem de um detalhamento melhor de sua programação.
+Guiliano informou que vai pegar os templates do 3ª ano, dar uma melhorada e verificar o que é realmente necessário e postar na pasta de trabalho para já ser feito o documento de manter usuário. Além disso, verificou-se a necessidade do ínicio da criação do manual de usuário, sendo que o de manter usuário ficou para o José fazê-lo nessa semana.
+O professor ainda informou que estamos com muitas pendências e que tudo que foi feito até agora não é visivél para o usuário e que devemos começar a "mostrar serviço" para o pessoal ver.
+Diego informa que está terminando o tutorial, e que passará novidades por e-mail de todos.
+Ainda sobre os documentos, foi lembrado sobre a categorização de usuário, dividindo a equipe em 2 grupos para confeccionar os casos de usos e documentos já citados como:
+- Grupo 01 - Cally, Diego, Douglas e Jhony para confecção do Manter usuário;
+- Grupo 02 - Tiago, Fernando e José para fazer a categorização do usuário.
+Para um melhor entendimento de como deve ser feito o caso de uso, o professor explicou sobre cenários e como fazer um detalhamento de caso de uso e a diferença entre fluxo de excessão e fluxo alternativo.
