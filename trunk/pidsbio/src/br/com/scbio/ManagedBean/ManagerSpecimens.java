@@ -17,18 +17,17 @@ public class ManagerSpecimens extends GenericBean<Specimen, Long> {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Collector collector;
-	
-	
+	private String name;
+		
 	public ManagerSpecimens(){
 		super();
 	}
 	
-
 	public String addCollector(){
+		Collector c = new Collector();
+		c.setNome(name);
 		Specimen specimen = objectDomain;
-		specimen.getCollect().getColetores().add(collector);
-		collector = new Collector();
+		specimen.getCollect().getColetores().add(c);
 		return null;
 	}
 	
@@ -62,7 +61,6 @@ public class ManagerSpecimens extends GenericBean<Specimen, Long> {
 		
 	}
 
-
 	@Override
 	public Specimen getById(Long id) throws ErrorException {
 		// TODO Auto-generated method stub
@@ -81,15 +79,12 @@ public class ManagerSpecimens extends GenericBean<Specimen, Long> {
 		return null;
 	}
 
-	public Collector getCollector() {
-		return collector;
+	public String getName() {
+		return name;
 	}
 
-	public void setCollector(Collector collector) {
-		this.collector = collector;
+	public void setName(String name) {
+		this.name = name;
 	}
-	
-	
-	
 
 }
