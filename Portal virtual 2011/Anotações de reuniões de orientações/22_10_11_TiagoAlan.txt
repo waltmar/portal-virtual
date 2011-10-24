@@ -1,0 +1,41 @@
+Início =~ 11:10
+Término =~~ 12:00
+
+Nessa reunião os integrantes foram divididos em dois grupos e delegadas tarefas para cada um. Durante a reunião foi explicado
+como irião ser feitas as tarefas e relembradas algumas definições da reunião passada.
+
+Cada grupo deverá fazer a especificação do casoo de uso do caso de uso delegado, tal especificação deverá conter:
+Diagrama de atividade, detalhamento de caso de uso, especificação de banco de dados e protótipo de Interface.
+sendo que o detalhamento de caso de uso é especificar o que eu quero que o sistema faça . 
+É preciso satisfazer as seguintes questões: 1º o que o sistema precisa, o que é o caso de uso 2º Como irá acontecer o caso de uso.
+Os seguintes cenários deve ser especificado: incluir, alterar, excluir, listar. Deve haver os três fluxos: 
+Fluxo princioal
+Fluxo alternativo, que retorna ao fluxo principal
+fluxo de exceção, encerra o programa
+Casos de uso devem ser bem detalhados a níveis de análise.
+
+Foi faldo sobre Especificação de programa (+-progração sem linguagem), que aborda o ponto de vista interno. só para casos
+de usos complexos, como, manter espécime.
+
+
+Foi falado também sobre fazer o manual de usuário. José irá ver como faz um manual do usuário e certamente será ele que o fará
+O Manual do usuário será feito a partir de cada caso de uso.
+Também foi falodo sobre o tutorial que o Diego irá fazer, ele disse que irá mandar dois manuais. Num dos manuais será explicado
+uma das maneiras de iniciar o Spring, ele está decidindo se será por xml ou por uma classe que irá inicializar tudo.
+
+
+
+Foi lembrado que usuário com atividade no sistema não pode ser excluído, mas sim desativado.
+
+
+
+
+Os seguintes membros estavam presente na reunião:
+
+Guiliano
+José
+Fernando
+Cally
+Douglas
+Diego
+Tiago
