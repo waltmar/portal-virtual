@@ -1,0 +1,15 @@
+Guliano pediu:
+	• Diagrama de Atividade
+	• Especificação de Caso de Uso
+	• Especificação de Banco de Dados
+	• Protótipo de Interface
+Guliano explicou as atividades e falou que disponibilizará o diagrama de caso de uso, e os templates de especificação de caso de uso, e os casos de uso.
+Guiliano pediu para alguém ficar responsável pela criação do caso de uso de Mante Usurário. José se dispôs a ficar responsável.
+Diego e Guiliano fizeram uma pequena discussão sobre formas de se inicializar o Spring.
+Guiliano explicou como será o manual, que deve ser voltado ao usuário.
+Diego ficou terminar o tutorial sobre as arquiteturas do projeto e mandar o PDF e documento para todos do grupo.
+Ficou decidido que ira se dividir o manter usuário em vários tipos: Cadastro de Usuário, Cadastro de Categorização. E os Níveis de acesso ficaram como um caso de uso separado.
+Guiliano separou em dois grupos. O grupo 1 ficou responsável pelo caso de Uso de Manter Usuário e o grupo 2 ficou responsável pelo Caso de Uso de categorização.
+Guiliano explicou como dever ser feito o caso de uso, com o uso de cenários para as ações. E deve ser feito detalhamento a nível de Analise e não a nível de programação.
+Grupo 1; Cally, Diego, Douglas e Jhonny
+Grupo 2: Fernando, José e Tiago
