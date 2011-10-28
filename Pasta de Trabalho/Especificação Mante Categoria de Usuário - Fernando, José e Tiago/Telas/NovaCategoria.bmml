@@ -1,0 +1,86 @@
+<mockup version="1.0" skin="sketch" measuredW="939" measuredH="674" mockupW="852" mockupH="674">
+  <controls>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Canvas" x="304" y="229" w="574" h="334" measuredW="100" measuredH="70" zOrder="6" locked="false" isInGroup="-1"/>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::TextInput" x="331" y="311" w="271" h="-1" measuredW="79" measuredH="29" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::TextInput" x="333" y="257" w="51" h="-1" measuredW="54" measuredH="29" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>disabled</state>
+        <text>00001</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="333" y="232" w="-1" h="-1" measuredW="22" measuredH="25" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>disabled</state>
+        <text>ID</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="331" y="296" w="-1" h="-1" measuredW="123" measuredH="25" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Nome%20de%20Categoria</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Button" x="456" y="584" w="-1" h="-1" measuredW="86" measuredH="28" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cadastrar</text>
+        <underline>true</underline>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Button" x="622" y="584" w="-1" h="-1" measuredW="78" measuredH="28" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cancelar</text>
+        <underline>true</underline>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="337" y="362" w="602" h="55" measuredW="81" measuredH="25" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%5B%20%5D%20Tem%20CPF</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::HelpButton" x="866" y="211" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="14" locked="false" isInGroup="-1"/>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="87" y="0" w="827" h="674" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="96" y="147" w="803" h="487" measuredW="200" measuredH="194" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>2</selectedIndex>
+        <text>Cadastro%20de%20Esp%E9cimes%0AManter%20Tabelas%20B%E1sicas%0AManter%20Categoria%20de%20Usu%E1rios%0ARelat%F3rios</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Label" x="392" y="91" w="272" h="19" measuredW="265" measuredH="25" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sistema%20de%20Cataloga%E7%E3o%20da%20Biodiversidade</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Button" x="608" y="165" w="-1" h="-1" measuredW="102" measuredH="28" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <icon>SearchIcon%7Cxsmall</icon>
+        <text>Pesquisar</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Button" x="440" y="165" w="-1" h="-1" measuredW="74" measuredH="28" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10470904</color>
+        <icon>PlusBigIcon%7Cxsmall</icon>
+        <text>Novo</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::Canvas" x="304" y="208" w="595" h="376" measuredW="100" measuredH="70" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::List" x="337" y="408" w="310" h="126" measuredW="100" measuredH="126" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::Label" x="337" y="392" w="-1" h="-1" measuredW="84" measuredH="25" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Observa%E7%F5es</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

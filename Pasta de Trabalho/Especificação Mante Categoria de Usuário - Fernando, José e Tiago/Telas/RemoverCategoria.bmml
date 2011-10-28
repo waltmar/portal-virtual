@@ -33,10 +33,10 @@
         <underline>true</underline>
       </controlProperties>
     </control>
-    <control controlID="12" controlTypeID="com.balsamiq.mockups::DataGrid" x="321" y="314" w="574" h="203" measuredW="577" measuredH="118" zOrder="7" locked="false" isInGroup="-1">
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::DataGrid" x="321" y="314" w="574" h="203" measuredW="592" measuredH="118" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
-        <text>Categoria%2C%20ID%2C%20Tem%20CPF%2C%20Observa%E7%E3o%2C%20%20Alterar%20%20%20%20%0AAluno%20de%20Universidade%2C%20001%2C%20Sim%2C%20-%0AAluno%20do%20Ens.%20Fundamental%2C%20002%2C%20Sim%2C%20Para%20projetos%20de%20Pro-Jovem%0AAluno%20do%20Ens.%20Medio%2C%20003%2C%20False%2C%20-</text>
+        <text>Categoria%2C%20ID%2C%20Tem%20CPF%2C%20Observa%E7%E3o%2C%20%20Alterar%20%20%20%20%0AAluno%20de%20Universidade%2C%20001%2C%20Sim%2C%20-%0AAluno%20do%20Ens.%20Fundamental%2C%20002%2C%20Sim%2C%20Vindos%20do%20projeto%20%22O%20Cerrado%22%0AAluno%20do%20Ens.%20Medio%2C%20003%2C%20False%2C%20-</text>
         <value>0</value>
         <verticalScrollbar>true</verticalScrollbar>
       </controlProperties>
@@ -101,5 +101,50 @@
       </controlProperties>
     </control>
     <control controlID="32" controlTypeID="com.balsamiq.mockups::HelpButton" x="866" y="211" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="17" locked="false" isInGroup="-1"/>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::Canvas" x="98" y="94" w="811" h="568" measuredW="100" measuredH="70" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.5</backgroundAlpha>
+        <color>0</color>
+      </controlProperties>
+    </control>
+    <control controlID="34" controlTypeID="__group__" x="387" y="296" w="327" h="146" measuredW="327" measuredH="146" zOrder="19" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="0" w="327" h="146" measuredW="327" measuredH="146" zOrder="0" locked="false" isInGroup="34">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="327" h="146" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="0">
+              <controlProperties>
+                <bottomheight>4</bottomheight>
+                <text>Aviso%21</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="29" y="40" w="-1" h="-1" measuredW="273" measuredH="29" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <size>16</size>
+                <text>Tem%20certeza%20que%20deseja%20excluir%20o%20</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="23" y="61" w="-1" h="-1" measuredW="280" measuredH="29" zOrder="2" locked="false" isInGroup="0">
+              <controlProperties>
+                <size>16</size>
+                <text>a%20categoria%20%22Aluno%20do%20Ens.%20Medio%22%3F</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="50" y="99" w="-1" h="-1" measuredW="71" measuredH="28" zOrder="3" locked="false" isInGroup="0">
+              <controlProperties>
+                <icon>ThumbsUpIcon%7Cxsmall</icon>
+                <text>SIM</text>
+              </controlProperties>
+            </control>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="201" y="99" w="-1" h="-1" measuredW="74" measuredH="28" zOrder="4" locked="false" isInGroup="0">
+              <controlProperties>
+                <icon>ThumbsDownIcon%7Cxsmall</icon>
+                <text>N%C3O</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::HelpButton" x="304" y="5" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="1" locked="false" isInGroup="34"/>
+      </groupChildrenDescriptors>
+    </control>
   </controls>
 </mockup>
