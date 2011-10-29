@@ -1,0 +1,12 @@
+A reunião foi iniciada definindo os itens do caso de uso que deveriam ser entregues:
+diagrama de atividades
+detalhamento de caso de uso
+diagrama de caso de uso
+especificação de banco de dados
+protótipo da interface
+
+Foi definido que haveria 2 grupos, para o caso de uso de manter usuarios e o de controle de acesso.
+foi dada um breve explicação sobre o conteúdo dos documentos e o organização dos flúxos de caso de uso.
+
+Foi relembrado que o usuário pode ser excluido, caso não haja nenhuma ação no sistema, e desativado para os demais casos.
+
