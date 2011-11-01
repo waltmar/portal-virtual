@@ -1,0 +1,40 @@
+Início =~ 11:30
+Fim: =~ 13:45
+
+Reunião realizada via Skype
+
+A Reunião foi realizada, via audioconferência. Foi visto as tarefas de cada um.
+Como na reunião passada houve a divisão de dois grupos para a elaboração das especificação de caso 
+de caso de uso e alguns outros itens abordados anteriormente.
+Foi visto as tarefas dos dois grupos, reforçado algumas definições e adicionando alguns padrões:
+
+*O controle de acesso é um caso de uso distinto de cadastro de usuário
+*Primeiro cadastra o usuário depois o controle de acesso
+*Nome nível de acesso não é o mais adequado porque sugere hierarquia, é melhor controle de acesso.
+*Categorização e controle de permissão são distintos
+*Ao se alterar o controle de permissao do usuário, ela será alterado do usuário e não do caso de uso.
+*Ao alterar CPF, se o tornar obrigatório, e existe usuário sem CPF, o usuário
+  ficará inativo. Haverá um caso de uso "Autenticar Usuário", para fazer isso
+  barrando os usuários que não CPF no banco de dados. Pode aparecer uma tela
+  pra ele digitar o CPF.
+
+Foi sugrido um padrão na hora de fazer os protótipos, esta padronização está sendo pensada, mas
+fica decidico o uso de guia (abas), por exemplo em cadastrar um novo usuário haverá uma guia para
+controle de acesso, categoria, etc.
+
+Durante a reunião foram esclarecidas diversas dúvidas, erros corrigidos, explicações referentes
+a especificação de Caso de Uso, espicificação de banco de dados etc.
+
+ 
+
+Presentes:
+
+Cally
+Emillie
+José
+Diego
+Fernando
+Guiliano
+
+Presente em parte da reunião, por motivos de técnicos:
+Douglas
