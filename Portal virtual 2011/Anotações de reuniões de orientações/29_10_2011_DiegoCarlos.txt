@@ -1,0 +1,21 @@
+Reunião feita pelo Skype
+
+Foi iniciada com o Diego falando o que foi feito durante a semana (criação de tutorial apenas)
+depois o cally falou que o usuário está pronto.
+Guiliano pede para todos abrirem o arquivo e vai corrigindo o que estava errado.
+
+Foi falado sobre a categorização e o niveis de acesso, abrindo um questionamento sobre colocar na mesma tela o níveis de acesso. 
+E ficou definido que terá uma aba cadastro, uma para pesquisa, e no do usuário haverá uma para o controle de acesso. as 2 primeiras tem em todas. Se houver necessidade para outros casos de uso serão cirado novas abas.
+
+O Guiliano falou sobre a especificação do caso de uso, sobre cenário e o fluxo principal e que quando se especifica o fluxo principal de um cenário deve especificar para tudo dar certo e que há 2 tipos de cenário editar no caso de uso manter usuário, para administrador e usuário normal.
+
+Foi pedido alterações no requisito de usuário:
+falar sobre como cadastrar o usuário, seleção de categoria e tipo de permissão que deve haver a associação a um "perfil" pré-definido, podendo alterar permissões para cada usuário individualmente.
+
+Ficaram de ser modificados no Manter usuário: controle de usuário vai ser controlado pelo controle de acesso; deve acrescentar o campo CPF; a obrigatóriedade do cpf será verificado pela categoria do usuário; quando for editar o usuário tem que checar se a categoria está com cpf obrigatório ou não.
+
+Guiliano corrigiu a especificação de banco de dados de categoria, que deve haver apenas 1 por caso de uso e que a tabela de campos da tela deve haver uma por tela.
+
+Ficou definido também que ao autenticar o usuário, se ele não tem cpf e a categoria o obriga a ter, vai abrir uma janela para digitar a cpf e fazer as validações
+
+Deve haver uma padronização de guias no protótipo.
