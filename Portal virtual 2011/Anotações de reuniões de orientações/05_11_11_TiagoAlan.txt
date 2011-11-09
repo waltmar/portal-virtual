@@ -1,0 +1,10 @@
+Inicio =~ 11:10
+Término =~ 12:43
+
+Visto nas atividades atribuídas, comentários correções de erros.
+Todos os dois casos de uso foi revisto e feito comentário sobre cada um deles.
+Também foi discutido com o responsável pela arquitetura do projeto, sobre a arquitetura.
+Foi pedido que se corrigisse os casos de uso e enviasse-os por email para postagem na pasta oficial
+do projeto.
+Foi falado que softwares em geral sofrem muita alteração. Portanto deve se pensar em referências,
+de maneira a aproveitar código e documentação.
