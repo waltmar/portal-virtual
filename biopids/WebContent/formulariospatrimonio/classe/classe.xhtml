@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:in="http://cdlanapolis.com.br/facelets">
+
+<ui:param name="mBean" value="#{msg.BeanClasse}" />
+
+<ui:composition
+	template="/templates/common/paineis/painelsembotoes.xhtml">
+	
+	<ui:param name="nomePainel" value="#{msg.cadastroClasse}" />
+	
+	
+	<ui:define name="formularioCadastro">
+		<center>
+			<in:crud id="classe" name="#{msg.classe}" address="#{BeanClasse.objectModel.nome}" />
+		</center>
+	</ui:define>
+</ui:composition>
+
+</html>

@@ -1,0 +1,38 @@
+@CHARSET "ISO-8859-1";
+
+em {
+	font-family: 'Arial';
+}
+
+.ui-widget  {
+	font-size: 12px !important;
+	
+}
+
+.ui-widget input{
+	text-transform: uppercase;
+}
+
+.inativo{
+		color: red;
+		font-weight: bold;
+	}
+
+.em_andamento{
+		color: green;
+		font-weight: bold;
+	}
+	
+.concluido{
+		color: blue;
+		font-weight: bold;
+	}
+	
+.tablefont{
+	font-size:11px;
+	}
+	
+.ui-wizard-step-title{
+	font-size:15px;
+	font-weight: bold;
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#formularios#pessoaFisica#index.xhtml"
+  PATH="/formularios/pessoaFisica/index.xhtml" SHAPE="48,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#formularios#pessoaFisica#index.xhtml:0"
+   NAME="item" PATH="/formularios/pessoaFisica/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="cheque::#formularios#debito#cheque#index.xhtml" NAME="output"
+    PATH="/formularios/debito/cheque/index.xhtml"
+    TARGET="rules:#formularios#debito#cheque#index.xhtml" TITLE="cheque" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#formularios#pessoaFisica#index.xhtml:1"
+   NAME="item1" PATH="/formularios/pessoaFisica/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="crediario::#formularios#debito#crediario#index.xhtml"
+    NAME="output" PATH="/formularios/debito/crediario/index.xhtml"
+    TARGET="rules:#formularios#debito#crediario#index.xhtml"
+    TITLE="crediario" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#formularios#debito#cheque#index.xhtml"
+  PATH="/formularios/debito/cheque/index.xhtml" SHAPE="272,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#formularios#debito#cheque#index.xhtml:0"
+   NAME="item" PATH="/formularios/debito/cheque/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="pessoaFisica::#formularios#pessoaFisica#index.xhtml"
+    NAME="output" PATH="/formularios/pessoaFisica/index.xhtml"
+    TARGET="rules:#formularios#pessoaFisica#index.xhtml"
+    TITLE="pessoaFisica" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#formularios#debito#cheque#index.xhtml:1"
+   NAME="item1" PATH="/formularios/debito/cheque/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="pessoaJuridica::#formularios#pessoaJuridica#index.xhtml"
+    NAME="output" PATH="/formularios/pessoaJuridica/index.xhtml"
+    TARGET="rules:#formularios#pessoaJuridica#index.xhtml"
+    TITLE="pessoaJuridica" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#formularios#debito#crediario#index.xhtml"
+  PATH="/formularios/debito/crediario/index.xhtml" SHAPE="720,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#formularios#debito#crediario#index.xhtml:0"
+   NAME="item" PATH="/formularios/debito/crediario/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="pessoaFisica::#formularios#pessoaFisica#index.xhtml"
+    NAME="output" PATH="/formularios/pessoaFisica/index.xhtml"
+    TARGET="rules:#formularios#pessoaFisica#index.xhtml"
+    TITLE="pessoaFisica" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#formularios#debito#crediario#index.xhtml:1"
+   NAME="item1" PATH="/formularios/debito/crediario/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="pessoaJuridica::#formularios#pessoaJuridica#index.xhtml"
+    NAME="output" PATH="/formularios/pessoaJuridica/index.xhtml"
+    TARGET="rules:#formularios#pessoaJuridica#index.xhtml"
+    TITLE="pessoaJuridica" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#formularios#pessoaJuridica#index.xhtml"
+  PATH="/formularios/pessoaJuridica/index.xhtml" SHAPE="496,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#formularios#pessoaJuridica#index.xhtml:0"
+   NAME="item" PATH="/formularios/pessoaJuridica/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="cheque::#formularios#debito#cheque#index.xhtml" NAME="output"
+    PATH="/formularios/debito/cheque/index.xhtml"
+    TARGET="rules:#formularios#debito#cheque#index.xhtml" TITLE="cheque" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#formularios#pessoaJuridica#index.xhtml:1"
+   NAME="item1" PATH="/formularios/pessoaJuridica/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="crediario::#formularios#debito#crediario#index.xhtml"
+    NAME="output" PATH="/formularios/debito/crediario/index.xhtml"
+    TARGET="rules:#formularios#debito#crediario#index.xhtml"
+    TITLE="crediario" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#login#login.xhtml" PATH="/login/login.xhtml"
+  SHAPE="80,176,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#login#login.xhtml:0" NAME="item"
+   PATH="/login/login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="login::#templates#template.xhtml"
+    NAME="output" PATH="/templates/template.xhtml"
+    TARGET="rules:#templates#template.xhtml" TITLE="login" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#templates#template.xhtml"
+  PATH="/templates/template.xhtml" SHAPE="272,176,50,25"
+  model-entity="JSFProcessGroup" persistent="true">
+  <PROCESS-ITEM ID="rules:#templates#template.xhtml:0" NAME="item"
+   PATH="/templates/template.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="login::#templates#template.xhtml"
+    NAME="output" PATH="/templates/template.xhtml"
+    TARGET="rules:#templates#template.xhtml" TITLE="login" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

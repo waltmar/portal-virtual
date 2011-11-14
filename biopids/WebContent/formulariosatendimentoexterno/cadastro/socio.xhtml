@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+	<p:panel style="width: 530px;" header="#{msg2.cadastroSocio}">
+		<h:panelGrid columns="1">
+
+			<h:panelGrid columns="3">
+
+				<h:panelGrid columns="2">
+					<h:panelGrid columns="1" style="text-align:left;">
+						<h:outputText value="#{msg2.cpf}" />
+						<p:inputMask style="#{styleRequired}" size="15" id="cpfSocio"
+							value="#{localSocio.cpf}" mask="999.999.999-99" required="true"
+							requiredMessage="#{msg2.obr}">
+							<p:ajax event="blur"
+								listener="#{mBean.validate('CPFValidator', localSocio.cpf, 'socioModel.cpf')}"
+								update="mensagem, cpf" />
+						</p:inputMask>
+						<p:message for="cpf" display="text" />
+					</h:panelGrid>
+				</h:panelGrid>
+
+				<h:panelGrid>
+					<h:outputLabel for="nomeSocio" value="#{msg2.nomeSocio} " />
+					<p:inputText size="40" id="nomeSocio"
+						value="#{localSocio.nomeSocio}" />
+					<p:message for="nomeSocio" display="text" />
+				</h:panelGrid>
+
+				<h:panelGrid>
+					<h:outputText value="#{msg2.dataAniversario}#{msg2.obr} " />
+					<p:inputMask size="10" id="dataAniversario"
+						value="#{localSocio.dataAniversario}" mask="99/99/9999">
+						<p:ajax event="blur"
+							listener="#{BeanPessoaFisica.validate('DateValidator', localSocio.dataAniversario, 'socio.dataAniversario')}"
+							update="mensagem, dataAniversario"></p:ajax>
+					</p:inputMask>
+					<p:message for="dataAniversario" display="text" />
+				</h:panelGrid>
+
+			</h:panelGrid>
+
+
+
+			<h:panelGrid columns="4">
+
+				<h:panelGrid columns="1" style="text-align:left;">
+					<h:outputText value="#{msg2.cep}#{msg2.obr}  " />
+					<p:inputMask style="#{styleRequired}" size="9" id="cepSocio"
+						value="#{localFiliacao.cep}" mask="99999-999" required="true"
+						requiredMessage="#{msg2.obr}" />
+					<p:message for="cepSocio" display="text" />
+				</h:panelGrid>
+
+				<h:panelGrid columns="1" style="text-align:left;">
+					<h:outputLabel for="enderecoSocio"
+						value="#{msg2.endereco}#{msg2.obr} " />
+					<p:inputText style="#{styleRequired}" size="25" id="enderecoSocio"
+						value="#{localFiliacao.endereco}" required="true"
+						requiredMessage="#{msg2.obr}" />
+					<p:message for="enderecoSocio" display="text" />
+				</h:panelGrid>
+
+
+				<h:panelGrid style="text-align:left;">
+					<h:outputLabel for="complementoSocio" value="#{msg2.complemento} " />
+					<p:inputText size="25" id="complementoSocio"
+						value="#{localFiliacao.complemento}" />
+				</h:panelGrid>
+				<h:panelGrid>
+					<h:outputLabel for="numeroSocio" value="#{msg2.numero} " />
+					<p:inputText size="2" id="numeroSocio"
+						value="#{localFiliacao.numero}" />
+				</h:panelGrid>
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="3">
+
+				<h:panelGrid columns="1" style="text-align:left;">
+					<h:outputLabel for="bairroSocio" value="#{msg2.bairro}#{msg2.obr} " />
+					<p:inputText style="#{styleRequired}" size="25" id="bairroSocio"
+						value="#{localFiliacao.bairro}" required="true"
+						requiredMessage="#{msg2.obr}" />
+					<p:message for="bairroSocio" display="text" />
+				</h:panelGrid>
+
+				<h:panelGrid columns="1" style="text-align:left;">
+					<h:outputLabel for="cidadeSocio" value="#{msg2.cidade}#{msg2.obr} " />
+					<p:inputText style="#{styleRequired}" size="25" id="cidadeSocio"
+						value="#{localFiliacao.cidade}" required="true"
+						requiredMessage="#{msg2.obr}" />
+					<p:message for="cidadeSocio" display="text" />
+				</h:panelGrid>
+
+				<h:panelGrid columns="1" style="text-align:left;">
+					<h:outputText value="#{msg2.estado}#{msg2.obr} " />
+					<h:selectOneMenu style="#{styleRequired}" id="estadoSocio"
+						value="#{localFiliacao.estado}" required="true"
+						requiredMessage="#{msg2.obr}">
+						<f:selectItem itemLabel="#{msg2.selecione}" itemValue=""
+							noSelectionOption="true" />
+						<f:selectItems value="#{combos.estados}" />
+					</h:selectOneMenu>
+					<p:message for="estadoSocio" display="text" />
+				</h:panelGrid>
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="1" style="text-align:left;">
+				<h:outputText value="#{msg2.telefones} " />
+
+				<h:panelGrid columns="3" style="text-align:left;">
+
+					<p:inputMask size="2" id="ddd1Socio" value="#{localSocio.ddd1}"
+						mask="(99)" style="#{styleRequired}" required="true" />
+					<p:inputMask size="13" id="telefone1Socio"
+						value="#{localSocio.telefone1}" mask="9999-9999"
+						style="#{styleRequired}" required="true" />
+					<p:message for="telefone1Socio" display="text" />
+
+					<p:inputMask size="2" id="ddd2Socio" value="#{localSocio.ddd2}"
+						mask="(99)" />
+					<p:inputMask size="13" id="telefone2Socio"
+						value="#{localSocio.telefone2}" mask="9999-9999" />
+				</h:panelGrid>
+			</h:panelGrid>
+
+
+			<h:panelGrid>
+				<p:commandButton immediate="true"
+					style="width: 100px; height: 40px;" value="#{msg2.adicionar}"
+					id="adicionarSocio" action="#{mBean.addSocio}"
+					update="contentPanel" />
+			</h:panelGrid>
+
+			<p:outputPanel id="sociosTable">
+				<p:dataTable value="#{mBean.socios}" var="object">
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="nomeSocio" />
+						</f:facet>
+						<h:outputText value="#{object.nomeSocio}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="cpf" />
+						</f:facet>
+						<h:outputText value="#{object.cpf}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="cidade" />
+						</f:facet>
+						<h:outputText value="#{object.cidade}" />
+					</p:column>
+
+					<p:column>
+
+						<p:commandLink value="Remove" update="contentPanel:socios"
+							process="@this">
+							<p:collector value="#{object}" removeFrom="#{localSocio}" />
+						</p:commandLink>
+					</p:column>
+
+				</p:dataTable>
+			</p:outputPanel>
+
+
+		</h:panelGrid>
+	</p:panel>
+	<h:panelGrid style="margin-left: auto; margin-right: auto;">
+		<p:commandButton immediate="true" style="width: 100px; height: 40px;"
+			value="#{msg2.salvar}" id="saveSocio" action="#{mBean.save}"
+			update="contentPanel" />
+
+	</h:panelGrid>
+</ui:composition>

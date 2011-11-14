@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:in="http://scbio.com.br/facelets"
+	template="/templates/template.xhtml">
+
+<ui:param name="beanCollect" value="#{ManagerSpecimen.objectModel.collect}" />
+<ui:param name="mBean" value="#{ManagerSpecimen}" />
+
+	<ui:define name="area">
+
+		<p:wizard nextLabel="#{msg.proximo}" backLabel="#{msg.anterior}">
+
+			<p:tab id="tabColeta" title="#{msg.coleta}">
+
+				<p:fieldset legend="#{msg.coletores}" id="collectorBase">
+
+					<h:panelGrid columns="2" style="text-align:left;">
+
+						<p:inputText size="30" value="#{mBean.collector.nome}" />
+
+						<p:commandButton value="#{msg.adicionar}" id="coletores"
+							action="#{ManagerSpecimen.newCollector}"
+							update="contentPanel,  tabColeta">
+							<p:collector value="#{mBean.collector}"
+								addTo="#{beanCollect.coletores}" />
+						</p:commandButton>
+
+						<p:outputPanel id="tableCollector">
+							<p:dataTable var="object" value="#{beanCollect.coletores}">
+								<p:column>
+									<f:facet name="header">  
+                 				 #{msg.coletores}
+           					</f:facet>
+									<h:outputText value="#{object.nome}" />
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="Operation" />
+									</f:facet>
+
+									<p:commandLink value="Remove" update="form:collectorBase"
+										process="@this">
+										<p:collector value="#{object}"
+											removeFrom="#{beanCollect.coletores}" />
+									</p:commandLink>
+
+
+								</p:column>
+
+							</p:dataTable>
+						</p:outputPanel>
+
+					</h:panelGrid>
+
+				</p:fieldset>
+			</p:tab>
+		</p:wizard>
+
+	</ui:define>
+
+</ui:composition>
+

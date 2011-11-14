@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui" >
+    
+    <h:head>
+    </h:head>
+
+    <h:body>
+
+
+        <h:form>  
+
+            <p:dataTable var="tabela" value="#{TesteBean.usuarios}" paginator="true" rows="10"  
+                         selection="#{TesteBean.usuario}" selectionMode="single"  
+                         onRowSelectUpdate="display" onRowSelectComplete="carDialog.show()">  
+
+                <f:facet name="header">  
+                    Lista de Usuários  
+                </f:facet>  
+
+                <p:column sortBy="#{usuario.empresa}" filterBy="#{usuario.empresa}">  
+                    <f:facet name="header">  
+                        <h:outputText value="Empresa" />  
+                    </f:facet>  
+                    <h:outputText value="#{usuario.empresa}" />  
+                </p:column>  
+
+                <p:column sortBy="#{usuario.cpf}" filterBy="#{usuario.cpf}">  
+                    <f:facet name="header">  
+                        <h:outputText value="CPF" />  
+                    </f:facet>  
+                    <h:outputText value="#{usuario.cpf}" />  
+                </p:column>  
+
+                <p:column sortBy="#{usuario.nome}" filterBy="#{usuario.nome}">  
+                    <f:facet name="header">  
+                        <h:outputText value="Nome" />  
+                    </f:facet>  
+                    <h:outputText value="#{usuario.nome}" />  
+                </p:column>  
+
+                <p:column sortBy="#{usuario.email}" filterBy="#{usuario.email}">  
+                    <f:facet name="header">  
+                        <h:outputText value="Email" />  
+                    </f:facet>  
+                    <h:outputText value="#{usuario.email}" />  
+                </p:column>  
+
+            </p:dataTable>  
+
+            <p:dialog header="Car Detail" widgetVar="carDialog" resizable="false"  
+                      width="200" showEffect="explode" hideEffect="explode">  
+
+                <h:panelGrid id="display" columns="2" cellpadding="4">  
+
+                    <f:facet name="header">  
+                        <p:graphicImage value="/images/cars/#{tableBean.selectedCar.manufacturer}.jpg"/>  
+                    </f:facet>  
+
+                    <h:outputText value="Model:" />  
+                    <h:outputText value="#{tableBean.selectedCar.model}" />  
+
+                    <h:outputText value="Year:" />  
+                    <h:outputText value="#{tableBean.selectedCar.year}" />  
+
+                    <h:outputText value="Manufacturer:" />  
+                    <h:outputText value="#{tableBean.selectedCar.manufacturer}" />  
+
+                    <h:outputText value="Color:" />  
+                    <h:outputText value="#{tableBean.selectedCar.color}" />  
+                </h:panelGrid>  
+            </p:dialog>  
+
+        </h:form>  
+    </h:body>
+</html>

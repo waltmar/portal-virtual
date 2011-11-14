@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+
+
+
+<ui:composition template="/templates/template.xhtml">
+
+
+	<ui:define name="area">
+
+		<p:tabView>
+			<p:tab title="#{msg.coleta}">
+				<ui:insert name="coleta" />
+			</p:tab>
+
+			<p:tab title="#{msg.geografia}">
+				<ui:insert name="geografia" />
+			</p:tab>
+
+			<p:tab title="#{msg.taxonomia}">
+				<ui:insert name="taxonomia" />
+			</p:tab>
+
+		</p:tabView>
+
+		<div style="width: auto; right: auto;">
+
+
+			<p:dialog header="#{mBean.headerDialog}" widgetVar="opcaoDialog"
+				rendered="#{mBean.panelDialog}" modal="true" showEffect="slide"
+				width="350" height="150">
+				<center>
+					<h:panelGrid columns="2">
+						<h:graphicImage rendered="#{mBean.imageDialog}"
+							url="/imagens/1317654562_question-frame_blue.png" />
+						<h:panelGrid columns="1">
+
+							<h:outputText value="#{mBean.textDialog}" />
+
+							<h:panelGrid columns="2"
+								style="margin-left: auto; margin-right: auto;">
+								<h:commandButton value="#{mBean.buttonDialogMessageOk}"
+									rendered="#{mBean.buttonDialogOk}"
+									action="#{mBean.actionDialogOk}"
+									update="contentPanel, mensagem" immediate="true" />
+								<h:commandButton value="#{mBean.buttonDialogMessageCancel}"
+									rendered="#{mBean.buttonDialogCancel}"
+									action="#{mBean.actionDialogCancel}"
+									update="contentPanel, mensagem" immediate="true" />
+							</h:panelGrid>
+						</h:panelGrid>
+					</h:panelGrid>
+				</center>
+			</p:dialog>
+		</div>
+
+
+	</ui:define>
+
+</ui:composition>
+</html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<f:loadBundle var="msg"
+	basename="br.com.biopids.language.pt_br" />
+<f:loadBundle var="msg2"
+	basename="br.com.biopids.language.pt_br_atendimento_externo" />
+<f:loadBundle var="parametros"
+	basename="br.com.biopids.parametros.parametros" />
+<ui:param name="path"
+	value="#{facesContext.externalContext.request.contextPath}" />
+<ui:param name="styleRequired" value="background-color:  #e2e9ee;" />
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="#{path}/css/cssgeral2.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title><ui:insert name="titulo">
+			<h:outputText value="#{msg.titulo_padrao}" />
+		</ui:insert>
+	</title>
+	<script language="javascript" src="#{path}/js/script.js"></script>
+</h:head>
+<h:body style="background-position: 50% 0%;background-repeat: no-repeat">
+	<p:dialog header="#{msg.login}" visible="true" closable="false"
+		draggable="false" resizable="false" width="420">
+		<center> <h:outputText value="#{msg.usuarioSenhaIncorretos}"
+			rendered="#{param.erro}" style="color: darkred" /> </center>
+
+		<form method="post" action="/biopids/j_spring_security_check">
+			<center> <h:panelGrid columns="2">
+				<h:graphicImage url="/imagens/1315499724_login.png" />
+
+				<h:panelGrid columns="2"
+					style="margin-left: auto;margin-right: auto;">
+
+					<h:outputText for="j_username" value="#{msg.login}" />
+					<h:inputText id="j_username" required="true" />
+
+					<h:outputText for="j_password" value="#{msg.senha}" />
+					<h:inputSecret id="j_password" required="true" />
+
+
+				</h:panelGrid>
+			</h:panelGrid> <h:commandButton value="#{msg.entrar}" /> </center>
+		</form>
+	</p:dialog>
+</h:body>
+</html>

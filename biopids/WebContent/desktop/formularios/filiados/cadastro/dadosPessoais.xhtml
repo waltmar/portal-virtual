@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+	<ui:param name="enderecoPessoal" value="#{BeanPessoaFisica.objectModel.dadosPessoais}" />
+	
+		<p:panel id="panel1">
+			<h:panelGrid columns="5" style="text-align:left;">
+				<h:outputText value="#{msg.cpf}#{msg.obr} " />
+				<p:inputMask style="#{styleRequired}" size="15" id="cpf" value="#{enderecoPessoal.cpf}"
+					mask="999.999.999-99" required="true" requiredMessage="#{msg.obr}">
+					<p:ajax event="blur" listener="#{BeanPessoaFisica.validate('CPFValidator', enderecoPessoal.cpf, 'dadosPessoais.cpf')}" update="mensagem, cpf"/>
+				</p:inputMask>
+				<p:message for="cpf" display="text"/>
+				<h:outputText  value="#{msg.rg} " />
+				<p:inputText size="7" id="rg" value="#{enderecoPessoal.rg}" />
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="3" style="text-align:left;">
+
+				<h:outputLabel for="nome" value="#{msg.nome}#{msg.obr} "/>
+				<p:inputText style="#{styleRequired}" size="49" id="nome" value="#{enderecoPessoal.nome}"
+					required="true" requiredMessage="#{msg.obr}"/>
+					<p:message for="nome" display="text" />
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="6">
+
+				<h:outputText value="#{msg.dataNascimento}#{msg.obr} " />
+				<p:inputMask style="#{styleRequired}" size="10" id="dataNascimento"
+					value="#{enderecoPessoal.dataNascimento}" mask="99/99/9999" required="true" requiredMessage="#{msg.obr}">
+					<p:ajax event="blur" listener="#{BeanPessoaFisica.validate('DateValidator', enderecoPessoal.dataNascimento, 'dadosPessoais.dataNascimento')}" update="mensagem, dataNascimento"></p:ajax>
+					</p:inputMask>
+				<p:message for="dataNascimento" display="text"/>
+				<h:outputText value="#{msg.sexo}#{msg.obr} " />
+				<h:selectOneMenu style="#{styleRequired}" id="sexo" value="#{enderecoPessoal.sexo}" required="true"  requiredMessage="#{msg.obr}">
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue="" noSelectionOption="true"  />
+					<f:selectItems value="#{combos.sexos}" />
+				</h:selectOneMenu>
+				<p:message for="sexo" display="text" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="4" style="text-align:left;">
+
+
+				<h:outputLabel for="nacionalidade" value="#{msg.nacionalidade} " />
+				<h:selectOneMenu id="nacionalidade"
+					value="#{enderecoPessoal.nacionalidade}">
+
+					<f:selectItems
+						value="#{combos.nacionalidades}" />
+				</h:selectOneMenu>
+				<h:outputText value="#{msg.naturalidade} " />
+				<h:selectOneMenu id="naturalidade"
+					value="#{enderecoPessoal.naturalidade}">
+
+					<f:selectItems value="#{combos.estados}" />
+				</h:selectOneMenu>
+
+			</h:panelGrid>
+			<h:panelGrid columns="2" style="text-align:left;">
+
+				<h:outputLabel for="cidadeNascimento" value="#{msg.cidadeNascimento} " />
+				<p:inputText size="30" id="cidadeNascimento" value="#{enderecoPessoal.cidadeNascimento}"/>
+				
+			</h:panelGrid>
+
+			<h:panelGrid columns="2" style="text-align:left;">
+
+				<h:outputLabel for="pai" value="#{msg.pai} " />
+				<p:inputText size="52" id="pai" value="#{enderecoPessoal.pai}"/>
+
+				<h:outputLabel for="mae" value="#{msg.mae} " />
+				<p:inputText size="52" id="mae" value="#{enderecoPessoal.mae}"/>
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="2" style="text-align:left;">
+
+				<h:outputText value="#{msg.escolaridade} " />
+				<h:selectOneMenu id="escolaridade"
+					value="#{enderecoPessoal.escolaridade}">
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue="" noSelectionOption="true"/>
+					<f:selectItems
+						value="#{combos.escolaridades}" />
+				</h:selectOneMenu>
+
+				<h:outputText value="#{msg.estadoCivil} " />
+				<h:selectOneMenu id="estadoCivil"
+					value="#{enderecoPessoal.estadoCivil}">
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue="" noSelectionOption="true"/>
+					<f:selectItems
+						value="#{combos.estadosCivis}" />
+				</h:selectOneMenu>
+			</h:panelGrid>
+			<h:panelGrid columns="2" style="text-align:left;">
+				<h:outputLabel for="conjuge" value="#{msg.conjuge}" />
+				<p:inputText size="44" id="conjuge"
+					value="#{enderecoPessoal.conjuge}"/>
+
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="1" style="text-align:left;">
+				<h:outputLabel for="obs" value="#{msg.obs} " />
+			</h:panelGrid>
+			<h:panelGrid columns="2" style="text-align:left;">
+				<p:inputTextarea id="obs" value="#{PessoaFisicaBean}"
+					style="width:280px;height:80px;" effectDuration="400" />
+				<p:commandButton value="#{msg.addContato}"
+					 onclick="contato.show();" type="button"/>
+				<p:commandButton value="#{msg.addContato}"
+					type="button" onclick="contato.show()" />
+			</h:panelGrid>
+
+
+
+		</p:panel>
+	
+		<p:dialog header="Contatos" widgetVar="contato"  
+			modal="true" showEffect="slide" >
+
+			<ui:include src="/formularios/pessoaFisica/cadastro/contato.xhtml" />
+
+		</p:dialog>
+
+</ui:composition>
