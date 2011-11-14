@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:in="http://biopids.com.br/facelets">
+
+<ui:composition
+	template="/templates/common/paineis/painelcadastro.xhtml">
+
+	<ui:param name="model" value="#{BeanUsuario.objectModel}" />
+
+	<ui:define name="formularioCadastro">
+		<h:panelGrid
+			style="margin-right: auto; margin-left: auto; text-align: left;"
+			columns="3">
+
+			<h:outputText value="#{msg.cpf}#{msg.obr} " />
+			<p:inputMask size="15" id="cpf" value="#{model.cpf}"
+				mask="999.999.999-99" style="#{styleRequired}" required="true"
+				requiredMessage="#{msg.obr}">
+				<p:ajax event="blur"
+					listener="#{BeanUsuario.validate('CPFValidator', model.cpf, 'cpf')}"
+					update="mensagem, cpf" />
+			</p:inputMask>
+			<p:message for="cpf" display="text" />
+
+			<h:outputText value="#{msg.nome}" />
+			<p:inputText size="49" id="nome" value="#{model.nome}"
+				required="true" requiredMessage="#{msg.obr}">
+				<p:ajax event="blur" update="mensagem" />
+			</p:inputText>
+			<p:message for="nome" display="text" />
+
+			<h:outputLabel for="email" value="#{msg.email} " />
+			<p:inputText size="49" id="email" value="#{model.email}"
+				required="true" requiredMessage="#{msg.obr}"/>
+
+			<p:message for="email" display="text" />
+
+		</h:panelGrid>
+
+	</ui:define>
+</ui:composition>
+</html>

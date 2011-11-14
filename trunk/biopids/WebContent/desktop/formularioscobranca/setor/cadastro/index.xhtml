@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	template="/templates/common/paineis/painelcadastro.xhtml">
+	<ui:define name="formularioCadastro">
+
+		<h:panelGrid columns="3" style="text-align:left;">
+
+			<h:outputLabel for="setor" value="#{msg.setor}#{msg.obr} " />
+			<p:inputText style="#{styleRequired}" size="49" id="setor"
+				value="#{endereco.setor}" required="true"
+				requiredMessage="#{msg.obr}" />
+			<p:message for="setor" display="text" />
+
+			<h:outputText for="cobrador" value="#{msg.cobrador} " />
+			<h:selectOneMenu style="#{styleRequired}" id="cobrador"
+				value="#{endereco.cobrador}" required="true"
+				requiredMessage="#{msg.obr}">
+				<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+					noSelectionOption="true" />
+				<f:selectItems value="#{combos.cobrador}" />
+			</h:selectOneMenu>
+			<p:message for="cobrador" display="text" />
+			
+		</h:panelGrid>
+
+
+
+	</ui:define>
+
+</ui:composition>

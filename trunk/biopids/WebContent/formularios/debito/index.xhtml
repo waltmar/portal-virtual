@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition
+	template="/templates/common/paineis/painelcadastro.xhtml">
+	<ui:define name="areaPainel">
+		<h:form>
+
+			<h:panelGrid style="margin-left:auto; margin-right:auto;" columns="1"
+				rendered="#{BeanDebito.panelPrincipal}">
+				<p:panel header="#{msg.escolhaTipoPessoa}">
+
+					<h:commandLink value="Pessoa Física"
+						action="#{BeanDebito.movePanelFisico}" />
+					<h:commandLink value="Pessoa Física"
+						action="#{BeanDebito.movePanelJuridico}" />
+
+				</p:panel>
+				
+			</h:panelGrid>
+
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+
+</html>

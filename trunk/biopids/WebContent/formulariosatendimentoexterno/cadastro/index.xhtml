@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	template="/templates/common/paineis/painelcadastro.xhtml">
+
+	<ui:define name="formularioCadastro">
+
+		<ui:param name="localFiliacao"
+			value="#{mBean.objectModel.filiacaoModel}" />
+		<ui:param name="localSocio" value="#{mBean.objectModel.socioModel}" />
+		<ui:param name="localVisitas"
+			value="#{mBean.objectModel.controleVisitaModel}" />
+
+		<h:panelGrid columns="1"
+			style="margin-left: auto; margin-right: auto;">
+
+			<h:panelGrid style="margin-left: auto; margin-right: auto;"
+				rendered="#{mBean.panelMenu}" columns="3">
+
+				<p:commandButton immediate="true"
+					style="width: 100px; height: 40px;" value="#{msg2.controleVisita}"
+					id="controleVisita" action="#{mBean.controleVisita}"
+					update="contentPanel" />
+				<p:spacer height="30"></p:spacer>
+				<p:commandButton immediate="true"
+					style="width: 100px; height: 40px;"
+					value="#{msg2.cadastroFiliacao}" id="cadastroFiliacao"
+					action="#{mBean.cadastroFiliacao}" update="contentPanel" />
+
+			</h:panelGrid>
+
+			<h:panelGrid rendered="#{mBean.panelFiliacao}" id="filiacao">
+				<ui:include
+					src="/formulariosatendimentoexterno/cadastro/filiacao.xhtml" />
+			</h:panelGrid>
+
+			<h:panelGrid rendered="#{mBean.panelSocio}" id="socio">
+				<ui:include
+					src="/formulariosatendimentoexterno/cadastro/socio.xhtml" />
+			</h:panelGrid>
+
+			<h:panelGrid rendered="#{mBean.panelControleVisitas}"
+				id="controleVisitas">
+				<ui:include
+					src="/formulariosatendimentoexterno/cadastro/controlevisitas.xhtml" />
+			</h:panelGrid>
+
+
+		</h:panelGrid>
+
+
+	</ui:define>
+
+</ui:composition>

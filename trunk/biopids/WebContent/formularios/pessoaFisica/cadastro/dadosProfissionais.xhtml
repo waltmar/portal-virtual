@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:in="http://biopids.com.br/facelets">
+
+	<ui:param name="enderecoProfissional"
+		value="#{BeanPessoaFisica.objectModel.dadosProfissionais}" />
+	<ui:param name="enderecoPessoal"
+		value="#{BeanPessoaFisica.objectModel.dadosPessoais}" />
+
+
+	<h:panelGrid columns="1">
+
+		<p:panel id="panel3">
+
+			<h:panelGrid columns="2" style="text-align:left;">
+
+				<h:outputText value="#{msg.empresa} " />
+				<p:inputText size="50" id="empresa"
+					value="#{enderecoProfissional.empresa}" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="1" style="text-align:left;">
+				<in:basicinput name="#{msg.cargo}" id="funcaoAtual" size="40"
+					required="false" address="#{enderecoProfissional.cargo}" />
+					
+			</h:panelGrid>
+
+			<h:panelGrid columns="4" style="text-align:left;">
+				<h:outputText value="#{msg.tempoDeServico}:" />
+				<in:numberinput name="#{msg.anos}" id="anosServico"
+					size="2" required="false"
+					address="#{enderecoProfissional.anosServico}" />
+				<in:numberinput name="#{msg.meses}" id="mesesServico"
+					size="2" required="false"
+					address="#{enderecoProfissional.mesesServico}" />
+
+			</h:panelGrid>
+
+			<h:panelGrid>
+				<in:moneyinput name="#{msg.rendaBruta}" id="salario"
+					required="false" address="#{enderecoProfissional.salario}" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="4" style="text-align:left;">
+				<in:basicinput name="#{msg.outrasRendas}" id="outrasRendas"
+					required="false" address="#{enderecoProfissional.outrasRendas}" />
+					<in:moneyinput name="" id="valor" required="false"
+					address="#{enderecoProfissional.valorRendas}" />
+			</h:panelGrid>
+
+			
+
+			<h:panelGrid columns="2" style="text-align:left;">
+				<h:outputText value="#{msg.cep}" />
+				<p:inputMask size="9" id="cepProf"
+					value="#{enderecoProfissional.cep}" mask="99999-999" >
+			<p:ajax event="blur"
+					listener="#{BeanPessoaFisica.actionSearchCEP(enderecoProfissional.cep, '2')}"
+					update="mensagem, wizardPF" oncomplete="setFocus('enderecoProf')"/>		
+			</p:inputMask>
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="4" style="text-align:left;">
+
+				<h:outputLabel for="endereco" value="#{msg.endereco} " />
+				<p:inputText size="38" id="enderecoProf"
+					value="#{enderecoProfissional.endereco}" />
+				<h:outputLabel for="numeroProf" value="#{msg.numero} " />
+				<p:inputText size="2" id="numeroProf" onkeyup="numberOnly(this)"
+					value="#{enderecoProfissional.numero}" />
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="2" style="text-align:left;">
+				<h:outputLabel for="complemento" value="#{msg.complemento} " />
+				<p:inputText size="49" id="complementoProf"
+					value="#{enderecoProfissional.complemento}" />
+
+				<h:outputLabel for="bairro" value="#{msg.bairro} " />
+				<p:inputText size="49" id="bairroProf"
+					value="#{enderecoProfissional.bairro}" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="4" style="text-align:left;">
+				<h:outputLabel for="cidade" value="#{msg.cidade} " />
+				<p:inputText size="25" id="cidadeProf"
+					value="#{enderecoProfissional.cidade}" />
+
+				<h:outputText value="#{msg.estado} " />
+				<h:selectOneMenu id="estadoProf"
+					value="#{enderecoProfissional.estado}">
+					<f:selectItems value="#{combos.estados}" />
+				</h:selectOneMenu>
+
+			</h:panelGrid>
+			<h:panelGrid columns="3" style="text-align:left;">
+				<h:outputText value="#{msg.telComercial} " />
+				<p:inputMask size="2" id="ddd" value="#{enderecoProfissional.ddd}"
+					mask="(99)" />
+				<p:inputMask size="13" id="telComercial"
+					value="#{enderecoProfissional.numero}" mask="9999-9999" />
+
+			</h:panelGrid>
+			
+			
+		</p:panel>
+
+
+
+
+	</h:panelGrid>
+
+</ui:composition>

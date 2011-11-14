@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.prime.com.tr/ui" template="basic.xhtml">
+	<ui:define name="titulo">
+		<h:outputText value="#{msg.titulo_padrao}" />
+	</ui:define>
+	<ui:define name="body">
+		<h:form id="form">
+			<p:ajaxStatus onstart="statusDialog.show();"
+				onsuccess="statusDialog.hide();" onerror="statusDialog.hide();"
+				oncomplete="statusDialog.hide();" />
+			<p:dialog modal="false" appendToBody="false" widgetVar="statusDialog"
+				header="Caregando...." draggable="false" closable="false" zindex="0">
+				<p:graphicImage value="/imagens/progresso.gif"
+					style="margin-left: 80px;" />
+			</p:dialog>
+			<!--
+           <p:ajaxStatus>
+           	<f:facet name="start">
+           		<p:graphicImage value="/imagens/progresso.gif" style="margin-left: auto; margin-rigth: auto; margin-top: 100px; z-index: 1;"/>
+           	</f:facet>
+           	<f:facet name="complete">
+           		<h:outputText value="" />
+           	</f:facet>
+           	
+           </p:ajaxStatus>-->
+			<ui:insert name="header" />
+			<h:panelGrid columns="2">
+				<ui:insert name="menu" />
+				<h:panelGrid>
+					<p:messages id="mensagem" showDetail="true" globalOnly="true" />
+					<ui:insert name="content" />
+				</h:panelGrid>
+			</h:panelGrid>
+			<ui:insert name="footer" />
+		</h:form>
+	</ui:define>
+</ui:composition>

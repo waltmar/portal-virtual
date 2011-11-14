@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+
+<ui:composition
+	template="/templates/common/pesquisa/formulariopadraopesquisa.xhtml">
+	
+	<ui:param name="tituloTabela" value="#{msg.contaCorrente}" />
+	<ui:param name="numeroDeLinhasTabela" value="10" />
+	<ui:param name="excluirColunas" value="4,5,6" />
+	<ui:param name="nomeArquivo" value="#{msg.contasCorrentes}" />
+
+	<ui:define name="camposPesquisa">
+		<h:panelGrid columns="4" style="text-align: left;">
+			<h:outputText for="talaoBusca" value="#{msg.talao}" />
+			<p:inputText size="15" id="talaoBusca" value="#{endereco.talao}" />
+			<h:outputLabel for="numeroBusca" value="#{msg.numero}" />
+			<p:inputText size="49" id="numeroBusca" value="#{endereco.numero}" />
+			<h:outputText for="statusBusca" value="#{msg.status}" />
+			<p:inputText size="15" id="statusBusca" value="#{endereco.status}" />
+		</h:panelGrid>
+	</ui:define>
+
+	<ui:define name="colunas">
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="#{msg.talao}" />
+			</f:facet>
+			<h:outputText value="#{object.talao}" />
+		</p:column>
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="#{msg.numero}" />
+			</f:facet>
+			<h:outputText value="#{object.numero}" />
+		</p:column>
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="#{msg.status}" />
+			</f:facet>
+			<h:outputText value="#{object.status}" />
+		</p:column>
+		
+	</ui:define>
+</ui:composition>
+</html>
