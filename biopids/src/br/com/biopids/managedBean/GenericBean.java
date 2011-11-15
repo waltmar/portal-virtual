@@ -290,11 +290,17 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 
 	public void save() {
 		try {
+			beforeSave();
 			getIController().save(objectDomain);
 			afterSave();
 		} catch (ErrorException e) {
 			treatException(e);
 		}
+	}
+
+	protected void beforeSave() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	protected void afterSave() {
@@ -455,7 +461,7 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 		
 	}
 
-	private void executeSearch() {
+	protected void executeSearch() {
 		IController<T, oid> icontorler = getIController();
 		try {
 			this.list = icontorler.getByFinder(objectDomain, getOrdersTableSearch(),
@@ -463,8 +469,9 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 		} catch (ErrorException e) {
 			treatException(e);
 		}
-
 	}
+	
+	
 
 	public void newSearch() {
 	}
@@ -751,7 +758,8 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 	protected void afterDelete() {
 		// TODO Auto-generated method stub
 		list.remove(this.objectDomain);
-
+		setMessage(FacesMessage.SEVERITY_INFO, FactoreProperties.loadPtbr()
+				.getValor("registroExcluidoSucesso"), "");
 	}
 
 	public String loadObjectTable(T selectedObject) {

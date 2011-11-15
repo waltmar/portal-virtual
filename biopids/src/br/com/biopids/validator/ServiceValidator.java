@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service("Validator")
 public class ServiceValidator implements Serializable{
-	private static final String packageValidator = "br.com.cdlanapolis.validator."; 
+	private static final String packageValidator = "br.com.biopids.validator."; 
 	private static final long serialVersionUID = 1L;
 	private String message;
 	

@@ -6,8 +6,10 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 
-
 import br.com.biopids.domain.UsuarioSistema;
+
+
+
 
 
 public class LoginBean implements Serializable {
@@ -27,10 +29,11 @@ public class LoginBean implements Serializable {
 		SecurityContext context = SecurityContextHolder.getContext();
 		if (context instanceof SecurityContext) {
 			Authentication authentication = context.getAuthentication();
-			if (authentication instanceof Authentication) {
+			if (authentication instanceof Authentication && authentication!= null) {
 				usuario.setUsername( ((User) authentication.getPrincipal()).getUsername());
 				usuario.setPassword( ((User) authentication.getPrincipal()).getPassword());
 			}
+	
 		}
 		return usuario;
 	}
