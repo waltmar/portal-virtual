@@ -2,95 +2,13 @@
 <faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
  <navigation-rule>
-  <from-view-id>/formularios/pessoaFisica/index.xhtml</from-view-id>
+  <from-view-id>/templates/*</from-view-id>
   <navigation-case>
-   <from-outcome>cheque</from-outcome>
-   <to-view-id>/formularios/debito/cheque/index.xhtml</to-view-id>
-   <redirect/>
+   <from-outcome>reino</from-outcome>
+   <to-view-id>/formularios/basicrecords/taxonomy/kingdom.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
- <navigation-rule>
-  <from-view-id>/formularios/debito/cheque/index.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>pessoaFisica</from-outcome>
-   <to-view-id>/formularios/pessoaFisica/index.xhtml</to-view-id>
-   <redirect/>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <from-view-id>/formularios/pessoaFisica/index.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>crediario</from-outcome>
-   <to-view-id>/formularios/debito/crediario/index.xhtml</to-view-id>
-   <redirect/>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <from-view-id>/formularios/debito/crediario/index.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>pessoaFisica</from-outcome>
-   <to-view-id>/formularios/pessoaFisica/index.xhtml</to-view-id>
-   <redirect/>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <from-view-id>/formularios/pessoaJuridica/index.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>cheque</from-outcome>
-   <to-view-id>/formularios/debito/cheque/index.xhtml</to-view-id>
-   <redirect/>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <from-view-id>/formularios/debito/cheque/index.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>pessoaJuridica</from-outcome>
-   <to-view-id>/formularios/pessoaJuridica/index.xhtml</to-view-id>
-   <redirect/>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <from-view-id>/formularios/pessoaJuridica/index.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>crediario</from-outcome>
-   <to-view-id>/formularios/debito/crediario/index.xhtml</to-view-id>
-   <redirect/>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <from-view-id>/formularios/debito/crediario/index.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>pessoaJuridica</from-outcome>
-   <to-view-id>/formularios/pessoaJuridica/index.xhtml</to-view-id>
-   <redirect/>
-  </navigation-case>
- </navigation-rule>
- 
- <navigation-rule>
-  <from-view-id>/login/login.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>login</from-outcome>
-   <to-view-id>/templates/template.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- 
- <navigation-rule>
-  <from-view-id>/templates/template.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>login</from-outcome>
-   <to-view-id>/templates/template.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- 
- <navigation-rule>
-  <from-view-id>/formularios/*</from-view-id>
-  <navigation-case>
-   <from-outcome>principal</from-outcome>
-   <to-view-id>/formularios/index.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- 
- 
  
 </faces-config>

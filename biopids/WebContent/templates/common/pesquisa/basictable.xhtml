@@ -7,7 +7,8 @@
 
 
 <p:dataTable id="tbl" var="object" value="#{mBean.list}"
-	paginator="true" rows="10" emptyMessage="#{msg.tabela_vazia}"
+	paginator="true" rows="10"
+	emptyMessage="#{msg.nenhumRegistroEncontrado}"
 	paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 	rowsPerPageTemplate="5,10,15"
 	rowStyleClass="#{object.status eq 'INATIVO' ? 'inativo' : object.status eq 'EM_ANDAMENTO' ? 'em_andamento' : object.status eq 'CONCLUIDO' ? 'concluido': null}">
@@ -18,25 +19,26 @@
 
 
 	<ui:insert name="colunas" />
+
 	<p:column headerText="#{name}">
 		<h:outputText value="#{object.valor}" />
 	</p:column>
-	<ui:insert name="visualizar">
-		<p:column>
+
+	<p:column headerText="#{msg.acoes}">
+		<center>
 			<p:commandLink action="#{mBean.loadObjectTable(object)}"
 				update="contentPanel, mensagem">
 				<h:graphicImage url="/imagens/find.png" />
 			</p:commandLink>
-		</p:column>
-	</ui:insert>
-	<p:column>
-		<p:commandLink value="#{msg.excluir}" rendered="false"
-			update="excluir" action="#{mBean.setSelectObject(object)}"
-			onclick="excluir.show()">
-			<h:graphicImage url="/imagens/login_icon16x16.png" />
-		</p:commandLink>
+			<p:spacer width="15px" height="0px" />
+
+			<p:commandLink update="excluir"
+				action="#{mBean.setSelectObject(object)}" onclick="excluir.show()">
+				<h:graphicImage url="/imagens/delete_icon.png" />
+			</p:commandLink>
+		</center>
 	</p:column>
-	<ui:insert name="inativar" />
+
 </p:dataTable>
 
 
