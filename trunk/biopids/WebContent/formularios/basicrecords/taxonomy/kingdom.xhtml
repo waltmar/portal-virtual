@@ -5,19 +5,19 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.prime.com.tr/ui"
 	xmlns:in="http://biopids.com.br/facelets"
-	template="/templates/basicrecords/templatebasictab/finaltemplatetab.xhtml">
+	template="/templates/basicrecords/templatebasictab/taxonomy.xhtml">
 
 	<ui:param name="mBean" value="#{ManagerBasic}" />
 	<ui:param name="tipo" value="reino" />
-	
 
 	<ui:define name="contentTaxonomia">
+
 		<input type="hidden" name="TIPO" value="REINO" />
-		
+
 		<center>
 			<in:crud id="reino" name="#{msg.reino}" action="#{mBean.actionSave}" />
 		</center>
-		
+
 	</ui:define>
 
 </ui:composition>
