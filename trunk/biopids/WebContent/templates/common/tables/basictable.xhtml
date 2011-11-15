@@ -5,9 +5,8 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.prime.com.tr/ui">
 
-
-<p:dataTable var="object" value="#{mBean.list}" paginator="true" id="tbl"
-	rows="10"
+<p:dataTable var="object" value="#{mBean.list}" paginator="true"
+	id="tbl" rows="10" emptyMessage=""
 	paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 	rowsPerPageTemplate="5,10,15">
 	<f:facet name="header">
@@ -16,30 +15,18 @@
             </ui:insert>
 	</f:facet>
 
-
 	<ui:insert name="columns" />
 
-	
 	<p:column>
-	
+
 		<p:commandButton value="#{msg.visualizar}"
-			action="#{mBean.loadObjectTable(object)}"/>
-			
-	</p:column>
-	<p:column>
-		
+			action="#{mBean.loadObjectTable(object)}" />
+
 		<p:commandButton value="#{msg.excluir}" rendered="false"
 			update="excluir" action="#{mBean.setSelectObject(object)}"
 			onclick="excluir.show()" />
-	
-	</p:column>
-	<p:column>
-	
-		<p:commandButton value="#{msg.alterar}"
-			action="#{mBean.updateAction(object)}" />
-			
-	</p:column>
 
+	</p:column>
 
 	<p:dialog header="#{msg.informacao}" widgetVar="excluir" modal="true"
 		height="130" width="270">
@@ -69,9 +56,6 @@
 		</h:panelGrid>
 	</p:dialog>
 
-
-
 </p:dataTable>
-
 
 </html>

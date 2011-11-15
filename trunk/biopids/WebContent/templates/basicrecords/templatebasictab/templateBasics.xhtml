@@ -6,15 +6,12 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.prime.com.tr/ui">
 
-
-
 <ui:composition template="/templates/template.xhtml">
-
 
 	<ui:define name="area">
 
 		<p:tabView>
-			<p:tab title="#{msg.coleta}">
+			<p:tab  title="#{msg.coleta}">
 				<ui:insert name="coleta" />
 			</p:tab>
 
@@ -22,7 +19,7 @@
 				<ui:insert name="geografia" />
 			</p:tab>
 
-			<p:tab title="#{msg.taxonomia}">
+			<p:tab id="tabTaxonomia" title="#{msg.taxonomia}">
 				<ui:insert name="taxonomia" />
 			</p:tab>
 
@@ -58,7 +55,6 @@
 				</center>
 			</p:dialog>
 		</div>
-
 
 	</ui:define>
 
