@@ -7,6 +7,11 @@ import br.com.biopids.domain.UsuarioSistema;
 @Repository("daoUsuarioSistema")
 public class DAOUsuarioSistema extends GenericDAO<UsuarioSistema, Long>{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 
 
 }
