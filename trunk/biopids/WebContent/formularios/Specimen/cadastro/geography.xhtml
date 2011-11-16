@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:in="http://cdlanapolis.com.br/facelets">
+
+<ui:param name="beanGeography" value="#{ManagerSpecimen.objectModel.geography}" />
+
+		<h:panelGrid>
+		
+			<p:fieldset legend="#{msg.areaGeografica}">
+				
+				<h:panelGrid columns="1">
+
+					<in:comboinput name="#{msg.pais}" id="pais" spacer="27px"
+						address="#{beanGeography.pais}" />
+
+					<in:comboinput name="#{msg.estado}" id="estado" spacer="13px"
+						address="#{beanGeography.estado}" />
+
+					<in:comboinput name="#{msg.municipio}" id="municipio"
+						address="#{beanGeography.municipio}" />
+
+					<in:basicinput name="#{msg.localidade}" id="localidade"
+						required="true" address="#{beanGeography.localidade}" />
+
+				</h:panelGrid>
+				
+			</p:fieldset>
+
+			<h:panelGrid columns="3">
+
+				<in:numberinput name="#{msg.latitude}" mask="999999" id="latitude"
+					required="true" address="#{beanGeography.latitude}" />
+
+				<in:numberinput name="#{msg.longitude}" mask="999999" id="longitude"
+					required="true" address="#{beanGeography.longitude}" />
+
+				<in:numberinput name="#{msg.altitude}" mask="999999" id="altitude"
+					required="true" address="#{beanGeography.altidude}" />
+
+				<in:numberinput name="#{msg.profundidade}" mask="999999"
+					id="profundidade" required="true" address="#{beanGeography.profundidade}" />
+
+				<in:basicinput name="#{msg.precisao}" size="3" id="precisao"
+					required="true" address="#{beanGeography.precisao}" />
+
+				<in:comboinput name="#{msg.massaDagua}" id="massaDagua"
+					required="true" address="#{beanGeography.massaDagua}" />
+
+				<in:comboinput name="#{msg.datum}" id="datum" required="true"
+					address="#{beanGeography.datum}" />
+
+			</h:panelGrid>
+
+			<in:obsinput name="#{msg.obs}" id="obsGeografia"
+				address="#{beanGeography.obsGeografia}" />
+
+		</h:panelGrid>
+
+</ui:composition>

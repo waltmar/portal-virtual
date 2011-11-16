@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+
+	<ui:param name="enderecoResidencial"
+		value="#{BeanPessoaFisica.objectModel.dadosResidenciais}" />
+	<p:panel id="panel2">
+
+
+		<h:panelGrid columns="3" style="text-align:left;">
+
+			<h:outputText value="#{msg.cep}#{msg.obr}  " />
+			<p:inputMask  style="#{styleRequired}" size="9" id="cep" value="#{enderecoResidencial.cep}"
+				mask="99999-999" required="true" requiredMessage="#{msg.obr}" />
+			<p:message for="cep" display="text" />
+			</h:panelGrid>
+			<h:panelGrid columns="3" style="text-align:left;">
+				<h:outputLabel for="endereco" value="#{msg.endereco}#{msg.obr} " />
+				<p:inputText style="#{styleRequired}" size="40" id="endereco"
+					value="#{enderecoResidencial.endereco}" required="true"
+					requiredMessage="#{msg.obr}" />
+				<p:message for="endereco" display="text" />
+			</h:panelGrid>
+			<h:panelGrid columns="4" style="text-align:left;">
+				<h:outputLabel for="complemento" value="#{msg.complemento} " />
+				<p:inputText size="29" id="complemento"
+					value="#{enderecoResidencial.complemento}" />
+				<h:outputLabel for="numero" value="#{msg.numero} " />
+				<p:inputText size="2" id="numero"
+					value="#{enderecoResidencial.numero}" />
+			</h:panelGrid>
+
+
+
+			<h:panelGrid columns="3" style="text-align:left;">
+				<h:outputLabel for="bairro" value="#{msg.bairro}#{msg.obr} " />
+				<p:inputText style="#{styleRequired}" size="49" id="bairro"
+					value="#{enderecoResidencial.bairro}" required="true"
+					requiredMessage="#{msg.obr}" />
+				<p:message for="bairro" display="text" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="6" style="text-align:left;">
+
+				<h:outputLabel for="cidade" value="#{msg.cidade}#{msg.obr} " />
+				<p:inputText style="#{styleRequired}" size="25" id="cidade"
+					value="#{enderecoResidencial.cidade}" required="true"
+					requiredMessage="#{msg.obr}" />
+				<p:message for="cidade" display="text" />
+
+				<h:outputText value="#{msg.estado}#{msg.obr} " />
+				<h:selectOneMenu  style="#{styleRequired}" id="estado" value="#{enderecoResidencial.estado}"
+					required="true" requiredMessage="#{msg.obr}">
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{combos.estados}" />
+				</h:selectOneMenu>
+				<p:message for="estado" display="text" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="6" style="text-align:left;">
+
+				<h:outputText value="#{msg.telefone1} " />
+				<p:inputMask size="2" id="ddd1cont"
+					value="#{enderecoResidencial.ddd1}" mask="(99)" />
+				<p:inputMask size="9" id="telefone1cont"
+					value="#{enderecoResidencial.telefone1}" mask="9999-9999" />
+
+				<h:outputText value="#{msg.telefone2} " />
+				<p:inputMask size="2" id="ddd2cont"
+					value="#{enderecoResidencial.ddd2}" mask="(99)" />
+				<p:inputMask size="9" id="telefone2cont"
+					value="#{enderecoResidencial.telefone2}" mask="9999-9999" />
+
+				<h:outputText value="#{msg.telefone3} " />
+				<p:inputMask size="2" id="ddd3cont"
+					value="#{enderecoResidencial.ddd3}" mask="(99)" />
+				<p:inputMask size="9" id="telefone3cont"
+					value="#{enderecoResidencial.telefone3}" mask="9999-9999" />
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="2" style="text-align:left;">
+
+				<h:outputLabel for="email" value="#{msg.email} " />
+				<p:inputText size="40" id="email"
+					value="#{enderecoResidencial.email}" />
+
+				
+
+			</h:panelGrid>
+	</p:panel>
+
+</ui:composition>

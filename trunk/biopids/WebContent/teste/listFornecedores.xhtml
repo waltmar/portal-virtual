@@ -1,0 +1,38 @@
+<ui:composition template="/teste/cadastro.xhtml"  
+    xmlns:ui="http://java.sun.com/jsf/facelets"  
+    xmlns:h="http://java.sun.com/jsf/html"  
+    xmlns:f="http://java.sun.com/jsf/core">  
+  <ui:define name="principal">  
+    <h:form>  
+      <ui:decorate template="listagem.xhtml">  
+        <ui:param name="mbean" value="${fornecedorMB}" />  
+        <ui:param name="actionNovo" value="doNovoFornecedor" />  
+        <ui:param name="actionPesquisa" value="doPesquisarFornecedor" />  
+  
+        <ui:define name="filtros">  
+          <h:panelGrid columns="2">  
+            <h:outputLabel value="Nome" for="iNome" />  
+            <h:inputText value="#{fornecedorMB.filtroNome}" id="iNome"/>  
+          </h:panelGrid>  
+        </ui:define>  
+  
+        <ui:define name="table">  
+          <h:dataTable id="tableFornecedores"  
+             value="#{fornecedorMB.fornecedorDM}" var="f">  
+            <h:column>  
+              <f:facet name="header">Nome</f:facet>  
+              <h:commandLink action="#{fornecedorMB.doEditarFornecedor}">  
+                <h:outputText value="#{f.nome}" />  
+              </h:commandLink>  
+            </h:column>  
+  
+            <h:column>  
+              <f:facet name="header">Cnpj</f:facet>  
+              <h:outputText value="#{f.cnpj}" />  
+            </h:column>  
+          </h:dataTable>    
+        </ui:define>    
+      </ui:decorate>    
+    </h:form>    
+  </ui:define>    
+</ui:composition>  

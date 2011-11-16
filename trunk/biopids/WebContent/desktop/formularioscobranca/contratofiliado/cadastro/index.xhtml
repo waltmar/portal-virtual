@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	template="/templates/common/paineis/painelcadastro.xhtml">
+	
+	<ui:define name="formularioCadastro">
+
+		<h:panelGrid columns="1" style="text-align:left;">
+
+			<h:panelGrid columns="3" style="text-align:left;">
+			
+				<h:outputText for="filiado" value="#{msg.filiado} " />
+				<h:selectOneMenu style="#{styleRequired}" id="filiado"
+					value="#{endereco.filiado}" required="true"
+					requiredMessage="#{msg.obr}">
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{combos.filiado}" />
+				</h:selectOneMenu>
+				<p:message for="filiado" display="text" />
+				
+			</h:panelGrid>
+
+			<h:panelGrid columns="3" style="text-align:left;">
+				
+				<h:outputLabel for="valorRepasse"
+					value="#{msg.valorRepasse}#{msg.obr} " />
+				<p:inputText style="#{styleRequired}" size="3" id="valorRepasse"
+					value="#{endereco.valorRepasse}" onkeyup="numberOnly(this)"
+					required="
+				true" requiredMessage="#{msg.obr}" />
+				<p:message for="valorRepasse" display="text" />
+
+			</h:panelGrid>
+
+		</h:panelGrid>
+
+
+
+	</ui:define>
+
+</ui:composition>

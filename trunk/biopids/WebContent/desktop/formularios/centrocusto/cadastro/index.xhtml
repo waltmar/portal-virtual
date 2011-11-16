@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	template="/templates/common/paineis/painelcadastro.xhtml">
+	<ui:define name="formularioCadastro">
+		<h:panelGrid columns="1">
+			<h:panelGrid columns="6" style="text-align:left;">
+
+				<h:outputLabel for="codigo" value="#{msg.codigo}" />
+				<p:inputText style="#{styleRequired}" size="10" id="codigo"
+					onkeyup="numberOnly(this);" value="#{endereco.codigo}"
+					required="true" requiredMessage="#{msg.obr}" />
+				<p:message for="codigo" display="text" />
+
+				<h:outputLabel for="descricao" value="#{msg.descricao}" />
+				<p:inputText style="#{styleRequired}" size="35" id="descricao"
+					value="#{endereco.descricao}" required="true"
+					requiredMessage="#{msg.obr}" />
+				<p:message for="descricao" display="text" />
+
+			</h:panelGrid>
+			<h:panelGrid columns="3" style="text-align:left;">
+				
+				<h:outputLabel value="#{msg.tipo}" />
+				<p:panel>
+					<h:selectOneRadio value="#{endereco.tipo}" id="tipo">
+						<f:selectItem id="receita" itemLabel="#{msg.receita}"
+							itemValue="1" />
+						<f:selectItem id="despesa" itemLabel="#{msg.despesa}"
+							itemValue="2" />
+					</h:selectOneRadio>
+				</p:panel>
+				<h:selectManyCheckbox value="#{endereco.tipo}">
+					<f:selectItem itemLabel="#{msg.receitaDespesa}" itemValue="true" />
+				</h:selectManyCheckbox>
+
+			</h:panelGrid>
+
+
+
+		</h:panelGrid>
+	</ui:define>
+
+</ui:composition>

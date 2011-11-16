@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+
+	<h:panelGrid columns="1" style="text-align:left;">
+		<p:panel style="width: 530px;">
+			<h:panelGrid style="margin-left: auto; margin-right: auto">
+				<h:selectOneRadio value="#{mBean.escolha}" required="true"
+					id="status">
+					<f:selectItem style="font-weight: bold;" id="linhaNova"
+						itemLabel="#{msg2.linhaNova}" itemValue="linhaNova" />
+
+					<f:selectItem style="font-weight: bold;" id="renovacao"
+						itemLabel="#{msg2.renovacao}" itemValue="renovacao" />
+
+					<p:ajax listener="#{mBean.choiceLinhaNovaRenovacao}"
+						event="onclick" update="addSocio" />
+
+				</h:selectOneRadio>
+			</h:panelGrid>
+
+
+			<h:panelGrid columns="2">
+				<h:panelGrid columns="3">
+					<h:outputText value="#{msg22.filiados}#{msg22.obr} " />
+					<h:selectOneMenu style="#{styleRequired}" id="filiados"
+						value="#{localVisitas.filiado}" required="true"
+						requiredMessage="#{msg2.obr}">
+						<f:selectItem itemLabel="#{msg2.selecione}" itemValue=""
+							noSelectionOption="true" />
+						<f:selectItems value="#{combos.filiados}" />
+					</h:selectOneMenu>
+					<p:message for="filiados" display="text" />
+				</h:panelGrid>
+
+				<h:panelGrid>
+					<p:commandButton immediate="true" image="ui-icon-plusthick"
+						id="panelSocioRender" action="#{mBean.panelSocioRender}"
+						update="contentPanel" />
+
+				</h:panelGrid>
+			</h:panelGrid>
+		</p:panel>
+		<h:panelGrid rendered="#{mBean.panelFormFiliado}">
+			<p:panel style="width: 530px;" header="#{msg2.dadosFiliado}">
+
+
+
+				<h:panelGrid id="formPanelSocio">
+
+					<h:panelGrid columns="3" style="text-align:left;">
+						<h:outputText value="#{msg2.cnpj}" />
+						<p:inputMask style="#{styleRequired}" size="19" id="cnpjVisita"
+							value="#{localVisitas.cnpj}" mask="99.999.999/9999-99"
+							required="true" requiredMessage="#{msg2.obr}">
+							<p:ajax event="blur"
+								listener="#{mBean.findDevedor(mBean.objectModel.cnpj)}"
+								update="mensagem, cnpj, devedor" />
+						</p:inputMask>
+						<p:message for="cnpj" display="text" />
+					</h:panelGrid>
+					
+					<h:panelGrid columns="2">
+					
+						<h:panelGrid>
+							<h:outputLabel for="razaoSocialVisita"
+								value="#{msg2.razaoSocial} " />
+							<p:inputText size="35" id="razaoSocialVisita"
+								value="#{razaoSocial}" />
+							<p:message for="razaoSocialVisita" display="text" />
+						</h:panelGrid>
+
+						<h:panelGrid>
+							<h:outputLabel for="nomeFantasiaVisita"
+								value="#{msg2.nomeFantasia} " />
+							<p:inputText size="35" id="nomeFantasiaVisita"
+								value="#{localVisitas.nomeFantasia}" />
+							<p:message for="nomeFantasiaVisita" display="text" />
+						</h:panelGrid>
+
+					</h:panelGrid>
+
+					<h:panelGrid>
+						<h:outputLabel for="inscEstadual" value="#{msg2.inscEstadual} " />
+						<p:inputText size="13" id="inscEstadualVisita"
+							value="#{localVisitas.inscEstadual}" onkeyup="numberOnly(this)" />
+						<p:message for="inscEstadual" display="text" />
+					</h:panelGrid>
+					<h:panelGrid columns="3" style="text-align:left;">
+						<h:panelGrid>
+							<h:outputLabel for="endereco" value="#{msg2.endereco}#{msg2.obr} " />
+							<p:inputText style="#{styleRequired}" size="35"
+								id="enderecoVisita" value="#{localVisitas.endereco}"
+								required="true" requiredMessage="#{msg2.obr}" />
+							<p:message for="endereco" display="text" />
+						</h:panelGrid>
+						<h:panelGrid>
+							<h:outputLabel for="complementoVisita"
+								value="#{msg2.complemento} " />
+							<p:inputText size="29" id="complementoVisita"
+								value="#{localVisitas.complemento}" />
+						</h:panelGrid>
+						<h:panelGrid>
+							<h:outputLabel for="numeroVisita" value="#{msg2.numero} " />
+							<p:inputText size="2" id="numeroVisita"
+								value="#{localVisitas.numero}" />
+						</h:panelGrid>
+					</h:panelGrid>
+
+					<h:panelGrid>
+						<h:outputLabel for="bairroVisita" value="#{msg2.bairro}#{msg2.obr} " />
+						<p:inputText style="#{styleRequired}" size="49" id="bairroVisita"
+							value="#{localFiliacao.bairro}" required="true"
+							requiredMessage="#{msg2.obr}" />
+						<p:message for="bairroVisita" display="text" />
+					</h:panelGrid>
+
+					<h:panelGrid columns="3">
+						<h:panelGrid>
+							<h:outputText value="#{msg2.cep}#{msg2.obr}  " />
+							<p:inputMask style="#{styleRequired}" size="9" id="cepVisita"
+								value="#{localVisitas.cep}" mask="99999-999" required="true"
+								requiredMessage="#{msg2.obr}" />
+							<p:message for="cepVisita" display="text" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" style="text-align:left;">
+							<h:outputLabel for="cidadeVisita"
+								value="#{msg2.cidade}#{msg2.obr} " />
+							<p:inputText style="#{styleRequired}" size="25" id="cidadeVisita"
+								value="#{localVisitas.cidade}" required="true"
+								requiredMessage="#{msg2.obr}" />
+							<p:message for="cidadeVisita" display="text" />
+						</h:panelGrid>
+
+						<h:panelGrid>
+							<h:outputText value="#{msg2.estado}#{msg2.obr} " />
+							<h:selectOneMenu style="#{styleRequired}" id="estadoVisita"
+								value="#{localSocio.estado}" required="true"
+								requiredMessage="#{msg2.obr}">
+								<f:selectItem itemLabel="#{msg2.selecione}" itemValue=""
+									noSelectionOption="true" />
+								<f:selectItems value="#{combos.estados}" />
+							</h:selectOneMenu>
+							<p:message for="estadoVisita" display="text" />
+						</h:panelGrid>
+
+					</h:panelGrid>
+					<h:panelGrid columns="2">
+						<h:outputLabel for="telefoneFixo" value="#{msg2.telefoneFixo} " />
+
+						<h:panelGrid columns="3">
+							<p:inputMask size="2" id="ddd1Visita"
+								value="#{localVisitas.dddVisita}" mask="(99)"
+								style="#{styleRequired}" required="true" />
+
+							<p:inputMask size="13" id="telefoneFixo"
+								value="#{localVisitas.telefoneFixo}" mask="9999-9999"
+								style="#{styleRequired}" required="true" />
+							<p:message for="telefoneFixo" display="text" />
+						</h:panelGrid>
+
+						<h:outputLabel for="celular" value="#{msg2.celular} " />
+
+						<h:panelGrid columns="3">
+							<p:inputMask size="2" id="ddd2Visita"
+								value="#{localVisitas.dddVisita2}" mask="(99)"
+								style="#{styleRequired}" required="true" />
+							<p:inputMask size="13" id="celular"
+								value="#{localVisitas.celular}" mask="9999-9999"
+								style="#{styleRequired}" required="true" />
+							<p:message for="celular" display="text" />
+						</h:panelGrid>
+					</h:panelGrid>
+
+
+
+
+					<h:panelGrid>
+						<h:outputLabel for="emailVisita" value="#{msg2.email} " />
+						<p:inputText size="49" id="emailVisita"
+							value="#{localFiliacao.email}" />
+						<p:message for="emailVisita" display="text" />
+					</h:panelGrid>
+
+				</h:panelGrid>
+			</p:panel>
+
+		</h:panelGrid>
+
+		<p:panel header="#{msg2.dadosCdlCelular}" id="novaLinha">
+
+			<fieldset>
+				<legend>
+					<h:outputLabel value="#{msg2.valorAtual} " />
+				</legend>
+				<h:panelGrid columns="4">
+					<h:panelGrid>
+						<h:outputLabel for="pacote" value="#{msg2.pacote} " />
+						<p:inputText size="6" id="pacote" value="#{localVisitas.pacote}"
+							onkeyup="moeda(this)" />
+						<p:message for="pacote" display="text" />
+					</h:panelGrid>
+
+					<h:panelGrid>
+						<h:outputLabel for="minutoLocal" value="#{msg2.minutoLocal} " />
+						<p:inputText size="6" id="minutoLocal"
+							value="#{localVisitas.minutoLocal}" onkeyup="numberOnly(this)" />
+						<p:message for="minutoLocal" display="text" />
+					</h:panelGrid>
+
+
+					<h:panelGrid>
+						<h:outputLabel for="minutoInterurbano"
+							value="#{msg2.minutoInterurbano} " />
+						<p:inputText size="6" id="minutoInterurbano"
+							value="#{localVisitas.minutoInterurbano}"
+							onkeyup="numberOnly(this)" />
+						<p:message for="minutoInterurbano" display="text" />
+					</h:panelGrid>
+
+					<h:panelGrid>
+						<h:outputLabel for="qtdLinhas" value="#{msg2.qtdLinhas} " />
+						<p:inputText size="6" id="qtdLinhas"
+							value="#{localVisitas.qtdLinhas}" onkeyup="numberOnly(this)" />
+						<p:message for="qtdLinhas" display="text" />
+					</h:panelGrid>
+				</h:panelGrid>
+			</fieldset>
+
+
+			<fieldset>
+				<legend>
+					<h:outputLabel value="#{msg2.aparelho} " />
+				</legend>
+
+				<h:panelGrid columns="2">
+					<h:panelGrid>
+						<h:outputText value="#{msg2.comAparelho}" />
+						<h:selectOneRadio value="#{localVisitas.comAparelho}">
+							<f:selectItem itemLabel="#{msg2.sim}" itemValue="sim" />
+							<f:selectItem itemLabel="#{msg2.nao}" itemValue="nao" />
+						</h:selectOneRadio>
+					</h:panelGrid>
+
+					<h:panelGrid>
+						<h:outputLabel for="qtdAparelhos" value="#{msg2.qtdAparelhos} " />
+						<p:inputText size="13" id="qtdAparelhos"
+							value="#{localVisitas.qtdAparelhos}" onkeyup="numberOnly(this)" />
+						<p:message for="qtdAparelhos" display="text" />
+					</h:panelGrid>
+				</h:panelGrid>
+			</fieldset>
+
+			<fieldset>
+				<legend>
+					<h:outputLabel value="#{msg2.sms} " />
+				</legend>
+
+				<h:panelGrid columns="2">
+					<h:panelGrid>
+						<h:outputText value="#{msg2.pacoteSMS}" />
+						<h:selectOneRadio value="#{localVisitas.pacoteSMS}">
+							<f:selectItem itemLabel="#{msg2.sim}" itemValue="sim" />
+							<f:selectItem itemLabel="#{msg2.nao}" itemValue="nao" />
+						</h:selectOneRadio>
+					</h:panelGrid>
+
+					<h:panelGrid>
+						<h:outputLabel for="pacoteAvulso" value="#{msg2.pacoteAvulso} " />
+						<p:inputText size="10" id="pacoteAvulso"
+							value="#{localVisitas.pacoteAvulso}" />
+						<p:message for="pacoteAvulso" display="text" />
+					</h:panelGrid>
+				</h:panelGrid>
+
+
+				<h:panelGrid>
+					<h:outputLabel for="descricaoPacote" value="#{msg2.tipoPacoteSMS} " />
+					<p:inputText size="49" id="descricaoPacote"
+						value="#{localVisitas.descricaoPacote}" />
+					<p:message for="descricaoPacote" display="text" />
+				</h:panelGrid>
+
+			</fieldset>
+			<fieldset>
+				<legend>
+					<h:outputLabel value="#{msg2.pacote} " />
+				</legend>
+
+				<h:panelGrid columns="3">
+					<h:panelGrid>
+						<h:outputText value="#{msg2.pacoteDados}" />
+						<h:selectOneRadio value="#{localVisitas.dados}">
+							<f:selectItem itemLabel="#{msg2.sim}" itemValue="sim" />
+							<f:selectItem itemLabel="#{msg2.nao}" itemValue="nao" />
+						</h:selectOneRadio>
+					</h:panelGrid>
+
+					<h:panelGrid>
+						<h:outputLabel for="modem" value="#{msg2.modem} " />
+						<p:inputText size="10" id="modem" value="#{localVisitas.modem}" />
+						<p:message for="modem" display="text" />
+					</h:panelGrid>
+
+				</h:panelGrid>
+				<h:panelGrid>
+					<h:outputLabel for="descricaoDados" value="#{msg2.tipoPacoteDados} " />
+					<p:inputText size="49" id="descricaoDados"
+						value="#{localVisitas.descricaoDados}" />
+					<p:message for="descricaoDados" display="text" />
+				</h:panelGrid>
+			</fieldset>
+			<h:panelGrid>
+				<h:outputLabel for="obs" value="#{msg2.obs} " />
+				<p:inputTextarea id="obs" value="#{localVisitas.obs}"
+					style="width:308px;height:100px;" effectDuration="400" />
+			</h:panelGrid>
+
+		</p:panel>
+		<h:panelGrid style="margin-left: auto; margin-right: auto;">
+
+			<p:commandButton immediate="true" style="width: 100px; height: 40px;"
+				value="#{msg2.salvar}" id="saveVisita" action="#{mBean.save}"
+				update="contentPanel" />
+
+		</h:panelGrid>
+	</h:panelGrid>
+
+
+
+
+</ui:composition>

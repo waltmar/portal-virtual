@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:in="http://cdlanapolis.com.br/facelets">
+
+<ui:composition
+	template="/templates/common/pesquisa/formulariopadraopesquisa.xhtml">
+	
+	<ui:param name="tituloTabela" value="#{msg.itemPatrimonio}" />
+	<ui:param name="numeroDeLinhasTabela" value="10" />
+		
+	<ui:define name="camposPesquisa">
+		<h:panelGrid columns="4" style="text-align: left;">
+			
+			<in:basicinput name="#{msg.classe}" id="classe" 
+				required="true" address="#{bean.classe}" />
+			<in:basicinput name="#{msg.codigo}" id="classe" 
+				required="true" address="#{bean.codigo}" />
+						
+		</h:panelGrid>
+		
+	</ui:define>
+			
+
+	<ui:define name="colunas">
+		
+		<p:column headerText="#{msg.codigo}">
+			<h:outputText styleClass="tablefont" value="#{object.codigo}" />
+		</p:column>
+	
+		<p:column headerText="#{msg.fornecedor}">
+			<h:outputText styleClass="tablefont" value="#{object.fornecedor}" />
+		</p:column>
+		
+		<p:column headerText="#{msg.quantidade}">
+			<h:outputText styleClass="tablefont" value="#{object.quantidade}" />
+		</p:column>
+		
+		<p:column headerText="#{msg.classe}">
+			<h:outputText styleClass="tablefont" value="#{object.classe}" />
+		</p:column>
+		
+		<p:column headerText="#{msg.dataCompra}">
+			<h:outputText styleClass="tablefont" value="#{object.dataCompra}" />
+		</p:column>
+		
+		<p:column headerText="#{msg.valor}">
+			<h:outputText styleClass="tablefont" value="#{object.valor}" />
+		</p:column>
+		
+	</ui:define>
+</ui:composition>
+</html>
