@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	template="/templates/common/paineis/painelcadastro.xhtml">
+	<ui:define name="formularioCadastro">
+		<h:panelGrid columns="1">
+			<h:panelGrid columns="6" style="text-align:left;">
+
+				<h:outputLabel for="numero" value="#{msg.numeroTalao}" />
+				<p:inputText size="10" id="numero" onkeyup="numberOnly(this);"
+					value="#{model.numero}" required="true"
+					requiredMessage="#{msg.obr}" />
+				<p:message for="numero" display="text" />
+
+				<h:outputText value="#{msg.contaCorrente} " />
+				<h:selectOneMenu style="#{styleRequired}" id="contaCorrente"
+					value="#{mBean}" required="true" requiredMessage="#{msg.obr}">
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{combos.contasCorrentes}" />
+				</h:selectOneMenu>
+				<p:message for="contaCorrente" display="text" />
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="9" style="text-align:left;">
+
+				<h:outputLabel for="quantidadeFolhas"
+					value="#{msg.quantidadeFolhas}" />
+				<p:inputText size="10" style="#{styleRequired}" id="quantidadeFolhas" onkeyup="numberOnly(this);"
+					value="#{model.quantidadeFolhas}" requiredMessage="#{msg.obr}" />
+				<p:message for="quantidadeFolhas" display="text" />
+
+				<h:outputLabel for="folhaInicial" value="#{msg.folhaInicial}" />
+				<p:inputText size="10" style="#{styleRequired}" id="folhaInicial" onkeyup="numberOnly(this);"
+					value="#{model.folhaInicial}" requiredMessage="#{msg.obr}" />
+				<p:message for="folhaInicial" display="text" />
+
+				<h:outputText value="#{msg.dataCadastro} " />
+				<p:inputMask size="10" id="dataCadastro"
+					value="#{enderecoPessoal.dataCadastro}" mask="99/99/9999"
+					required="true" requiredMessage="#{msg.obr}">
+					<p:ajax event="blur"
+						listener="#{BeanPessoaFisica.validate('DateValidator', endereco.dataCadastro, 'dataCadastro')}"
+						update="mensagem, dataCadastro" />
+				</p:inputMask>
+				<p:message for="dataCadastro" display="text" />
+
+				<h:outputText value="#{msg.situacao} " />
+				<h:selectOneMenu  id="situacao"
+					value="#{mBean}" required="true" requiredMessage="#{msg.obr}">
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{combos.situacoes}" />
+				</h:selectOneMenu>
+				<p:message for="situacao" display="text" />
+
+
+			</h:panelGrid>
+
+		</h:panelGrid>
+	</ui:define>
+
+</ui:composition>

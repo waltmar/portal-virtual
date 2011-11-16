@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+<ui:composition template="../paineis/painelpesquisa.xhtml">
+
+	<ui:define name="botoesPesquisa">
+
+		<ui:include src="../acoes/botoespesquisa.xhtml" />
+
+	</ui:define>
+
+
+	<ui:define name="tabelaPesquisa">
+
+		<p:dataTable id="tbl" var="object" value="#{mBean.list}"
+			paginator="true" rows="10" emptyMessage="#{msg.tabela_vazia}"
+			paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			rowsPerPageTemplate="5,10,15"
+			rowStyleClass="#{object.status eq 'INATIVO' ? 'inativo' : object.status eq 'EM_ANDAMENTO' ? 'em_andamento' : object.status eq 'CONCLUIDO' ? 'concluido': null}">
+
+			<f:facet name="header">  
+         	 #{tituloTabela}  
+        </f:facet>
+
+
+			<ui:insert name="colunas" />
+			<ui:insert name="visualizar">
+				<p:column>
+					<p:commandLink 
+						action="#{mBean.loadObjectTable(object)}"
+						update="contentPanel, mensagem">
+						<h:graphicImage url="/imagens/find.png" />
+					</p:commandLink>
+				</p:column>
+			</ui:insert>
+			<ui:insert name="inativar"/>
+			
+
+		</p:dataTable>
+
+		<p:panel style="margin-left: auto; width:15%; text-align: center;"
+			header="Exportar Dados">
+			<h:commandLink>
+				<p:graphicImage value="/imagens/pdf.png" />
+				<p:dataExporter excludeColumns="#{excluirColunas}" type="pdf"
+					target="tbl" fileName="#{nomeArquivo}" />
+			</h:commandLink>
+			<h:commandLink>
+				<p:graphicImage value="/imagens/excel_icon.PNG" />
+				<p:dataExporter excludeColumns="#{excluirColunas}" type="xls"
+					target="tbl" fileName="#{nomeArquivo}" />
+			</h:commandLink>
+		</p:panel>
+
+		<p:dialog header="#{msg.informacao}" widgetVar="excluir" modal="true"
+			height="130" width="270">
+			<h:panelGrid columns="2"
+				style="margin-right: auto;margin-left: auto;">
+				<h:panelGrid columns="3"
+					style="margin-right: auto;margin-left: auto;">
+					<h:graphicImage url="/imagens/information2.png" />
+					<p:spacer width="10px" />
+
+				</h:panelGrid>
+				<h:panelGrid columns="1"
+					style="margin-right: auto;margin-left: auto;">
+					<h:panelGrid columns="1"
+						style="margin-right: auto;margin-left: auto;">
+						<h:outputText style="font-size:15px; font-weight: bold;"
+							value="#{msg.desejaExcluir}" />
+					</h:panelGrid>
+					<h:panelGrid columns="3"
+						style="margin-right: auto;margin-left: auto;">
+						<p:commandButton value="#{msg.sim}" action="#{mBean.deleteAction}"
+							onclick="excluir.hide()" update="contentPanel, mensagem" />
+						<p:spacer width="10px" />
+						<p:commandButton value="#{msg.nao}" update="tlb"
+							oncomplete="excluir.hide()" />
+					</h:panelGrid>
+				</h:panelGrid>
+			</h:panelGrid>
+		</p:dialog>
+
+		<p:dialog header="#{msg.informacao}" widgetVar="inativar" modal="true"
+			height="130" width="270">
+			<h:panelGrid columns="2"
+				style="margin-right: auto;margin-left: auto;">
+				<h:panelGrid columns="3"
+					style="margin-right: auto;margin-left: auto;">
+					<h:graphicImage url="/imagens/information2.png" />
+					<p:spacer width="10px" />
+
+				</h:panelGrid>
+				<h:panelGrid columns="1"
+					style="margin-right: auto;margin-left: auto;">
+					<h:panelGrid columns="1"
+						style="margin-right: auto;margin-left: auto;">
+						<h:outputText style="font-size:15px; font-weight: bold;"
+							value="#{msg.desejaExcluir}" />
+					</h:panelGrid>
+					<h:panelGrid columns="3"
+						style="margin-right: auto;margin-left: auto;">
+						<p:commandButton value="#{msg.sim}" action="#{mBean.deleteAction}"
+							onclick="excluir.hide()" update="contentPanel, mensagem" />
+						<p:spacer width="10px" />
+						<p:commandButton value="#{msg.nao}" update="tlb"
+							oncomplete="excluir.hide()" />
+					</h:panelGrid>
+				</h:panelGrid>
+			</h:panelGrid>
+		</p:dialog>
+		
+	</ui:define>
+
+</ui:composition>
+
+</html>

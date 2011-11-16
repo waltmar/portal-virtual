@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:in="http://cdlanapolis.com.br/facelets">
+
+<ui:composition
+	template="/templates/common/paineis/painelsembotoes.xhtml">
+
+	<ui:param name="model" value="#{BeanUsuarioSistema.objectModel}" />
+
+	<ui:define name="formularioCadastro">
+		<h:panelGrid
+			style="margin-right: auto; margin-left: auto; text-align: left;"
+			columns="2">
+
+			<h:outputText value="#{msg.login}: " />
+			<h:outputText value="#{mBean.usuario.username}" />
+
+			<h:outputText value="#{msg.nome}: " />
+			<h:outputText value="#{mBean.usuario.name}" />
+
+			<h:outputText value="#{msg.email}: " />
+			<h:outputLabel value="#{mBean.usuario.email}" />
+
+			<h:outputLabel for="senha" value="#{msg.informeSuaSenha}" />
+			<h:inputSecret value="#{model.password}" id="senha"
+				requiredMessage="#{mBean.messageValid}" />
+
+
+			<h:outputLabel value="#{msg.informeNovaSenha}" />
+			<h:inputSecret value="#{mBean.passwordNew}" id="senhaNova1"
+				requiredMessage="#{mBean.messageValid}" />
+
+			<h:outputLabel value="#{msg.informeNovamenteNovaSenha}" />
+			<h:inputSecret value="#{mBean.passwordNew2}" id="senhaNova2" />
+
+		</h:panelGrid>
+
+		<p:commandButton value="#{msg.atualizar}"
+			action="#{mBean.changePassword}" update="contentPanel, mensagem"
+			oncomplete="showDialog2(opcao);" />
+			
+	</ui:define>
+</ui:composition>
+</html>

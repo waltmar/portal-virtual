@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	template="/templates/common/paineis/painelcadastro.xhtml">
+	<ui:define name="formularioCadastro">
+		<h:panelGrid columns="1">
+			<h:panelGrid columns="6" style="text-align:left;">
+
+
+				<h:outputText for="tabela" value="#{msg.tabela} " />
+				<h:selectOneMenu style="#{styleRequired}" id="tabela"
+					value="#{endereco.tabela}" required="true" requiredMessage="#{msg.obr}">
+				</h:selectOneMenu>
+
+				<h:outputLabel for="numero" value="#{msg.numero}" />
+				<p:inputText style="#{styleRequired}" size="10" id="numero"
+					onkeyup="numberOnly(this);" value="#{endereco.numero}" required="true"
+					requiredMessage="#{msg.obr}" />
+				<p:message for="numero" display="text" />
+
+				<h:outputText for="banco" value="#{msg.banco} " />
+				<h:selectOneMenu style="#{styleRequired}" id="banco"
+					value="#{endereco.banco}" required="true" requiredMessage="#{msg.obr}">
+
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{combos.tabelas}" />
+				</h:selectOneMenu>
+				<p:message for="tabela" display="text" />
+
+				<h:outputText for="regiao" value="#{msg.regiao} " />
+				<h:selectOneMenu style="#{styleRequired}" id="regiao"
+					value="#{endereco.regiao}" required="true" requiredMessage="#{msg.obr}">
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{combos.regioes}" />
+				</h:selectOneMenu>
+				<p:message for="regiao" display="text" />
+				
+				<h:outputText for="categoria" value="#{msg.categoria} " />
+				<h:selectOneMenu style="#{styleRequired}" id="categoria"
+					value="#{endereco.categoria}" required="true" requiredMessage="#{msg.obr}">
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{combos.categorias}" />
+				</h:selectOneMenu>
+				<p:message for="categoria" display="text" />
+				
+				<h:outputText for="servico" value="#{msg.servico} " />
+				<h:selectOneMenu style="#{styleRequired}" id="servico"
+					value="#{endereco.servico}" required="true" requiredMessage="#{msg.obr}">
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{combos.servicos}" />
+				</h:selectOneMenu>
+				<p:message for="servico" display="text" />
+				
+				<h:outputLabel for="preco" value="#{msg.preco}" />
+					<p:inputText style="#{styleRequired}" size="10" id="preco" onkeyup="moeda(this);"
+						value="#{model.preco}" required="true"
+						requiredMessage="#{msg.obr}" />
+					<p:message for="preco" display="text" />
+			</h:panelGrid>
+
+<<<<<<< .mine
+					
+=======
+			<h:panelGrid columns="9" style="text-align:left;">
+
+				<h:outputText for="agencia" value="#{msg.agencia} " />
+				<p:inputMask style="#{styleRequired}" size="10" id="agencia"
+					value="#{endereco.agencia}" mask="99999" required="true"
+					requiredMessage="#{msg.obr}" />
+				<p:message for="agencia" display="text" />
+
+
+				<h:outputText value="#{msg.telefone} " />
+				<p:inputMask size="2" id="ddd" value="#{endereco.ddd}" mask="(99)" />
+				<p:inputMask size="9" id="telefone" value="#{endereco.telefone}"
+					mask="9999-9999" />
+
+				<h:outputLabel for="aplicacaoConta" value="#{msg.aplicacaoConta}" />
+				<p:inputText size="25" id="aplicacaoConta"
+					value="#{endereco.aplicacaoConta}" />
+				
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="3" style="text-align:left;">
+
+				<h:outputLabel for="gerenteResponsavel"
+					value="#{msg.gerenteResponsavel}" />
+				<p:inputText size="40" id="gerenteResponsavel"
+					value="#{endereco.gerenteResponsavel}"/>
+
+			</h:panelGrid>
+
+			<p:spacer width="15px" />
+
+			<h:outputLabel value="#{msg.chequeEspecial}" />
+
+
+			<p:panel>
+				<h:panelGrid columns="7" style="text-align:left;">
+
+					<h:outputLabel for="limite" value="#{msg.limite}" />
+					<p:inputText size="10" id="limite" onkeyup="moeda(this);"
+						value="#{endereco.limite}" required="true"
+						requiredMessage="#{msg.obr}" />
+					
+
+					<h:outputLabel for="taxa" value="#{msg.taxa}" />
+					<p:inputText size="10" id="taxa" onkeyup="numberOnly(this);"
+						value="#{endereco.taxa}" />
+				
+
+					<h:outputText value="#{msg.vencimento}" />
+					<p:inputMask size="10" id="vencimento"
+						value="#{endereco.vencimento}" mask="99/99/9999"
+						required="true" requiredMessage="#{msg.obr}">
+						<p:ajax event="blur"
+							listener="#{mBean.validate('DateValidator', model.dataNascimento, 'model.dataNascimento')}"
+							update="mensagem, validade" />
+					</p:inputMask>
+					<p:message for="vencimento" display="text" />
+
+					<h:outputLabel for="diaDebito" value="#{msg.diaDebito}" />
+					<p:inputText size="10" id="diaDebito"
+						onkeyup="numberOnly(this);" value="#{endereco.diaDebito}"
+						required="true" requiredMessage="#{msg.obr}" />
+					<p:message for="diaDebito" display="text" />
+
+					<h:outputLabel for="jurosPagar" value="#{msg.jurosPagar}" />
+					<p:inputText size="10" id="jurosPagar" onkeyup="moeda(this);"
+						value="#{model.jurosPagar}" />
+					
+					<h:outputLabel for="saldoDevedor" value="#{msg.saldoDevedor}" />
+					<p:inputText size="10" id="saldoDevedor" onkeyup="moeda(this);"
+						value="#{model.saldoDevedor}" />
+					
+
+				</h:panelGrid>
+			</p:panel>
+>>>>>>> .r398
+		</h:panelGrid>
+	</ui:define>
+
+</ui:composition>

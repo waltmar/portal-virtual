@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:in="http://cdlanapolis.com.br/facelets">
+
+<ui:composition template="../formulariopadraopesquisadebito.xhtml">
+
+	<ui:param name="tituloTabela" value="#{msg.debito}" />
+	<ui:param name="numeroDeLinhasTabela" value="10" />
+
+	<ui:define name="camposPesquisa">
+		<center>
+			<h:panelGrid columns="3" style="text-align: left;">
+				<h:outputText value="#{msg.devedor} " />
+				<p:inputText size="20" id="devedorBusca" value="#{model.devedor}" />
+			
+				<h:panelGrid columns="4" style="text-align:left;">
+
+					<h:outputLabel for="status" value="#{msg.status}" />
+					<p:spacer width="#{spacer}" height="0px" />
+					<h:selectOneMenu id="status"  value="#{model.status}"
+						required="#{required}" style="#{style}"
+						requiredMessage="#{msg.obr}">
+						<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+							noSelectionOption="true" />
+						<f:selectItems value="#{BeanDebitoPesquisa.comboModel.status}" var="object"
+							itemLabel="#{object}" itemValue="#{object}" />
+					</h:selectOneMenu>
+					<p:message for="status" display="text" />
+
+				</h:panelGrid>
+
+
+			</h:panelGrid>
+		</center>
+	</ui:define>
+
+	<ui:define name="colunas">
+		<p:column style="width:200px; " headerText="#{msg.devedor}">
+			<h:outputText styleClass="tablefont" value="#{object.pessoa.nome}" />
+		</p:column>
+		<p:column headerText="#{msg.valor}">
+			<h:outputText styleClass="tablefont" value="#{object.valor}">
+				<f:convertNumber pattern="R$ #,##0.00" />
+			</h:outputText>
+		</p:column>
+		<p:column headerText="#{msg.dataCompra}">
+			<h:outputText styleClass="tablefont" value="#{object.dataCompra}">
+				<f:convertDateTime dateStyle="medium" />
+			</h:outputText>
+		</p:column>
+		<p:column headerText="#{msg.vencimento}">
+			<h:outputText styleClass="tablefont" value="#{object.dataVencimento}">
+				<f:convertDateTime dateStyle="medium" />
+			</h:outputText>
+		</p:column>
+
+		<f:facet name="footer">
+			<h:outputText style="color:red" value="#{msg.inativo}" />
+			<p:spacer width="15px" height="0px" />
+			<h:outputText style="color:green" value="#{msg.emAndamento}" />
+			<p:spacer width="15px" height="0px" />
+			<h:outputText style="color:blue" value="#{msg.concluido}" />
+
+		</f:facet>
+
+	</ui:define>
+
+	<ui:define name="viewPesquisa">
+
+		<p:dialog header="#{msg.debito}" widgetVar="debitosView" modal="true"
+			showEffect="slide" width="450" height="240">
+			<h:panelGrid columns="2">
+				<h:outputText value="#{msg.devedor}:" />
+				<h:outputText value="#{BeanDebitoPesquisa.debitoView.pessoa.nome}" />
+				<h:outputText value="#{msg.filiado}:" />
+				<h:outputText value="#{BeanDebitoPesquisa.debitoView.filiado.nome}" />
+				<h:outputText value="#{msg.dataCompra}:" />
+				<h:outputText value="#{BeanDebitoPesquisa.debitoView.dataCompra}">
+					<f:convertDateTime dateStyle="medium" />
+				</h:outputText>
+				<h:outputText value="#{msg.vencimento}:" />
+				<h:outputText
+					value="#{BeanDebitoPesquisa.debitoView.dataVencimento}">
+					<f:convertDateTime dateStyle="medium" />
+				</h:outputText>
+				<h:outputText value="#{msg.valor}:" />
+				<h:outputText value="#{BeanDebitoPesquisa.debitoView.valor}">
+					<f:convertNumber pattern="R$ #,##0.00" />
+				</h:outputText>
+				<h:outputText value="#{msg.valorPago}:" />
+				<h:outputText value="#{BeanDebitoPesquisa.debitoView.valorPago}">
+					<f:convertNumber pattern="R$ #,##0.00" />
+				</h:outputText>
+				<h:outputText value="#{msg.dataPagamento}:" />
+				<h:outputText value="#{BeanDebitoPesquisa.debitoView.dataPagamento}">
+					<f:convertDateTime dateStyle="medium" />
+				</h:outputText>
+				<h:outputText value="#{msg.status}:" />
+				<h:outputText value="#{BeanDebitoPesquisa.debitoView.status}" />
+				<h:outputText value="#{msg.multa}:" />
+				<h:outputText value="#{BeanDebitoPesquisa.debitoView.multa}" />
+				<h:outputText value="#{msg.juro}:" />
+				<h:outputText value="#{BeanDebitoPesquisa.debitoView.juro}" />
+
+			</h:panelGrid>
+
+		</p:dialog>
+	</ui:define>
+</ui:composition>
+</html>

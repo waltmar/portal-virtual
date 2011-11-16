@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE facelet-taglib PUBLIC "-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN"
+                                "facelet-taglib_1_0.dtd">
+<facelet-taglib>
+ <namespace>
+	http://biopids.com.br/facelets</namespace>
+
+
+ 
+   <tag>
+  <tag-name>crud</tag-name>
+  <source>../templates/common/crud/basiccrud.xhtml</source>
+ </tag>
+ 
+  <tag>
+  <tag-name>crudancestor</tag-name>
+  <source>../templates/common/crud/basiccrudancestor.xhtml</source>
+ </tag>
+ 
+  <tag>
+  <tag-name>campo</tag-name>
+  <source>../crud/componentes/genericInput.xhtml</source>
+ </tag>
+ 
+ <tag>
+  <tag-name>cpf</tag-name>
+  <source>../crud/componentes/cpfInput.xhtml</source>
+ </tag>
+ <tag>
+  <tag-name>cadastro</tag-name>
+  <source>../crud/genericCadastro.xhtml</source>
+ </tag>
+ 
+ 
+
+ <tag>
+  <tag-name>basicinput</tag-name>
+  <source>../templates/common/inputs/basicinput.xhtml</source>
+ </tag>
+ <tag>
+  <tag-name>numberinput</tag-name>
+  <source>../templates/common/inputs/numberinput.xhtml</source>
+ </tag>
+ <tag>
+  <tag-name>comboinput</tag-name>
+  <source>../templates/common/inputs/comboinput.xhtml</source>
+ </tag>
+ <tag>
+  <tag-name>obsinput</tag-name>
+  <source>../templates/common/inputs/obsinput.xhtml</source>
+ </tag>
+ <tag>
+  <tag-name>dateinput</tag-name>
+  <source>../templates/common/inputs/dateinput.xhtml</source>
+ </tag>
+  <tag>
+  <tag-name>moneyinput</tag-name>
+  <source>../templates/common/inputs/moneyinput.xhtml</source>
+ </tag>
+
+
+</facelet-taglib>
