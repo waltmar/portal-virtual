@@ -1,93 +1,45 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.prime.com.tr/ui"
 	xmlns:in="http://cdlanapolis.com.br/facelets">
 
-		
-		<p:wizard nextLabel="#{msg.proximo}" backLabel="#{msg.anterior}">
 
-			<p:tab id="tabColeta" title="#{msg.coleta}">
-					<ui:param name="beanCollect" value="#{ManagerSpecimen.objectModel.collect}" />
-					<ui:param name="mBean" value="#{ManagerSpecimen}" />
-					
-					
-					
-					<p:fieldset legend="#{msg.coletores}" id="collectorBase">
+	<p:wizard nextLabel="#{msg.proximo}" backLabel="#{msg.anterior}" style="width:700px ; height: auto;"  >
 
-					<h:panelGrid columns="2" style="text-align:left;">
-<in:crud id="reino" name="#{msg.reino}" action="mBean.actionSave(tipo)" />
-						<p:inputText size="30" value="#{mBean.collector.nome}" />
+<!--		<p:tab title="#{msg.coleta}">-->
+<!--			<br />-->
+<!--			<ui:include src="collect.xhtml" />-->
+<!--		</p:tab>-->
 
-						<p:commandButton value="#{msg.adicionar}" id="coletores"
-							action="#{ManagerSpecimen.newCollector}"
-							update="contentPanel,  tabColeta">
-							<p:collector value="#{mBean.collector}"
-								addTo="#{beanCollect.coletores}" />
-						</p:commandButton>
+		<p:tab title="#{msg.geografia}">
+			<br />
+			<ui:include src="geography.xhtml" />
+		</p:tab>
 
-						<p:outputPanel id="tableCollector">
-							<p:dataTable var="object" value="#{beanCollect.coletores}">
-								<p:column>
-									<f:facet name="header">  
-                 				 #{msg.coletores}
-           					</f:facet>
-									<h:outputText value="#{object.nome}" />
-								</p:column>
+		<p:tab title="#{msg.taxonomia}">
+			<br />
+			<ui:include src="taxonomy.xhtml" />
+		</p:tab>
 
-								<p:column>
-									<f:facet name="header">
-										<h:outputText value="Operation" />
-									</f:facet>
+		<p:tab title="#{msg.multimidia}">
+			<br />
+			<ui:include src="media.xhtml" />
+		</p:tab>
 
-									<p:commandLink value="Remove" update="form:collectorBase"
-										process="@this">
-										<p:collector value="#{object}"
-											removeFrom="#{beanCollect.coletores}" />
-									</p:commandLink>
+		<p:tab title="#{msg.bibliografiaOutros}">
+			<br />
+			<ui:include src="bibliographyandother.xhtml" />
+		</p:tab>
+
+		<p:tab title="#{msg.fimDoCadastro}">
+			<br />
+			<ui:include src="save.xhtml" />
+		</p:tab>
+	</p:wizard>
 
 
-								</p:column>
-
-							</p:dataTable>
-						</p:outputPanel>
-
-					</h:panelGrid>
-
-				</p:fieldset>
-				
-			<!--	<ui:include src="collect.xhtml" /> -->
-			</p:tab>
-
-			<p:tab title="#{msg.geografia}">
-				<br />
-				<ui:include src="geography.xhtml" />
-			</p:tab>
-
-			<p:tab title="#{msg.taxonomia}">
-				<br />
-				<ui:include src="taxonomy.xhtml" />
-			</p:tab>
-
-			<p:tab title="#{msg.multimidia}">
-				<br />
-				<ui:include src="media.xhtml" />
-			</p:tab>
-
-			<p:tab title="#{msg.bibliografiaOutros}">
-				<br />
-				<ui:include src="bibliographyandother.xhtml" />
-			</p:tab>
-
-			<p:tab title="#{msg.fimDoCadastro}">
-				<br />
-				<ui:include src="save.xhtml" />
-			</p:tab>
-		</p:wizard>
-
-
-
-</html>
+</ui:component>

@@ -6,7 +6,8 @@
 	xmlns:p="http://primefaces.prime.com.tr/ui"
 	xmlns:in="http://biopids.com.br/facelets">
 
-<ui:param name="beanTaxonomy" value="#{ManagerSpecimen.objectModel.taxonomy}" />
+	<ui:param name="beanTaxonomy"
+		value="#{ManagerEspecime.objectModel.taxonomia}" />
 
 	<h:panelGrid>
 
@@ -31,8 +32,8 @@
 					<in:comboinput name="#{msg.ordem}" id="ordem" required="false"
 						address="#{beanTaxonomy.ordem}" />
 
-					<in:comboinput name="#{msg.subOrdem}" id="subOrdem" required="false"
-						address="#{beanTaxonomy.subOrdem}" />
+					<in:comboinput name="#{msg.subOrdem}" id="subOrdem"
+						required="false" address="#{beanTaxonomy.subOrdem}" />
 
 					<in:comboinput name="#{msg.familia}" id="familia" required="false"
 						address="#{beanTaxonomy.familia}" />
@@ -56,27 +57,41 @@
 		</p:fieldset>
 
 		<h:panelGrid columns="2">
-		
+
 			<h:panelGrid columns="1">
-
-				<in:dateinput name="#{msg.dataDeterminacao}" id="dataDeterminacao"
-					required="true" address="#{beanTaxonomy.dataDeterminacao}" />
-
+				<!---->
+				<!--				<in:dateinput name="#{msg.dataDeterminacao}" id="dataDeterminacao"-->
+				<!--					required="false" address="#{beanTaxonomy.dataDeterminacao}" />-->
+				<h:panelGrid columns="4">
+					<h:outputText value="#{msg.dataDeterminacao} " />
+					<p:spacer height="30px" width="0px" />
+					<p:inputMask size="10" required="false"
+						value="#{beanTaxonomy.dataDeterminacao}" id="dataDeterminacao"
+						requiredMessage="#{msg.obr}" mask="99/99/9999">
+						<p:ajax event="blur"
+							listener="#{mBean.validate('DateValidatorNotObr', model.dataCompra, 'dataCompra')}"
+							update="mensagem, dataDeterminacao"
+							oncomplete="setFocus('dataDeterminacao');"></p:ajax>
+					</p:inputMask>
+					<p:message for="dataDeterminacao" display="text" />
+				</h:panelGrid>
+				
 			</h:panelGrid>
-			
-			<h:panelGrid columns="1">
+
+		</h:panelGrid>
+
+		<h:panelGrid columns="1">
 
 			<in:basicinput name="#{msg.imprecisao}" size="3" id="imprecisao"
-				required="true" address="#{beanTaxonomy.imprecisao}" />
+				required="false" address="#{beanTaxonomy.imprecisao}" />
 
-			<in:obsinput name="#{msg.obs}" id="obsTaxonomia"
+			<in:obsinput name="#{msg.obs}" id="obsTaxonomia" required="false"
 				address="#{beanTaxonomy.obsTaxonomia}" />
-			
-			</h:panelGrid>
-			
+
 		</h:panelGrid>
 
 	</h:panelGrid>
+
 
 
 </ui:composition>

@@ -247,8 +247,9 @@ public class BeanPessoaFisica extends GenericBean<PessoaFisica, Long> {
 		}
 	}
 
-	protected void afterLoadObjectTable() {
+	protected String afterLoadObjectTable() {
 		actionTipoImovel();
+		return null;
 	}
 
 	public boolean isReadOnlyCPF() {

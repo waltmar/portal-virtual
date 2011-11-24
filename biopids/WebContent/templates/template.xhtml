@@ -12,15 +12,44 @@
 	</ui:define>
 
 
-		<ui:define name="menu">
-			<ui:include src="/menu/menu2.xhtml" />
-		</ui:define>
-		<ui:define name="content">
-			<p:panel id="contentPanel"
-				style="width: 100%; height: 95%; background-image: url('#{path}/imagens/ss_2.JPG'); background-position: top; background-repeat: no-repeat; border-width: 0px">
-				<ui:insert name="area" />
-			</p:panel>
-		</ui:define>
+	<ui:define name="menu">
+		<ui:include src="/menu/menu2.xhtml" />
+	</ui:define>
+	<ui:define name="content">
+		<p:panel id="contentPanel"
+			style="width: 100%; height: 95%; background-image: url('#{path}/imagens/ss_2.JPG'); background-position: top; background-repeat: no-repeat; border-width: 0px">
+			<ui:insert name="area" />
+
+			<p:dialog header="#{mBean.headerDialog}" widgetVar="opcao"
+				rendered="true" modal="true" showEffect="slide" width="350"
+				height="150">
+				<center>
+					<h:panelGrid columns="2">
+						<h:graphicImage rendered="#{mBean.imageDialog}"
+							url="/imagens/1317654562_question-frame_blue.png" />
+						<h:panelGrid columns="1">
+
+							<h:outputText value="#{mBean.textDialog}" id="textDialog" />
+
+							<h:panelGrid columns="2"
+								style="margin-left: auto; margin-right: auto;">
+								<h:commandButton value="#{mBean.buttonDialogMessageOk}"
+									rendered="#{mBean.buttonDialogOk}"
+									action="#{mBean.actionDialogOk}"
+									update="contentPanel, mensagem" immediate="true" />
+								<h:commandButton value="#{mBean.buttonDialogMessageCancel}"
+									rendered="#{mBean.buttonDialogCancel}"
+									action="#{mBean.actionDialogCancel}"
+									update="contentPanel, mensagem" immediate="true" />
+							</h:panelGrid>
+						</h:panelGrid>
+					</h:panelGrid>
+				</center>
+			</p:dialog>
+
+
+		</p:panel>
+	</ui:define>
 
 
 	<ui:define name="footer">
