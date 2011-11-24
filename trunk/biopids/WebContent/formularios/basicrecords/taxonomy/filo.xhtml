@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:in="http://biopids.com.br/facelets">
+
+<ui:composition
+	template="/templates/common/gerenciadores/taxonomia.xhtml">
+
+	<ui:param name="mBean" value="#{ManagerFilo}" />
+	<ui:param name="bean" value="#{ManagerFilo.objectModel}" />
+	<ui:param name="update" value="filo" />
+	<ui:param name="nome" value="#{msg.filo}" />
+	<ui:param name="valor" value="#{ManagerFilo.objectModel.valor}" />
+
+	<!-- Ancestor -->
+	<ui:param name="lista" value="#{ManagerFilo.combos.reinos}" />
+	<ui:param name="labelLista" value="#{object.valor}" />
+	<ui:param name="valorLista" value="#{object.codigo}" />
+	<ui:param name="idAncestor" value="reino" />
+	<ui:param name="nomeAncestor" value="#{msg.reino}" />
+	<ui:param name="inputAncestor" value="#{bean.reino}" />
+<ui:param name="colunaAncestor" value="#{object.reino.valor}"/>
+
+
+	<ui:define name="Cadastro">
+		<ui:include src="/templates/common/crud/basiccrudancestor.xhtml" />
+	</ui:define>
+
+</ui:composition>
+</html>

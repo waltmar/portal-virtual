@@ -5,25 +5,25 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.prime.com.tr/ui" template="basiccrud.xhtml">
 
-	<ui:define name="ancestorInput">
-		<h:panelGrid columns="3">
-			<h:outputLabel for="#{ancestor}" value="#{nameAncestor}" />
-			<h:selectOneMenu id="#{ancestor}" value="#{mBean.ancestor}"
-				required="true" requiredMessage="#{msg.obr}">
+	<ui:define name="comboAncestor">
+		<h:panelGrid columns="4">
+			<h:outputLabel for="#{idAncestor}" value="#{nomeAncestor}" />
+			<p:spacer width="0px" height="0px" />
+			<h:selectOneMenu id="#{idAncestor}" value="#{inputAncestor}"
+				required="false" requiredMessage="#{msg.obr}">
 				<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
 					noSelectionOption="true" />
-				<f:selectItems value="#{combos.ancestor}" />
+				<f:selectItems value="#{lista}" var="object"
+					itemLabel="#{labelLista}" itemValue="#{valorLista}" />
 			</h:selectOneMenu>
-			<p:message for="#{ancestor}" display="text" />
+			<p:message for="#{idAncestor}" display="text" />
 		</h:panelGrid>
 	</ui:define>
 
-	<ui:define name="columnAncestor">
-
-		<p:column headerText="#{ancestor}">
-			<h:outputText value="#{object.ancestor}" />
+	<ui:define name="ancestorColumn">
+		<p:column headerText="#{nomeAncestor}">
+			<h:outputText value="#{colunaAncestor}" />
 		</p:column>
-
 	</ui:define>
 
 

@@ -1,38 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.prime.com.tr/ui"
 	xmlns:in="http://biopids.com.br/facelets">
 
-<ui:composition>
-
-	<ui:param name="tituloTabela" value="#{name}" />
-	<ui:param name="nameAncestor" value="#{nameAncestor}" />
+	<ui:param name="tituloTabela" value="#{nome}" />
 
 	<h:panelGrid id="panelcrud">
 
 		<h:panelGrid columns="3">
 
-			<ui:insert name="ancestorInput" />
 
-			<in:basicinput id="#{id}" name="#{name}"
-				address="#{ManagerBasic.objectModel.valor}" />
+			<h:panelGrid columns="2">
+			
+				<ui:insert name="comboAncestor"/>
+				
+				<h:panelGrid columns="4" style="text-align:left;" id="areaInput">
+
+					<h:outputLabel for="valor" value="#{nome}" />
+					<p:spacer width="0px" height="0px" />
+					<p:inputText id="valor" value="#{valor}"
+						requiredMessage="#{msg.obr}" />
+					<p:message for="valor" display="text" />
+
+				</h:panelGrid>
+			</h:panelGrid>
 
 			<h:panelGrid columns="2"
 				style="margin-left: auto; margin-right: auto;">
-				
+
 				<h:panelGrid columns="1"
 					style="margin-right:auto; margin-left:auto;">
 					<p:commandButton value="#{msg.salvar}" id="save2"
-						action="#{mBean.saveAction}" update="mensagem"
-						 />
+						action="#{mBean.saveAction}"
+						update="tbl,pesquisaTable, mensagem, valor" />
 				</h:panelGrid>
-				
-			<p:commandButton value="#{msg.pesquisar}" id="busca1"
-			action="#{mBean.search}"
-			rendered="true" update="contentPanel, mensagem" />
+
+				<p:commandButton value="#{msg.pesquisar}" id="busca1"
+					immediate="true" action="#{mBean.search}" rendered="true"
+					update="tbl, pesquisaTable, mensagem, valor" />
 			</h:panelGrid>
 
 
@@ -44,24 +52,46 @@
 			<h:panelGrid columns="1">
 
 
-				<ui:include src="../pesquisa/basictable.xhtml">
+				<p:dataTable id="tbl" var="object" value="#{mBean.list}"
+					paginator="true" rows="10"
+					emptyMessage="#{msg.nenhumRegistroEncontrado}"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="5,10,15">
 
-					<ui:define name="colunas">
-						<ui:insert name="columnAncestor" />
-						<p:column headerText="#{name}">
-							<h:outputText value="#{object.valor}" />
-						</p:column>
-					</ui:define>
+					<f:facet name="header">  
+         				 #{tituloTabela}  
+       					</f:facet>
 
-				</ui:include>
+					<ui:insert name="ancestorColumn" />
+
+					<p:column headerText="#{nome}">
+						<h:outputText value="#{object.valor}" />
+					</p:column>
+
+					<p:column headerText="#{msg.acoes}">
+						<center>
+							<p:commandLink action="#{mBean.loadObjectTable(object)}"
+								id="atualizar" update="valor" immediate="true">
+								<h:graphicImage url="/imagens/find.png" />
+							</p:commandLink>
+							<p:spacer height="10px" width="opx" />
+							<p:commandLink update="contentPanel, opcao, mensagem" id="delete"
+								onstart="#{mBean.setSelectObject(object)}" immediate="true"
+								oncomplete="showDialog2(opcao);">
+								<h:graphicImage url="/imagens/delete_icon.png" />
+							</p:commandLink>
+						</center>
+					</p:column>
+				</p:dataTable>
+
 			</h:panelGrid>
 		</h:panelGrid>
+
+
 
 	</h:panelGrid>
 
 
 
-
 </ui:composition>
 
-</html>

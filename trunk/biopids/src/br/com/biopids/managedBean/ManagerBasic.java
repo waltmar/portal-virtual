@@ -26,7 +26,6 @@ public class ManagerBasic extends GenericBean<Basic, Long> {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
 
 	/** 
 	 * 
@@ -35,11 +34,11 @@ public class ManagerBasic extends GenericBean<Basic, Long> {
 	public ManagerBasic() {
 		super();
 	}
-	
-	public String moveToKingdom(){
+
+	public String moveToKingdom() {
 		return "reino";
 	}
-	
+
 	public void save() {
 		try {
 			mapping();
@@ -48,31 +47,25 @@ public class ManagerBasic extends GenericBean<Basic, Long> {
 			e.printStackTrace();
 		}
 		executeSearch();
-		if (getList().size() == 0) {
+		boolean result = false;
+		if (getList().size() != 0) {
+
+			for (int i = 0; i < getList().size(); i++) {
+				if (getList().get(i).equals(
+						((BasicModel) getModel()).getValor())) {
+					setMessage(FacesMessage.SEVERITY_WARN, FactoreProperties
+							.loadPtbr().getValor("RegistroJaCadastrado"), "");
+					result = true;
+				}
+			}
+			
+		} else if (result)
 			super.save();
-		} else
-			setMessage(FacesMessage.SEVERITY_WARN, FactoreProperties.loadPtbr()
-					.getValor("RegistroJaCadastrado"), "");
 		objectModel = getModel();
 		search();
 	}
 
-	protected void before() throws ErrorException {
-		BasicModel basic = (BasicModel) objectModel;
-		String tipo = FacesContext.getCurrentInstance().getExternalContext()
-				.getRequestParameterMap().get("TIPO");
-		basic.setTipo(tipo);
-		super.before();
-	}
 
-	public String chooseSave() {
-		BasicModel basic = (BasicModel) objectModel;
-		setParamsDialog(false, true, true, "saveAction", "exitDialogFound",
-				properties.getValor("desejaSalvarEsteRegistro"),
-				basic.getTipo() + ": " + basic.getValor(),
-				properties.getValor("salvar"), properties.getValor("cancelar"));
-		return null;
-	}
 
 	public ControlerList getControllerList() {
 		return (ControlerList) AppContext.getApplicationContext().getBean(

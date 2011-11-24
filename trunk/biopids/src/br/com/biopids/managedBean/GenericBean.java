@@ -73,6 +73,7 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 	protected String buttonDialogMessageOk;
 	protected String buttonDialogMessageCancel;
 	protected boolean panelDialog;
+	protected String returnAction="";
 
 	public GenericBean() {
 		this.objectDomain = getDomain();
@@ -80,6 +81,17 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 		loadVisiblePanels();
 		loadProperties();
 		checkUserInSession();
+		resetParamsDialog();
+	}
+	
+	public String getValorPtbr(String valor){
+		return FactoreProperties.loadPtbr().getValor(
+		valor);
+	}
+	
+	public void setWarnError(String text) {
+		setMessage(FacesMessage.SEVERITY_WARN, FactoreProperties.loadPtbr()
+				.getValor(text), "");
 	}
 	
 	private void checkUserInSession() {
@@ -137,7 +149,7 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 			SecurityException, IllegalAccessException,
 			InvocationTargetException, NoSuchMethodException {
 		genericAction(actionDialogMethodCancel);
-		return "principal";
+		return returnAction;
 	}
 
 	public String actionDialogConfirm() throws IllegalArgumentException,
@@ -458,7 +470,6 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 
 	protected void afterSearch() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	protected void executeSearch() {
@@ -723,9 +734,15 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 	}
 
 	public String deleteAction() {
+		beforeDelete();
 		delete();
 		afterDelete();
 		return null;
+	}
+
+	private void beforeDelete() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	public String inactiveAction(T entity) throws ErrorException {
@@ -774,18 +791,25 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 			treatException(e);
 		}
 		organizerPanel(true, false);
-		afterLoadObjectTable();
-		return " ";
+		
+		return afterLoadObjectTable();
 	}
 
-	protected void afterLoadObjectTable() {
+	protected String afterLoadObjectTable() {
 		// TODO Auto-generated method stub
-		
+		return "";
 	}
 
 	public String setSelectObject(T entity) {
 		this.objectDomain = entity;
+		afterSelectObject();
 		return null;
+	}
+	
+
+	protected void afterSelectObject() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	protected void setMethodonInativate() {

@@ -10,62 +10,13 @@
 <ui:composition
 	template="/templates/common/gerenciadores/gerenciadorpaineiscrud.xhtml">
 
-	<ui:param name="mBean" value="#{ManagerSpecimen}" />
+	<ui:param name="mBean" value="#{ManagerEspecime}" />
 	<ui:param name="nomePainel" value="#{msg.cadastroEspecimes}" />
+	<ui:param name="combos" value="#{ManagerEspecime.comboModel}" />
 
 	<ui:define name="Cadastro">
-		
-		<p:tab id="tabColeta" title="#{msg.coleta}">
-					<ui:param name="beanCollect" value="#{ManagerSpecimen.objectModel.collect}" />
-					<ui:param name="mBean" value="#{ManagerSpecimen}" />
-					
-					<p:fieldset legend="#{msg.coletores}" id="collectorBase">
 
-					<h:panelGrid columns="2" style="text-align:left;">
-
-						<p:inputText size="30" value="#{mBean.collector.nome}" />
-
-						<p:commandButton value="#{msg.adicionar}" id="coletores"
-							action="#{ManagerSpecimen.newCollector}"
-							update="contentPanel,  tabColeta">
-							<p:collector value="#{mBean.collector}"
-								addTo="#{beanCollect.coletores}" />
-						</p:commandButton>
-
-						<p:outputPanel id="tableCollector">
-							<p:dataTable var="object" value="#{beanCollect.coletores}">
-								<p:column>
-									<f:facet name="header">  
-                 				 #{msg.coletores}
-           					</f:facet>
-									<h:outputText value="#{object.nome}" />
-								</p:column>
-
-								<p:column>
-									<f:facet name="header">
-										<h:outputText value="Operation" />
-									</f:facet>
-
-									<p:commandLink value="Remove" update="form:collectorBase"
-										process="@this">
-										<p:collector value="#{object}"
-											removeFrom="#{beanCollect.coletores}" />
-									</p:commandLink>
-
-
-								</p:column>
-
-							</p:dataTable>
-						</p:outputPanel>
-
-					</h:panelGrid>
-
-				</p:fieldset>
-				
-			<!--	<ui:include src="collect.xhtml" /> -->
-			</p:tab>
-	
-		<!--	<ui:include src="/formularios/Specimen/cadastro/index.xhtml" />-->
+		<ui:include src="/formularios/Specimen/cadastro/index.xhtml" />
 		
 	</ui:define>
 
