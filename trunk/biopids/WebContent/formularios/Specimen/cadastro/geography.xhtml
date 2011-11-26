@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:in="http://biopids.com.br/facelets">
+
+	<ui:param name="beanGeography"
+		value="#{ManagerEspecime.objectModel.geografia}" />
+
+	<h:panelGrid>
+
+		<p:fieldset legend="#{msg.areaGeografica}">
+
+			<h:panelGrid columns="1">
+
+				<h:panelGrid columns="4">
+					<h:outputText value="#{msg.pais} " />
+					<p:spacer height="0px" width="35px"></p:spacer>
+					<h:selectOneMenu style="#{styleRequired}" id="pais"
+						value="#{beanGeography.pais}" required="false"
+						requiredMessage="#{msg.obr}">
+						<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+							noSelectionOption="true" />
+						<f:selectItems value="#{combos.paises}" var="object"
+							itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+					</h:selectOneMenu>
+					<p:message for="pais" display="text" />
+				</h:panelGrid>
+
+				<h:panelGrid columns="4">
+					<h:outputText value="#{msg.estado} " />
+					<p:spacer height="0px" width="21px"></p:spacer>
+					<h:selectOneMenu style="#{styleRequired}" id="estado"
+						value="#{beanGeography.estado}" required="false"
+						requiredMessage="#{msg.obr}">
+						<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+							noSelectionOption="true" />
+						<f:selectItems value="#{combos.estados}" var="object"
+							itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+					</h:selectOneMenu>
+					<p:message for="estado" display="text" />
+				</h:panelGrid>
+
+				<h:panelGrid columns="4">
+					<h:outputText value="#{msg.municipio} " />
+					<p:spacer height="0px" width="8px"></p:spacer>
+					<h:selectOneMenu style="#{styleRequired}" id="municipio"
+						value="#{beanGeography.municipio}" required="false"
+						requiredMessage="#{msg.obr}">
+						<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+							noSelectionOption="true" />
+						<f:selectItems value="#{combos.municipios}" var="object"
+							itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+					</h:selectOneMenu>
+					<p:message for="municipio" display="text" />
+				</h:panelGrid>
+
+				<in:basicinput name="#{msg.localidade}" id="localidade" size="59"
+					required="false" address="#{beanGeography.localidade}" />
+
+			</h:panelGrid>
+
+		</p:fieldset>
+
+		<h:panelGrid columns="3">
+
+			<in:numberinput name="#{msg.latitude}" mask="999999" id="latitude" spacer="26" size="6"
+				required="false" address="#{beanGeography.latitude}" />
+
+			<in:numberinput name="#{msg.longitude}" mask="999999" id="longitude" size="6"
+				required="false" address="#{beanGeography.longitude}" />
+
+			<in:numberinput name="#{msg.altitude}" mask="999999" id="altitude" size="6" spacer="36"
+				required="false" address="#{beanGeography.altitude}" />
+
+			<in:numberinput name="#{msg.profundidade}" mask="999999" size="6"
+				id="profundidade" required="false"
+				address="#{beanGeography.profundidade}" />
+
+			<in:basicinput name="#{msg.precisao}" size="3" id="precisao"  spacer="6"
+				required="false" address="#{beanGeography.precisao}" />
+			
+			<h:panelGrid columns="4">
+					<h:outputText value="#{msg.massaDagua} " />
+					<p:spacer height="27px" width="0px"></p:spacer>
+					<h:selectOneMenu style="#{styleRequired}" id="massaDagua"
+						value="#{beanGeography.massaDagua}" required="false"
+						requiredMessage="#{msg.obr}">
+						<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+							noSelectionOption="true" />
+						<f:selectItems value="#{combos.massasDagua}" var="object"
+							itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+					</h:selectOneMenu>
+					<p:message for="massaDagua" display="text" />
+				</h:panelGrid>
+
+			<h:panelGrid columns="4">
+					<h:outputText value="#{msg.datum} " />
+					<p:spacer height="27px" width="0px"></p:spacer>
+					<h:selectOneMenu style="#{styleRequired}" id="datum"
+						value="#{beanGeography.datum}" required="false"
+						requiredMessage="#{msg.obr}">
+						<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+							noSelectionOption="true" />
+						<f:selectItems value="#{combos.datuns}" var="object"
+							itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+					</h:selectOneMenu>
+					<p:message for="datum" display="text" />
+				</h:panelGrid>
+
+		</h:panelGrid>
+
+		<in:obsinput name="#{msg.obs}" id="obsGeografia"
+			address="#{beanGeography.obsGeografia}" />
+
+	</h:panelGrid>
+
+</ui:composition>
+
+
+
