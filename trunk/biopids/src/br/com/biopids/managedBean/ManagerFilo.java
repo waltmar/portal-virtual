@@ -6,7 +6,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
-import br.com.biopids.domain.Debito;
 import br.com.biopids.domain.Filo;
 import br.com.biopids.domain.Reino;
 import br.com.biopids.exception.ErrorException;

@@ -75,11 +75,11 @@ public class ControllerFilo extends GenericController<Filo, Long> implements
 				.getApplicationContext().getBean("ControllerClasse");
 		Classe classe = new Classe();
 		classe.setFilo(Filo);
-		List<Classe> list = controllerClasse.getByFinder(classe, new String[] {
-				"classe.filo", "classe.codigo" });
-		if (!list.isEmpty())
-			return true;
-		else
+//		List<Classe> list = controllerClasse.getByFinder(classe, new String[] {
+//				"classe.filo", "classe.codigo" });
+//		if (!list.isEmpty())
+//			return true;
+//		else
 			return false;
 	}
 

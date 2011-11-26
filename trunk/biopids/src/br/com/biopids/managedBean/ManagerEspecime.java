@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -19,26 +20,63 @@ import org.primefaces.model.CroppedImage;
 import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
 
+import br.com.biopids.domain.Aplicacao;
+import br.com.biopids.domain.Autor;
+import br.com.biopids.domain.Bibliografia;
+import br.com.biopids.domain.Classe;
 import br.com.biopids.domain.Datum;
+import br.com.biopids.domain.EntityPersist;
+import br.com.biopids.domain.EpEspecifico;
 import br.com.biopids.domain.Especime;
 import br.com.biopids.domain.Estado;
+import br.com.biopids.domain.EstagioDesenvolvimento;
+import br.com.biopids.domain.Familia;
+import br.com.biopids.domain.Fenologia;
+import br.com.biopids.domain.Filo;
+import br.com.biopids.domain.Fenologia;
+import br.com.biopids.domain.Genero;
 import br.com.biopids.domain.Imagem;
 import br.com.biopids.domain.MassaDagua;
+import br.com.biopids.domain.Metodo;
 import br.com.biopids.domain.Municipio;
+import br.com.biopids.domain.Ordem;
 import br.com.biopids.domain.Pais;
+import br.com.biopids.domain.Reino;
+import br.com.biopids.domain.Sexo;
+import br.com.biopids.domain.SubClasse;
+import br.com.biopids.domain.SubFamilia;
+import br.com.biopids.domain.SubGenero;
+import br.com.biopids.domain.SubOrdem;
+import br.com.biopids.domain.TipoMontagem;
 import br.com.biopids.model.Video;
 import br.com.biopids.exception.ErrorException;
 import br.com.biopids.interfaces.IController;
 import br.com.biopids.listable.ControlerList;
+import br.com.biopids.managedListable.ListableAutor;
+import br.com.biopids.managedListable.ListableClasse;
 import br.com.biopids.managedListable.ListableDatum;
 import br.com.biopids.managedListable.ListableEstado;
+import br.com.biopids.managedListable.ListableEstagioDesenvolvimento;
+import br.com.biopids.managedListable.ListableFamilia;
+import br.com.biopids.managedListable.ListableFenologia;
+import br.com.biopids.managedListable.ListableFilo;
+import br.com.biopids.managedListable.ListableGenero;
 import br.com.biopids.managedListable.ListableMassaDagua;
+import br.com.biopids.managedListable.ListableMetodo;
 import br.com.biopids.managedListable.ListableMunicipio;
+import br.com.biopids.managedListable.ListableOrdem;
 import br.com.biopids.managedListable.ListablePais;
+import br.com.biopids.managedListable.ListableReino;
+import br.com.biopids.managedListable.ListableSexo;
+import br.com.biopids.managedListable.ListableSubClasse;
+import br.com.biopids.managedListable.ListableSubFamilia;
+import br.com.biopids.managedListable.ListableSubOrdem;
+import br.com.biopids.managedListable.ListableTipoMontagem;
 import br.com.biopids.model.Coletor;
 import br.com.biopids.model.ComboEspecime;
 import br.com.biopids.model.EspecimeModel;
 import br.com.biopids.provider.AppContext;
+import br.com.biopids.util.FactoreProperties;
 
 @ManagedBean(name = "ManagerEspecime")
 @SessionScoped
@@ -50,6 +88,8 @@ public class ManagerEspecime extends GenericBean<Especime, Long> {
 	private static final long serialVersionUID = 1L;
 	private ComboEspecime combos;
 	private Coletor collector;
+	private Bibliografia bibliografia;
+	private Aplicacao aplicacao;
 
 	private StreamedContent imagemEnviada = new DefaultStreamedContent();
 	private String imagemTemporaria;
@@ -57,6 +97,7 @@ public class ManagerEspecime extends GenericBean<Especime, Long> {
 	private boolean exibeBotao = false;
 	private List<Imagem> imagens;
 	private List<Video> videos;
+	private boolean renderedVideo = false;
 	private Video video;
 	private String videoCurrent;
 	private List<String> listaImagens;
@@ -70,12 +111,39 @@ public class ManagerEspecime extends GenericBean<Especime, Long> {
 	public ManagerEspecime() {
 		super();
 		this.collector = new Coletor();
+		this.bibliografia = new Bibliografia();
+		this.aplicacao = new Aplicacao();
 		this.video = new Video();
 		this.imagens = new ArrayList<Imagem>();
 		this.videos = new ArrayList<Video>();
 		this.listaImagens = new ArrayList<String>();
 		this.videoCurrent = "";
+		this.renderedVideo = false;
 
+	}
+
+	protected void afterSave() {
+		// TODO Auto-generated method stub
+		loadProperties();
+		objectModel = getModel();
+
+		// setMethodDialogSave();
+		setMessage(FacesMessage.SEVERITY_INFO, FactoreProperties.loadPtbr()
+				.getValor("SalvoSucesso"), "");
+		exit();
+	}
+	
+	protected void afterMapping() {
+		
+	}
+
+	public String exit2() {
+		objectModel = getModel();
+		return "";
+	}
+
+	public String exit() {
+		return "/formularios/Specimen/index.xhtml?move=1";
 	}
 
 	public String removeImage(Imagem imagem) {
@@ -102,10 +170,9 @@ public class ManagerEspecime extends GenericBean<Especime, Long> {
 					null, ex);
 		}
 	}
-	
-	public String getRandomString(){
-		return Integer.toString(1000 + (int) (Math.random() * 1000))
-		.toString();
+
+	public String getRandomString() {
+		return Integer.toString(1000 + (int) (Math.random() * 1000)).toString();
 	}
 
 	public void enviarImagem(FileUploadEvent event) {
@@ -115,7 +182,7 @@ public class ManagerEspecime extends GenericBean<Especime, Long> {
 					.getInputstream());
 			foto = new Imagem();
 			foto.setImagem(event.getFile().getContents());
-			foto.setNome("imagem"+ getRandomString());
+			foto.setNome("imagem" + getRandomString());
 			FacesContext facesContext = FacesContext.getCurrentInstance();
 			ServletContext scontext = (ServletContext) facesContext
 					.getExternalContext().getContext();
@@ -137,6 +204,16 @@ public class ManagerEspecime extends GenericBean<Especime, Long> {
 		return null;
 	}
 
+	public String newBibliografia() {
+		bibliografia = new Bibliografia();
+		return null;
+	}
+
+	public String newAplicacao() {
+		aplicacao = new Aplicacao();
+		return null;
+	}
+
 	public String newVideo() {
 		video = new Video();
 		return null;
@@ -148,18 +225,37 @@ public class ManagerEspecime extends GenericBean<Especime, Long> {
 		return null;
 	}
 
-	public String removeVideo(Video object) {
+	public String removeBibliografia(Bibliografia object) {
 		EspecimeModel specimen = (EspecimeModel) objectModel;
-		specimen.getMedia().getVideos().remove(object);
+		specimen.getOutros().getBibliografias().remove(object);
 		return null;
 	}
-	
+
+	public String removeAplicacao(Aplicacao object) {
+		EspecimeModel specimen = (EspecimeModel) objectModel;
+		specimen.getOutros().getAplicacoes().remove(object);
+		return null;
+	}
+
+	public String removeVideo(Video object) {
+		EspecimeModel specimen = (EspecimeModel) objectModel;
+
+		specimen.getMedia().getVideos().remove(object);
+
+		if (specimen.getMedia().getVideos().size() == 0)
+			this.renderedVideo = false;
+		if (videoCurrent.equalsIgnoreCase(object.getUrl()))
+			videoCurrent = "algo";
+		return null;
+	}
+
 	public String playVideo(Video object) {
 		videoCurrent = object.getUrl();
 		return null;
 	}
 
 	public String addVideo() {
+		this.renderedVideo = true;
 		if (video.getUrl() != null) {
 			videoCurrent = video.getUrl();
 			video.setNome("video" + getRandomString());
@@ -177,11 +273,6 @@ public class ManagerEspecime extends GenericBean<Especime, Long> {
 			collector = new Coletor();
 		}
 		return null;
-	}
-
-	protected void afterSave() {
-		super.afterSave();
-		// setMethodDialogSave();
 	}
 
 	public String returnToInit() {
@@ -212,6 +303,7 @@ public class ManagerEspecime extends GenericBean<Especime, Long> {
 		return new Especime();
 	}
 
+
 	public Object loadCombos() {
 		combos = new ComboEspecime();
 
@@ -231,6 +323,54 @@ public class ManagerEspecime extends GenericBean<Especime, Long> {
 				ListableDatum.class);
 		combos.setDatuns(list4);
 
+		List<Reino> list5 = (List<Reino>) getControllerList().getList(
+				ListableReino.class);
+		combos.setReinos(list5);
+		List<Filo> list6 = (List<Filo>) getControllerList().getList(
+				ListableFilo.class);
+		combos.setFilos(list6);
+		List<Classe> list7 = (List<Classe>) getControllerList().getList(
+				ListableClasse.class);
+		combos.setClasses(list7);
+		List<SubClasse> list8 = (List<SubClasse>) getControllerList().getList(
+				ListableSubClasse.class);
+		combos.setSubClasses(list8);
+		List<Ordem> list9 = (List<Ordem>) getControllerList().getList(
+				ListableOrdem.class);
+		combos.setOrdens(list9);
+		List<SubOrdem> list10 = (List<SubOrdem>) getControllerList().getList(
+				ListableSubOrdem.class);
+		combos.setSubOrdens(list10);
+		List<Familia> list11 = (List<Familia>) getControllerList().getList(
+				ListableFamilia.class);
+		combos.setFamilias(list11);
+		List<SubFamilia> list12 = (List<SubFamilia>) getControllerList()
+				.getList(ListableSubFamilia.class);
+		combos.setSubFamilias(list12);
+		List<Genero> list13 = (List<Genero>) getControllerList().getList(
+				ListableGenero.class);
+		combos.setGeneros(list13);
+
+		List<Autor> list19 = (List<Autor>) getControllerList().getList(
+				ListableAutor.class);
+		combos.setAutores(list19);
+
+		List<EstagioDesenvolvimento> list14 = (List<EstagioDesenvolvimento>) getControllerList()
+				.getList(ListableEstagioDesenvolvimento.class);
+		combos.setEstagiosDesenvolvimento(list14);
+		List<Fenologia> list15 = (List<Fenologia>) getControllerList().getList(
+				ListableFenologia.class);
+		combos.setFenologias(list15);
+		List<Metodo> list16 = (List<Metodo>) getControllerList().getList(
+				ListableMetodo.class);
+		combos.setMetodos(list16);
+		List<Sexo> list17 = (List<Sexo>) getControllerList().getList(
+				ListableSexo.class);
+		combos.setSexos(list17);
+		List<TipoMontagem> list18 = (List<TipoMontagem>) getControllerList()
+				.getList(ListableTipoMontagem.class);
+		combos.setTiposMontagem(list18);
+
 		return combos;
 	}
 
@@ -245,15 +385,19 @@ public class ManagerEspecime extends GenericBean<Especime, Long> {
 	public void setCombos(ComboEspecime combos) {
 		this.combos = combos;
 	}
+	public String GenerateCodigo(){
+		((EspecimeModel) getObjectModel()).getColeta().setCodigoCatalogo("lab" +getRandomString());
+		
+		return null;
+	}
 
 	public String[] getCollunsTableSearch() {
-		return new String[] { "Specimen.codigo", "Specimen.nome",
-				"Specimen.cnpj", "Specimen.status", "endereco.endereco",
-				"endereco.cidade", "endereco.cep", "Specimen.email" };
+		return new String[] { "especime.coleta", "especime.coleta",
+				"especime.geografia", "especime.taxonomia"};
 	}
 
 	public String[] getOrdersTableSearch() {
-		return new String[] { "Specimen.nome" };
+		return new String[] { "especime.coleta.codigoColeta" };
 	}
 
 	private void loadSpecimen(String codigoCatalogo) {
@@ -366,6 +510,30 @@ public class ManagerEspecime extends GenericBean<Especime, Long> {
 
 	public void setVideo(Video video) {
 		this.video = video;
+	}
+
+	public Bibliografia getBibliografia() {
+		return bibliografia;
+	}
+
+	public void setBibliografia(Bibliografia bibliografia) {
+		this.bibliografia = bibliografia;
+	}
+
+	public Aplicacao getAplicacao() {
+		return aplicacao;
+	}
+
+	public void setAplicacao(Aplicacao aplicacao) {
+		this.aplicacao = aplicacao;
+	}
+
+	public boolean isRenderedVideo() {
+		return renderedVideo;
+	}
+
+	public void setRenderedVideo(boolean renderedVideo) {
+		this.renderedVideo = renderedVideo;
 	}
 
 }

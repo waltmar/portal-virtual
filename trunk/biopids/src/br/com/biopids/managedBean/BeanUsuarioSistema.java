@@ -15,18 +15,15 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import br.com.biopids.domain.Autorizacao;
-import br.com.biopids.domain.Filiado;
-import br.com.biopids.domain.PessoaFisica;
 import br.com.biopids.domain.Status;
 import br.com.biopids.domain.UsuarioSistema;
 import br.com.biopids.exception.ErrorException;
 import br.com.biopids.listable.ControlerList;
 import br.com.biopids.managedListable.ListableAutorizacao;
 import br.com.biopids.managedListable.ListableFiliado;
-import br.com.biopids.model.ComboCheque;
-import br.com.biopids.model.ComboCrediario;
+
 import br.com.biopids.model.ComboUsuarioSistema;
-import br.com.biopids.model.PessoaFisicaModel;
+
 import br.com.biopids.model.UserChangePassword;
 import br.com.biopids.model.UsuarioSistemaModel;
 import br.com.biopids.interfaces.IController;

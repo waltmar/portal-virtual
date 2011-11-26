@@ -2,6 +2,8 @@ package br.com.biopids.model;
 
 import java.io.Serializable;
 
+import br.com.biopids.annotation.InnerClassDomain;
+
 public class Taxonomia implements Serializable{
 
 	/**
@@ -9,20 +11,35 @@ public class Taxonomia implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	@InnerClassDomain(local={"taxonomia","reino","codigo"})
 	private String reino;
+	@InnerClassDomain(local={"taxonomia","filo","codigo"})
 	private String filo;
+	@InnerClassDomain(local={"taxonomia","classe","codigo"})
 	private String classe;
+	@InnerClassDomain(local={"taxonomia","subClasse","codigo"})
 	private String subClasse;
+	@InnerClassDomain(local={"taxonomia","ordem","codigo"})
 	private String ordem;
+	@InnerClassDomain(local={"taxonomia","subOrdem","codigo"})
 	private String subOrdem;
+	@InnerClassDomain(local={"taxonomia","familia","codigo"})
 	private String familia;
+	@InnerClassDomain(local={"taxonomia","subFamilia","codigo"})
 	private String subFamilia;
+	@InnerClassDomain(local={"taxonomia","genero","codigo"})
 	private String genero;
+	@InnerClassDomain(local={"taxonomia","subGenero","codigo"})
 	private String subGenero;
+	@InnerClassDomain(local={"taxonomia","epEspecifico"})
 	private String epEspecifico;
+	@InnerClassDomain(local={"taxonomia","autor","nome"})
 	private String autor;
+	@InnerClassDomain(local={"taxonomia", "dataDeterminacao"})
 	private String dataDeterminacao;
+	@InnerClassDomain(local={"taxonomia", "imprecisao"})
 	private String imprecisao;
+	@InnerClassDomain(local={"taxonomia", "obsTaxonomia"})
 	private String obsTaxonomia;
 	
 	public Taxonomia(){}

@@ -16,7 +16,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import br.com.biopids.converter.GenericConverterEntity;
-import br.com.biopids.domain.EnderecoCep;
+
 import br.com.biopids.domain.EntityPersist;
 import br.com.biopids.domain.Status;
 import br.com.biopids.domain.UsuarioSistema;
@@ -159,31 +159,6 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 		return null;
 	}
 	
-	public EnderecoCep searchCEP(String cep){
-		EnderecoCep enderecoCep = new EnderecoCep();
-		enderecoCep.setCep(cep);
-		List<EnderecoCep> list = null;
-		IController<EnderecoCep, Integer> controlerCep = (IController<EnderecoCep, Integer>) AppContext.getApplicationContext().getBean("ControllerEnderecoCep");
-		try {
-			 list = controlerCep.getByFinder(enderecoCep, "enderecocep.logradouro", "enderecocep.complemento", "enderecocep.bairro.descricao", "enderecocep.bairro.cidade.descricao", "enderecocep.bairro.cidade.uf.sigla");
-		} catch (ErrorException e) {
-			treatException(e);
-		}
-		if(list != null && !list.isEmpty()){
-			enderecoCep = list.get(0);
-		}else{
-			enderecoCep = null;
-		}
-		return enderecoCep;
-	}
-	
-	public void actionSearchCEP(Object cep, String marcador){
-		EnderecoCep enderecoCep = searchCEP(cep.toString().replaceAll("-", ""));
-		if(enderecoCep != null){
-			enderecoCep.setCep(cep.toString());
-			setCEPInObjectModel(enderecoCep, marcador);
-		}
-	}
 
 	
 
@@ -297,7 +272,13 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 
 	protected void before() throws ErrorException {
 		mapping();
+		afterMapping();
 		((EntityPersist) objectDomain).setStatus(Status.ATIVO);
+	}
+
+	protected void afterMapping() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	public void save() {
@@ -590,6 +571,12 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 
 		return url;
 	}
+	
+	public String exit2() {
+		objectModel = getModel();
+		return "";
+	}
+	
 
 	protected void preparePage() {
 	};
@@ -879,9 +866,7 @@ public abstract class GenericBean<T extends Serializable, oid extends Serializab
 		return null;
 	}
 	
-	public void setCEPInObjectModel(EnderecoCep enderecoCep, String marcador) {}
 
-	
 	public String getActionDialogMethodCancel() {
 		return actionDialogMethodCancel;
 	}
