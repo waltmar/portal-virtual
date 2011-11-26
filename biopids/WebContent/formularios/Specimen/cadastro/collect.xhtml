@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:in="http://biopids.com.br/facelets">
+
+	<ui:param name="beanCollect"
+		value="#{ManagerEspecime.objectModel.coleta}" />
+	<ui:param name="mBean" value="#{ManagerEspecime}" />
+
+	<h:panelGrid>
+
+		<h:panelGrid columns="3">
+
+			<in:numberinput name="#{msg.codigoCatalogo}" mask="999999"
+				id="codigoCatalogo" required="false" size="6"
+				address="#{beanCollect.codigoCatalogo}" />
+
+			<in:numberinput name="#{msg.codigoColeta}" mask="999999"
+				id="codigoColeta" required="false" size="6"
+				address="#{beanCollect.codigoColeta}" />
+
+			<h:panelGrid columns="4">
+				<h:outputText value="#{msg.dataColeta} " />
+				<p:spacer height="30px" width="0px" />
+				<p:inputMask size="10" required="false"
+					value="#{beanCollect.dataColeta}" id="dataColeta"
+					requiredMessage="#{msg.obr}" mask="99/99/9999" />
+				<p:message for="dataColeta" display="text" />
+			</h:panelGrid>
+		</h:panelGrid>
+
+		<h:panelGrid columns="2">
+
+			<h:panelGrid columns="4">
+				<h:outputText value="#{msg.estagioDesenvolvimento} " />
+				<p:spacer height="0px" width="0px"></p:spacer>
+				<h:selectOneMenu style="#{styleRequired}"
+					id="estagioDesenvolvimento"
+					value="#{beanCollect.estagioDesenvolvimento}" required="false"
+					requiredMessage="#{msg.obr}">
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{combos.estagiosDesenvolvimento}"
+						var="object" itemLabel="#{object.valor}"
+						itemValue="#{object.codigo}" />
+				</h:selectOneMenu>
+				<p:message for="estagioDesenvolvimento" display="text" />
+			</h:panelGrid>
+
+
+			<h:panelGrid columns="4">
+				<h:outputText value="#{msg.fenologia} " />
+				<p:spacer height="0px" width="0px"></p:spacer>
+				<h:selectOneMenu style="#{styleRequired}" id="fenologia"
+					value="#{beanCollect.fenologia}" required="false"
+					requiredMessage="#{msg.obr}">
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{combos.fenologias}" var="object"
+						itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+				</h:selectOneMenu>
+				<p:message for="fenologia" display="text" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="4">
+				<h:outputText value="#{msg.metodo} " />
+				<p:spacer height="0px" width="115px"></p:spacer>
+				<h:selectOneMenu style="#{styleRequired}" id="metodo"
+					value="#{beanCollect.metodo}" required="false"
+					requiredMessage="#{msg.obr}">
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{combos.metodos}" var="object"
+						itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+				</h:selectOneMenu>
+				<p:message for="metodo" display="text" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="4">
+				<h:outputText value="#{msg.sexo} " />
+				<p:spacer height="0px" width="27px"></p:spacer>
+				<h:selectOneMenu style="#{styleRequired}" id="sexo"
+					value="#{beanCollect.sexo}" required="false"
+					requiredMessage="#{msg.obr}">
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{combos.sexos}" var="object"
+						itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+				</h:selectOneMenu>
+				<p:message for="metodo" display="text" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="4">
+				<h:outputText value="#{msg.tipoMontagem} " />
+				<p:spacer height="0px" width="50px"></p:spacer>
+				<h:selectOneMenu style="#{styleRequired}" id="tipoMontagem"
+					value="#{beanCollect.tipoMontagem}" required="false"
+					requiredMessage="#{msg.obr}">
+					<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{combos.tiposMontagem}" var="object"
+						itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+				</h:selectOneMenu>
+				<p:message for="tipoMontagem" display="text" />
+			</h:panelGrid>
+
+			<in:numberinput name="#{msg.numeroIndividuos}" mask="99"
+				id="numeroIndividuos" required="false" size="3"
+				address="#{beanCollect.numeroIndividuos}" />
+
+		</h:panelGrid>
+
+		<p:fieldset legend="#{msg.coletores}" id="collectorBase">
+
+			<h:panelGrid columns="2" style="text-align:left;">
+
+				<p:inputText size="30" value="#{mBean.collector.nome}" />
+
+				<p:commandButton value="#{msg.adicionar}" id="coletores"
+					action="#{ManagerEspecime.newCollector}"
+					update="contentPanel,  tabColeta">
+					<p:collector value="#{mBean.collector}"
+						addTo="#{beanCollect.coletores}" />
+				</p:commandButton>
+
+				<p:outputPanel id="tableCollector">
+					<p:dataTable var="object" value="#{beanCollect.coletores}">
+						<p:column>
+							<f:facet name="header">  
+                 				 #{msg.coletores}
+           					</f:facet>
+							<h:outputText value="#{object.nome}" />
+						</p:column>
+
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="Operation" />
+							</f:facet>
+
+							<p:commandLink value="Remove" update="form:collectorBase"
+								process="@this">
+								<p:collector value="#{object}"
+									removeFrom="#{beanCollect.coletores}" />
+							</p:commandLink>
+
+
+						</p:column>
+
+					</p:dataTable>
+				</p:outputPanel>
+
+			</h:panelGrid>
+
+		</p:fieldset>
+
+		<in:obsinput name="#{msg.obs}" id="obsColeta" required="false"
+			address="#{beanCollect.obsColeta}" />
+	</h:panelGrid>
+
+</ui:composition>
+
+
+
