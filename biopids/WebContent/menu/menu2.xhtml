@@ -7,45 +7,27 @@
 	xmlns:c="http://java.sun.com/jstl/core">
 
 
-	<p:menu  type="tiered" style="width:180px" autoSubmenuDisplay="false">
-		<p:submenu label="#{msg.cadastrar}" >
-			<p:menuitem value="#{msg.usuario}"
-				url="/formularios/usuario/index.xhtml?move=1" rendered="#{p:ifGranted('ROLE_ADMIN')}"/>
-			<p:submenu label="#{msg.debito}">
-				<p:menuitem value="#{msg.tabelasBasicas}"
-					url="/templates/basicrecords/templatebasictab/finaltemplatetab.xhtml" />
-				<p:menuitem value="#{msg.crediario}"
-					url="/formularios/debito/crediario/index.xhtml?move=1" />
-			</p:submenu>
-					
-			<p:menuitem value="#{msg.especime}"
+	<p:menu style="width:180px" autoSubmenuDisplay="false">
+
+
+		<p:submenu label="Espécimes">
+			<p:menuitem value="#{msg.novo}" 
 				url="/formularios/Specimen/index.xhtml?move=1" />
-				
-			<p:menuitem value="#{msg.tabelasBasicas}"
-					url="/templates/basicrecords/templatebasictab/finaltemplatetab.xhtml" />
-				
-			<p:menuitem value="#{msg.pessoaFisica}"
-				url="/formularios/pessoaFisica/index.xhtml?move=1" />
-
-			<p:menuitem value="#{msg.pessoaJuridica}"
-				url="/formularios/pessoaJuridica/index.xhtml?move=1">
-			
-			
-	
-				
-			</p:menuitem>
+			<p:menuitem value="#{msg.pesquisar}"
+				url="/formularios/Specimen/pesquisa/pesquisa.xhtml" />
 		</p:submenu>
 
-		<p:submenu label="#{msg.pesquisar}">
-			<p:menuitem value="#{msg.usuario}"
-				url="/formularios/usuario/index.xhtml?move=2" />
-			<p:menuitem value="#{msg.debito}"
-				url="/formularios/debito/pesquisa/index.xhtml" /> 
-			<p:menuitem value="#{msg.pessoaFisica}"
-				url="/formularios/pessoaFisica/index.xhtml?move=2" />
-			<p:menuitem value="#{msg.pessoaJuridica}"
-				url="/formularios/pessoaJuridica/index.xhtml?move=2" />
+		<p:submenu label="Tabelas básicas">
+			<p:menuitem value="#{msg.manter}"
+				url="/templates/basicrecords/templatebasictab/finaltemplatetab.xhtml" />
 		</p:submenu>
+		<p:submenu label="Usuários">
+			<p:menuitem value="#{msg.novo}"
+				url="/templates/basicrecords/templatebasictab/finaltemplatetab.xhtml" />
+			<p:menuitem value="#{msg.pesquisar}"
+				url="/templates/basicrecords/templatebasictab/finaltemplatetab.xhtml" />
+		</p:submenu>
+
 
 	</p:menu>
 
