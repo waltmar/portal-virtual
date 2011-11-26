@@ -6,10 +6,13 @@
 	xmlns:p="http://primefaces.prime.com.tr/ui"
 	xmlns:in="http://cdlanapolis.com.br/facelets">
 
-	<ui:param name="beanMedia" value="#{ManagerEspecime.objectModel.media}" />
+	
+	
 	<h:panelGrid>
-
-		<p:panel id="AdicionarImagens" header="#{msg.adicionarImagens}"
+		
+		<ui:param name="beanMedia" value="#{ManagerEspecime.objectModel.media}" />
+		
+		<p:panel  header="#{msg.adicionarImagens}"
 			toggleable="true" closable="false" toggleSpeed="50"
 			style="width:700px ; height: auto;" widgetVar="AdicionarImagens">
 
@@ -28,12 +31,12 @@
 					<p:dataTable var="object" value="#{mBean.imagens}"
 						style="width:300px ; height: auto;" id="tabelaImagens">
 						<f:facet name="header">
-							<ui:insert name="nameTable">
+							
              imagens  
-            </ui:insert>
+           
 						</f:facet>
 
-						<ui:insert name="columns" />
+					
 						<p:column>
 							<f:facet name="header">  
                    #{msg.nome}
@@ -45,8 +48,8 @@
                    #{msg.excluir}
             </f:facet>
 							<center>
-								<p:commandLink update="panelImagens,tabelaImagens "
-									id="deleteImage" ajax="false"
+								<p:commandLink update="panelImagens,tabelaImagens"
+									 ajax="false"
 									action="#{mBean.removeImage(object)}">
 									<h:graphicImage url="/imagens/delete_icon.png" />
 									<p:ajax update="panelImagens, tabelaImagens"></p:ajax>
@@ -66,7 +69,7 @@
 			</p:galleria>
 		</p:panel>
 
-		<p:panel id="AdicionarVideos" header="#{msg.adicionarVideos}"
+		<p:panel header="#{msg.adicionarVideos}"
 			toggleable="true" closable="false" toggleSpeed="50"
 			widgetVar="AdicionarVideos">
 
@@ -79,15 +82,15 @@
 						<p:inputText size="30" value="#{ManagerEspecime.video.url}" />
 
 						<p:commandButton value="#{msg.adicionar}" ajax="false"
-							id="videosAction" action="#{ManagerEspecime.addVideo}"
+							 action="#{ManagerEspecime.addVideo}"
 							update="contentPanel, tableVideo, mediaView">
 
 						</p:commandButton>
 					</h:panelGrid>
 				</center>
 
-				<p:outputPanel id="tableVideo">
-					<p:dataTable var="object2" value="#{beanMedia.videos}">
+				<p:outputPanel>
+					<p:dataTable  id="tableVideo" var="object2" value="#{beanMedia.videos}">
 						<p:column>
 							<f:facet name="header">  
                  				 Vídeos
@@ -97,15 +100,15 @@
 
 						<p:column>
 							<f:facet name="header">
-								<h:outputText value="Operation" />
+								<h:outputText value="excluir" />
 							</f:facet>
 
-							<p:commandLink update="tableVideo, mediaView" id="playVideo"
+							<p:commandLink update="tableVideo, mediaView" 
 								ajax="false" action="#{mBean.playVideo(object2)}">
 								<h:graphicImage url="/imagens/play.png" />
 							</p:commandLink>
 							<p:spacer height="0px" width="20px"></p:spacer>
-							<p:commandLink update="tableVideo, mediaView" id="deleteVideo"
+							<p:commandLink update="tableVideo, mediaView, mediaPanelGrid"  
 								ajax="false" action="#{mBean.removeVideo(object2)}">
 								<h:graphicImage url="/imagens/delete_icon.png" />
 
@@ -118,17 +121,13 @@
 
 			</h:panelGrid>
 			<center>
-				<p:media value="#{mBean.videoCurrent}" width="425" height="344"
+			
+			<h:panelGrid id="mediaPanelGrid" rendered="#{mBean.renderedVideo}">
+				<p:media  value="#{mBean.videoCurrent}" width="425" height="344" 
 					player="flash" />
+			</h:panelGrid>
+			
 			</center>
-
-		</p:panel>
-
-		<p:panel id="AdicionarSons" header="#{msg.adicionarSons}"
-			toggleable="true" closable="false" toggleSpeed="50"
-			widgetVar="AdicionarSons">
-
-			<p:media value="value" width="200" height="20" player="quicktime" />
 
 		</p:panel>
 

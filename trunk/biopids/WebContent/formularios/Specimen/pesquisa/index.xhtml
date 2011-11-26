@@ -7,39 +7,77 @@
 
 <ui:composition
 	template="/templates/common/pesquisa/formulariopadraopesquisa.xhtml">
-	<ui:param name="tituloTabela" value="#{msg.pessoaJuridica}" />
+	<ui:param name="tituloTabela" value="#{msg.especimes}" />
 	<ui:param name="numeroDeLinhasTabela" value="10" />
+	<ui:param name="mBean" value="#{ManagerEspecime}"></ui:param>
 	<ui:define name="camposPesquisa">
 		<h:panelGrid columns="4" style="text-align: left;">
-			<h:outputLabel for="nomeBusca" value="#{msg.nome}" />
-			<p:inputText size="49" id="nomeBusca" value="#{BeanPessoaJuridica.objectModel.dadosEmpresa.nomeFantasia}" />
-			<h:outputText value="#{msg.cnpj}" />
-			<p:inputMask size="19" id="cnpjBusca" value="#{BeanPessoaJuridica.objectModel.dadosEmpresa.cnpj}"
-				mask="99.999.999/9999-99" />
+			<h:outputLabel for="codigoColetaBusca" value="#{msg.codigoColeta}" />
+			<p:inputText size="6" id="codigoColetaBusca"
+				value="#{mBean.objectModel.coleta.codigoColeta}" />
+			<h:outputLabel for="epEspecificoBusca" value="#{msg.especie}" />
+			<p:inputText size="49" id="epEspecificoBusca"
+				value="#{mBean.objectModel.taxonomia.epEspecifico}" />
+
 		</h:panelGrid>
+
+	</ui:define>
+	
+	<ui:define name="inativar">
+
+		<p:column>
+			<p:commandLink rendered="true"
+				update="excluir" action="#{mBean.setSelectObject(object)}"
+				onclick="excluir.show()">
+				<h:graphicImage url="/imagens/delete_icon.png" />
+			</p:commandLink>
+			
+		</p:column>
+
 	</ui:define>
 
 	<ui:define name="colunas">
-		
-		<p:column style="width:200px; " headerText="#{msg.nomeFantasia}">
-			<h:outputText styleClass="tablefont" value="#{object.nome}" />
+
+		<p:column>
+			<f:facet name="header">  
+                  Código da Coleta
+            </f:facet>
+			<h:outputText styleClass="tablefont"
+				value="#{object.coleta.codigoColeta}" />
 		</p:column>
-		<p:column style="width:200px; " headerText="#{msg.razaoSocial}">
-			<h:outputText styleClass="tablefont" value="#{object.razaoSocial}" />
+
+		<p:column>
+			<f:facet name="header">  
+                   Data da Coleta
+            </f:facet>
+			<p:calendar pattern="dd/MM/yyyy" value="#{object.coleta.dataColeta}"
+				size="10" />
 		</p:column>
-		<p:column headerText="#{msg.cnpj}">
-			<h:outputText styleClass="tablefont" value="#{object.cnpj}" />
+
+		<p:column>
+			<f:facet name="header">  
+                   Município
+            </f:facet>
+			<h:outputText styleClass="tablefont"
+				value="#{object.geografia.municipio.valor}" />
 		</p:column>
-		<p:column headerText="#{msg.cep}">
-			<h:outputText styleClass="tablefont" value="#{object.endereco.cep}" />
+
+		<p:column>
+			<f:facet name="header">  
+                  Família
+            </f:facet>
+			<h:outputText styleClass="tablefont"
+				value="#{object.taxonomia.familia.valor}" />
 		</p:column>
-		<p:column headerText="#{msg.endereco}">
-			<h:outputText styleClass="tablefont" value="#{object.endereco.endereco}" />
+
+		<p:column>
+			<f:facet name="header">  
+                  Gênero
+            </f:facet>
+			<h:outputText styleClass="tablefont"
+				value="#{object.taxonomia.genero}" />
 		</p:column>
-		<p:column headerText="#{msg.cidade}">
-			<h:outputText styleClass="tablefont" value="#{object.endereco.cidade}" />
-		</p:column>
-		
+
 	</ui:define>
 </ui:composition>
 </html>

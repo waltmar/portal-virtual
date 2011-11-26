@@ -12,7 +12,9 @@
 
 	<ui:param name="mBean" value="#{ManagerEspecime}" />
 	<ui:param name="nomePainel" value="#{msg.cadastroEspecimes}" />
-	<ui:param name="combos" value="#{ManagerEspecime.comboModel}" />
+	<ui:param name="headerCadastro" value="Cadastro de Espécime" />
+	<ui:param name="headerPesquisa" value="Busca de Espécimes" />
+<ui:param name="combos" value="#{ManagerEspecime.comboModel}" />
 
 	<ui:define name="Cadastro">
 
@@ -21,7 +23,7 @@
 	</ui:define>
 
 	<ui:define name="Pesquisa">
-
+		<ui:include src="/formularios/Specimen/pesquisa/index.xhtml"/>
 	</ui:define>
 
 
