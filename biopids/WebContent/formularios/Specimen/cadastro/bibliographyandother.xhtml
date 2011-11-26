@@ -5,16 +5,97 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.prime.com.tr/ui"
 	xmlns:in="http://cdlanapolis.com.br/facelets">
+	
+	<ui:param name="beanBibliografia" value="#{ManagerEspecime.objectModel.outros}" />
+	<h:panelGrid>
+	
+	
+		<p:fieldset legend="#{msg.bibliografias}" id="bibliografiaBase">
 
-		<h:panelGrid>
-			<!--
-			<in:collectortable name="#{msg.bibliografias}" id="bibliografias" 
-					address="#{bean.bibliografia}" idButton="saveBibliografias" action="action" list="list" valorList="list"/>
-			
-			<in:collectortable name="#{msg.aplicacaoEconomica}" id="aplicacaoEconomica" 
-					address="#{bean.aplicacaoEconomica}" idButton="saveAplicacao" action="action" list="list" valorList="list"/>
-			-->		
-		</h:panelGrid>
+			<h:panelGrid columns="2" style="text-align:left;">
+
+				<p:inputText size="30" value="#{ManagerEspecime.bibliografia.valor}" />
+
+				<p:commandButton value="#{msg.adicionar}" id="bibliografias"
+					action="#{ManagerEspecime.newBibliografia}"
+					update="contentPanel, tableBibliografia">
+					<p:collector value="#{mBean.bibliografia}"
+						addTo="#{beanBibliografia.bibliografias}" />
+				</p:commandButton>
+
+				<p:outputPanel id="tableBibliografia">
+					<p:dataTable var="object" value="#{beanBibliografia.bibliografias}">
+						<p:column>
+							<f:facet name="header">  
+                 				 #{msg.bibliografias}
+           					</f:facet>
+							<h:outputText value="#{object.valor}" />
+						</p:column>
+
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="Operation" />
+							</f:facet>
+
+							<p:commandLink value="Remove" update="form:bibliografiaBase"
+								process="@this">
+								<p:collector value="#{object}"
+									removeFrom="#{beanBibliografia.bibliografias}" />
+							</p:commandLink>
+
+						</p:column>
+
+					</p:dataTable>
+				</p:outputPanel>
+
+			</h:panelGrid>
+
+		</p:fieldset>
+<!--		-->
+		<p:fieldset legend="#{msg.aplicacoes}" id="aplicacaoBase">
+
+			<h:panelGrid columns="2" style="text-align:left;">
+
+				<p:inputText size="30" value="#{ManagerEspecime.aplicacao.valor}" />
+
+				<p:commandButton value="#{msg.adicionar}" id="aplicacoes"
+					action="#{ManagerEspecime.newAplicacao}"
+					update="contentPanel, tableAplicacao">
+					<p:collector value="#{mBean.aplicacao}"
+						addTo="#{beanBibliografia.aplicacoes}" />
+				</p:commandButton>
+
+				<p:outputPanel id="tableAplicacao">
+					<p:dataTable var="object" value="#{beanBibliografia.aplicacoes}">
+						<p:column>
+							<f:facet name="header">  
+                 				 #{msg.aplicacoes}
+           					</f:facet>
+							<h:outputText value="#{object.valor}" />
+						</p:column>
+
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="Operation" />
+							</f:facet>
+
+							<p:commandLink value="Remove" update="form:aplicacaoBase"
+								process="@this">
+								<p:collector value="#{object}"
+									removeFrom="#{beanBibliografia.aplicacoes}" />
+							</p:commandLink>
+
+						</p:column>
+
+					</p:dataTable>
+				</p:outputPanel>
+
+			</h:panelGrid>
+
+		</p:fieldset>
+
+
+	</h:panelGrid>
 
 
 

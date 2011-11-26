@@ -9,9 +9,12 @@
 		<p:separator />  
 	
 	<h:panelGrid columns="1" style="margin-right:auto; margin-left:auto;">
-		<p:commandButton  style="width: 140px; height: 60px;" immediate="true"
+		<p:commandButton  style="width: 140px; height: 60px;" 
 			value="#{msg.salvar}" id="save2" action="#{mBean.saveAction}"
-			update="contentPanel, mensagem" oncomplete="showDialog2(opcao);" />
+			update="contentPanel, mensagem" />
 	</h:panelGrid>
+	
+<!---->
+
 	
 	</ui:composition>

@@ -10,58 +10,178 @@
 		value="#{ManagerEspecime.objectModel.taxonomia}" />
 
 	<h:panelGrid>
+		<h:panelGrid columns="2">
+			<p:fieldset legend="#{msg.taxonomiaEspecime}">
 
-		<p:fieldset legend="#{msg.taxonomiaEspecime}">
+				<h:panelGrid columns="1">
 
-			<h:panelGrid columns="1">
 
-				<in:comboinput name="#{msg.reino}" id="reino" required="false"
-					address="#{beanTaxonomy.reino}" />
+					<h:panelGrid columns="5">
+						<p:spacer height="0px" width="1px"></p:spacer>
+						<h:outputText value="#{msg.reino} " />
+						<p:spacer height="0px" width="6px"></p:spacer>
+						<h:selectOneMenu style="#{styleRequired}" id="reino"
+							value="#{beanTaxonomy.reino}" required="false"
+							requiredMessage="#{msg.obr}">
+							<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+								noSelectionOption="true" />
+							<f:selectItems value="#{combos.reinos}" var="object"
+								itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+						</h:selectOneMenu>
+						<p:message for="reino" display="text" />
+					</h:panelGrid>
 
-				<in:comboinput name="#{msg.filo}" id="filo" required="false"
-					address="#{beanTaxonomy.filo}" />
+					<h:panelGrid columns="5">
+					<p:spacer height="0px" width="1px"></p:spacer>
+						<h:outputText value="#{msg.filo} " />
+						<p:spacer height="0px" width="19px"></p:spacer>
+						<h:selectOneMenu style="#{styleRequired}" id="filo"
+							value="#{beanTaxonomy.filo}" required="false"
+							requiredMessage="#{msg.obr}">
+							<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+								noSelectionOption="true" />
+							<f:selectItems value="#{combos.filos}" var="object"
+								itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+						</h:selectOneMenu>
+						<p:message for="filo" display="text" />
+					</h:panelGrid>
 
-				<h:panelGrid columns="2">
+					<h:panelGrid columns="2">
 
-					<in:comboinput name="#{msg.classe}" id="classe" required="false"
-						address="#{beanTaxonomy.classe}" />
 
-					<in:comboinput name="#{msg.subClasse}" id="subClasse"
-						required="false" address="#{beanTaxonomy.subClasse}" />
+						<h:panelGrid columns="4">
+							<h:outputText value="#{msg.classe} " />
+							<p:spacer height="0px" width="1px"></p:spacer>
+							<h:selectOneMenu style="#{styleRequired}" id="classe"
+								value="#{beanTaxonomy.classe}" required="false"
+								requiredMessage="#{msg.obr}">
+								<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+									noSelectionOption="true" />
+								<f:selectItems value="#{combos.classes}" var="object"
+									itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+							</h:selectOneMenu>
+							<p:message for="classe" display="text" />
+						</h:panelGrid>
 
-					<in:comboinput name="#{msg.ordem}" id="ordem" required="false"
-						address="#{beanTaxonomy.ordem}" />
+						<h:panelGrid columns="4">
+							<h:outputText value="#{msg.subClasse} " />
+							<p:spacer height="0px" width="0px"></p:spacer>
+							<h:selectOneMenu style="#{styleRequired}" id="subClasse"
+								value="#{beanTaxonomy.subClasse}" required="false"
+								requiredMessage="#{msg.obr}">
+								<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+									noSelectionOption="true" />
+								<f:selectItems value="#{combos.subClasses}" var="object"
+									itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+							</h:selectOneMenu>
+							<p:message for="subClasse" display="text" />
+						</h:panelGrid>
 
-					<in:comboinput name="#{msg.subOrdem}" id="subOrdem"
-						required="false" address="#{beanTaxonomy.subOrdem}" />
+						<h:panelGrid columns="4">
+							<h:outputText value="#{msg.ordem} " />
+							<p:spacer height="0px" width="3px"></p:spacer>
+							<h:selectOneMenu style="#{styleRequired}" id="ordem"
+								value="#{beanTaxonomy.ordem}" required="false"
+								requiredMessage="#{msg.obr}">
+								<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+									noSelectionOption="true" />
+								<f:selectItems value="#{combos.ordens}" var="object"
+									itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+							</h:selectOneMenu>
+							<p:message for="ordem" display="text" />
+						</h:panelGrid>
 
-					<in:comboinput name="#{msg.familia}" id="familia" required="false"
-						address="#{beanTaxonomy.familia}" />
 
-					<in:comboinput name="#{msg.subFamilia}" id="subFamilia"
-						required="false" address="#{beanTaxonomy.subFamilia}" />
+
+						<h:panelGrid columns="4">
+							<h:outputText value="#{msg.subOrdem} " />
+							<p:spacer height="0px" width="0px"></p:spacer>
+							<h:selectOneMenu style="#{styleRequired}" id="subOrdem"
+								value="#{beanTaxonomy.subOrdem}" required="false"
+								requiredMessage="#{msg.obr}">
+								<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+									noSelectionOption="true" />
+								<f:selectItems value="#{combos.subOrdens}" var="object"
+									itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+							</h:selectOneMenu>
+							<p:message for="subOrdem" display="text" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="4">
+							<h:outputText value="#{msg.familia} " />
+							<p:spacer height="0px" width="0px"></p:spacer>
+							<h:selectOneMenu style="#{styleRequired}" id="familia"
+								value="#{beanTaxonomy.familia}" required="false"
+								requiredMessage="#{msg.obr}">
+								<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+									noSelectionOption="true" />
+								<f:selectItems value="#{combos.familias}" var="object"
+									itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+							</h:selectOneMenu>
+							<p:message for="familia" display="text" />
+						</h:panelGrid>
+
+						<h:panelGrid columns="4">
+							<h:outputText value="#{msg.subFamilia} " />
+							<p:spacer height="0px" width="0px"></p:spacer>
+							<h:selectOneMenu style="#{styleRequired}" id="subFamilia"
+								value="#{beanTaxonomy.subFamilia}" required="false"
+								requiredMessage="#{msg.obr}">
+								<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+									noSelectionOption="true" />
+								<f:selectItems value="#{combos.subFamilias}" var="object"
+									itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+							</h:selectOneMenu>
+							<p:message for="subFamilia" display="text" />
+						</h:panelGrid>
+
+					</h:panelGrid>
+
+					<h:panelGrid columns="4">
+						<h:outputText value="#{msg.genero} " />
+						<p:spacer height="0px" width="3px"></p:spacer>
+						<h:selectOneMenu style="#{styleRequired}" id="genero"
+							value="#{beanTaxonomy.genero}" required="false"
+							requiredMessage="#{msg.obr}">
+							<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+								noSelectionOption="true" />
+							<f:selectItems value="#{combos.generos}" var="object"
+								itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+						</h:selectOneMenu>
+						<p:message for="genero" display="text" />
+					</h:panelGrid>
+
+					<in:basicinput name="#{msg.epEspecifico}" id="epEspecifico"
+						required="false" address="#{beanTaxonomy.epEspecifico}" />
+					<!---->
+					<!---->
+					<h:panelGrid columns="4">
+						<h:outputText value="#{msg.autor}" />
+						<p:spacer height="0px" width="15px"></p:spacer>
+						<h:selectOneMenu style="#{styleRequired}" id="autor2"
+							value="#{beanTaxonomy.autor}" required="false"
+							requiredMessage="#{msg.obr}">
+							<f:selectItem itemLabel="#{msg.selecione}" itemValue=""
+								noSelectionOption="true" />
+							<f:selectItems value="#{combos.autores}" var="object"
+								itemLabel="#{object.valor}" itemValue="#{object.codigo}" />
+						</h:selectOneMenu>
+						<p:message for="autor2" display="text" />
+					</h:panelGrid>
 
 				</h:panelGrid>
 
-				<in:comboinput name="#{msg.genero}" id="genero" required="false"
-					address="#{beanTaxonomy.genero}" />
-
-				<in:basicinput name="#{msg.epEspecifico}" id="epEspecifico"
-					required="false" address="#{beanTaxonomy.epEspecifico}" />
-
-				<in:comboinput name="#{msg.autor}" id="autor" required="false"
-					address="#{beanTaxonomy.autor}" />
-
-			</h:panelGrid>
-
-		</p:fieldset>
-
+			</p:fieldset>
+			
+						<in:obsinput name="#{msg.obs}" id="obsTaxonomia" required="false"
+				address="#{beanTaxonomy.obsTaxonomia}" />
+			
+		</h:panelGrid>
+		
 		<h:panelGrid columns="2">
 
 			<h:panelGrid columns="1">
-				<!---->
-				<!--				<in:dateinput name="#{msg.dataDeterminacao}" id="dataDeterminacao"-->
-				<!--					required="false" address="#{beanTaxonomy.dataDeterminacao}" />-->
+
 				<h:panelGrid columns="4">
 					<h:outputText value="#{msg.dataDeterminacao} " />
 					<p:spacer height="30px" width="0px" />
@@ -75,20 +195,15 @@
 					</p:inputMask>
 					<p:message for="dataDeterminacao" display="text" />
 				</h:panelGrid>
-				
+
 			</h:panelGrid>
-
-		</h:panelGrid>
-
-		<h:panelGrid columns="1">
-
 			<in:basicinput name="#{msg.imprecisao}" size="3" id="imprecisao"
 				required="false" address="#{beanTaxonomy.imprecisao}" />
 
-			<in:obsinput name="#{msg.obs}" id="obsTaxonomia" required="false"
-				address="#{beanTaxonomy.obsTaxonomia}" />
 
 		</h:panelGrid>
+
+
 
 	</h:panelGrid>
 
