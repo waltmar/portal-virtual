@@ -6,8 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.biopids.domain.Filo;
-import br.com.biopids.domain.PessoaFisica;
-import br.com.biopids.domain.PessoaJuridica;
+
 import br.com.biopids.domain.Reino;
 import br.com.biopids.exception.ErrorException;
 import br.com.biopids.interfaces.IController;

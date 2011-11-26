@@ -6,7 +6,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
 
-import br.com.biopids.domain.PessoaFisica;
 import br.com.biopids.domain.Status;
 import br.com.biopids.domain.Usuario;
 import br.com.biopids.exception.ErrorException;

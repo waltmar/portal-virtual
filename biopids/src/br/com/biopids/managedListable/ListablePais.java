@@ -3,14 +3,10 @@ package br.com.biopids.managedListable;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import br.com.biopids.domain.Cheque;
 import br.com.biopids.domain.Pais;
 import br.com.biopids.exception.ErrorException;
 import br.com.biopids.interfaces.IController;
 import br.com.biopids.listable.AbstractGenericListable;
-import br.com.biopids.listable.ControlerList;
 import br.com.biopids.provider.AppContext;
 
 public class ListablePais extends AbstractGenericListable<Pais>{

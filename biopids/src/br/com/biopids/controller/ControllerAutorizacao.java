@@ -7,8 +7,7 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import br.com.biopids.domain.Autorizacao;
 import br.com.biopids.persistence.DAOAutorizacao;

@@ -5,22 +5,34 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import br.com.biopids.annotation.InnerClassDomain;
+
 public class Coleta implements Serializable {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	@InnerClassDomain(local={"coleta","codigoCatalogo"})
 	private String codigoCatalogo;
+	@InnerClassDomain(local={"coleta","codigoColeta"})
 	private String codigoColeta;
-	private Date dataColeta;
+	@InnerClassDomain(local={"coleta","dataColeta"})
+	private String dataColeta;
+	@InnerClassDomain(local={"coleta","estagioDesenvolvimento","codigo"})
 	private String estagioDesenvolvimento;
+	@InnerClassDomain(local={"coleta","fenologia","codigo"})
 	private String fenologia;
+	@InnerClassDomain(local={"coleta","metodo","codigo"})
 	private String metodo;
+	@InnerClassDomain(local={"coleta","sexo","codigo"})
 	private String sexo;
+	@InnerClassDomain(local={"coleta","tipoMontagem","codigo" })
 	private String tipoMontagem;
-	private int numeroIndividuos;
+	@InnerClassDomain(local={"coleta","numeroIndividuos"})
+	private String numeroIndividuos;
 	private List<Coletor> coletores;
+	@InnerClassDomain(local={"coleta","obsColeta"})
 	private String obsColeta;
 	
 	public Coleta(){
@@ -40,12 +52,18 @@ public class Coleta implements Serializable {
 	public void setCodigoColeta(String codigoColeta) {
 		this.codigoColeta = codigoColeta;
 	}
-	public Date getDataColeta() {
+	
+	
+	public String getDataColeta() {
 		return dataColeta;
 	}
-	public void setDataColeta(Date dataColeta) {
+
+
+	public void setDataColeta(String dataColeta) {
 		this.dataColeta = dataColeta;
 	}
+
+
 	public String getEstagioDesenvolvimento() {
 		return estagioDesenvolvimento;
 	}
@@ -61,6 +79,7 @@ public class Coleta implements Serializable {
 	public String getMetodo() {
 		return metodo;
 	}
+	
 	public void setMetodo(String metodo) {
 		this.metodo = metodo;
 	}
@@ -70,18 +89,24 @@ public class Coleta implements Serializable {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
+	
 	public String getTipoMontagem() {
 		return tipoMontagem;
 	}
 	public void setTipoMontagem(String tipoMontagem) {
 		this.tipoMontagem = tipoMontagem;
 	}
-	public int getNumeroIndividuos() {
+	
+	public String getNumeroIndividuos() {
 		return numeroIndividuos;
 	}
-	public void setNumeroIndividuos(int numeroIndividuos) {
+
+
+	public void setNumeroIndividuos(String numeroIndividuos) {
 		this.numeroIndividuos = numeroIndividuos;
 	}
+
+
 	public List<Coletor> getColetores() {
 		return coletores;
 	}

@@ -19,6 +19,8 @@ public class EspecimeModel implements Serializable{
 	private Taxonomia taxonomia;
 	@FieldBean(internalClass=true)
 	private Media media;
+	@FieldBean(internalClass=true)
+	public Outros outros;
 	
 	
 	public EspecimeModel() {
@@ -26,6 +28,7 @@ public class EspecimeModel implements Serializable{
 		this.geografia = new Geografia();
 		this.taxonomia = new Taxonomia();
 		this.media = new Media();
+		this.outros = new Outros();
 		
 	}
 	
@@ -86,10 +89,20 @@ public class EspecimeModel implements Serializable{
 	public void setMedia(Media media) {
 		this.media = media;
 	}
-	
-	
 
+
+
+	public Outros getOutros() {
+		return outros;
+	}
+
+
+
+	public void setOutros(Outros outros) {
+		this.outros = outros;
+	}
 	
+		
 	
 	
 }

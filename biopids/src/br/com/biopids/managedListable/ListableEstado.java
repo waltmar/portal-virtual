@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import br.com.biopids.domain.Cheque;
 import br.com.biopids.domain.Estado;
 import br.com.biopids.exception.ErrorException;
 import br.com.biopids.interfaces.IController;

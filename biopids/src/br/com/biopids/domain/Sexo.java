@@ -1,19 +1,27 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package br.com.biopids.domain;
 
-/**
- *
- * @author Johnys
- */
-public enum Sexo {
-    Masculino , Feminino
-      
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="sexo")
+public class Sexo extends EntityPersist{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String valor;
+	
+	public Sexo(){
+	}
+	
+	public String getValor() {
+		return valor;
+	}
+	public void setValor(String valor) {
+		this.valor = valor;
+	}
+
 }
-
-
-
 

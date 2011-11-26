@@ -22,6 +22,18 @@ public class Especime extends EntityPersist{
     @OneToOne(optional=true, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "geografia_codigo", insertable = true, updatable = true)
 	private Geografia geografia;
+    
+    @OneToOne(optional=true, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "coleta_codigo", insertable = true, updatable = true)
+    private Coleta coleta;
+    
+    @OneToOne(optional=true, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "taxonomia_codigo", insertable = true, updatable = true)
+    private Taxonomia taxonomia;
+    
+    @OneToOne(optional=true, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "outros_codigo", insertable = true, updatable = true)
+    private Outros outros;
 
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
    	@JoinTable(name = "especime_has_imagem", joinColumns = @JoinColumn(name = "especime_codigo"), inverseJoinColumns = @JoinColumn(name = "imagem_codigo"))
@@ -48,6 +60,36 @@ public class Especime extends EntityPersist{
 
 	public void setImagem(List<Imagem> imagem) {
 		this.imagem = imagem;
+	}
+
+
+	public Coleta getColeta() {
+		return coleta;
+	}
+
+
+	public void setColeta(Coleta coleta) {
+		this.coleta = coleta;
+	}
+
+
+	public Taxonomia getTaxonomia() {
+		return taxonomia;
+	}
+
+
+	public void setTaxonomia(Taxonomia taxonomia) {
+		this.taxonomia = taxonomia;
+	}
+
+
+	public Outros getOutros() {
+		return outros;
+	}
+
+
+	public void setOutros(Outros outros) {
+		this.outros = outros;
 	}
 
 	
