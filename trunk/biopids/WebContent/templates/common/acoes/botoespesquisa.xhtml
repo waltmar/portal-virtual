@@ -10,7 +10,7 @@
 		<p:commandButton value="#{msg.pesquisar}" id="busca1"
 			action="#{mBean.search}"
 			rendered="true" update="contentPanel, mensagem" />
-		<p:commandButton id="novo1"
+	<p:commandButton id="novo1" rendered="false"
 			value="#{msg.novo}" action="#{mBean.registerAction}"
 			update="contentPanel, mensagem" />
 		 

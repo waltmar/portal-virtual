@@ -6,10 +6,10 @@
       xmlns:p="http://primefaces.prime.com.tr/ui">
 	<ui:composition template="../../template.xhtml">
 	<ui:define name="area">
-		<p:panel rendered="#{mBean.panelCadastro}">
+		<p:panel rendered="#{mBean.panelCadastro}" header="#{headerCadastro}">
 			<ui:insert name="Cadastro"/>
 		</p:panel>
-		<p:panel rendered="#{mBean.panelPesquisa}">
+		<p:panel rendered="#{mBean.panelPesquisa}" header="#{headerPesquisa}">
 			<ui:insert name="Pesquisa"/>
 		</p:panel>
 	</ui:define>
