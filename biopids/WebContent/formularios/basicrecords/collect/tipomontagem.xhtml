@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:in="http://biopids.com.br/facelets">
+
+<ui:composition
+	template="/templates/common/gerenciadores/coleta.xhtml">
+
+	<ui:param name="mBean" value="#{ManagerTipoMontagem}" />
+	<ui:param name="bean" value="#{ManagerTipoMontagem.objectModel}" />
+	<ui:param name="update" value="tipoMontagem" />
+	<ui:param name="nome" value="#{msg.tipoMontagem}"/>
+	<ui:param name="valor" value="#{ManagerTipoMontagem.objectModel.valor}"/>
+	
+	<ui:define name="Cadastro">
+		<ui:include src="/templates/common/crud/basiccrud.xhtml"></ui:include>
+	</ui:define>
+	
+</ui:composition>
+</html>

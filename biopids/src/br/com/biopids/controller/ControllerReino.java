@@ -50,6 +50,8 @@ public class ControllerReino extends GenericController<Reino, Long> implements I
 		
 		int size = list.size();
 		boolean result = true;
+		if (reino.getCodigo() != null)
+			return result;
 		if (size!= 0) {
 			for (int i = 0; i < size; i++) {
 				String valor1 = ((Reino) list.get(i)).getValor();

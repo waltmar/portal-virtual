@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.biopids.domain.Classe;
 import br.com.biopids.domain.Filo;
+import br.com.biopids.domain.Reino;
 import br.com.biopids.exception.ErrorException;
 import br.com.biopids.interfaces.IController;
 import br.com.biopids.interfaces.IControllerFilo;
@@ -46,18 +47,20 @@ public class ControllerFilo extends GenericController<Filo, Long> implements
 
 	// -----------------validacoes------------->
 
-	public boolean isNew(Filo Filo, List<Filo> list) {
+	public boolean isNew(Filo filo, List<Filo> list) {
 
 		int size = list.size();
 		boolean result = true;
+		if (filo.getCodigo() != null)
+			return result;
 		if (size != 0) {
 			for (int i = 0; i < size; i++) {
 				Long pai1 = ((Filo) list.get(i)).getReino().getCodigo();
-				Long pai2 = Filo.getReino().getCodigo();
+				Long pai2 = filo.getReino().getCodigo();
 				if (pai1.intValue() == pai2.intValue()) {
 
 					String valor1 = ((Filo) list.get(i)).getValor();
-					String valor2 = Filo.getValor();
+					String valor2 = filo.getValor();
 					valor2 = valor2.toUpperCase();
 					if (valor1.equals(valor2)) {
 						result = false;
@@ -70,21 +73,24 @@ public class ControllerFilo extends GenericController<Filo, Long> implements
 		return result;
 	}
 
-	public boolean isFather(Filo Filo) throws ErrorException {
+	public boolean isFather(Filo filo) throws ErrorException {
+
 		controllerClasse = (IController<Classe, Long>) AppContext
 				.getApplicationContext().getBean("ControllerClasse");
 		Classe classe = new Classe();
-		classe.setFilo(Filo);
-//		List<Classe> list = controllerClasse.getByFinder(classe, new String[] {
-//				"classe.filo", "classe.codigo" });
-//		if (!list.isEmpty())
-//			return true;
-//		else
+		classe.setFilo(filo);
+		List<Classe> list = controllerClasse.getByFinder(classe, new String[] {
+				"classe.filo", "classe.codigo" });
+		System.out.println("ok");
+		if (!list.isEmpty())
+			return true;
+		else
 			return false;
+
 	}
 
 	public boolean isValid(Filo Filo) {
-		if (Filo.getValor().length() < 3 )
+		if (Filo.getValor().length() < 3)
 			return false;
 		else
 			return true;
