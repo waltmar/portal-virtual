@@ -6,27 +6,31 @@
 	xmlns:p="http://primefaces.prime.com.tr/ui">
 <ui:composition template="../../template.xhtml">
 
-	
+
 	<ui:define name="area">
 		<h:panelGrid columns="3">
 
 			<h:outputLink
-				value="#{path}/formularios/basicrecords/taxonomy/index.xhtml">
+				value="#{path}/formularios/basicrecords/collect/index.xhtml">
 				<h:graphicImage url="/imagens/coleta.png" />
 			</h:outputLink>
-			<p:commandLink hreflang="www.google.com" id="tabtaxonomia"
-				immediate="true">
-				<h:graphicImage url="/imagens/taxonomia.png" />
-			</p:commandLink>
-			<p:commandLink id="tabgeografia">
+
+			<h:outputLink
+				value="#{path}/formularios/basicrecords/geography/index.xhtml">
 				<h:graphicImage url="/imagens/geografia.png" />
-			</p:commandLink>
+			</h:outputLink>
+
+			<h:outputLink
+				value="#{path}/formularios/basicrecords/taxonomy/index.xhtml">
+				<h:graphicImage url="/imagens/taxonomia.png" />
+			</h:outputLink>
+
 		</h:panelGrid>
 
-		<ui:include src="/menu/basic/taxonomiamenu.xhtml"></ui:include>
+		<ui:include src="/menu/basic/coletamenu.xhtml"></ui:include>
 		<p:panel rendered="#{mBean.panelCadastro}">
 			<center>
-				<ui:insert name="Cadastro"/>
+				<ui:insert name="Cadastro" />
 
 			</center>
 		</p:panel>

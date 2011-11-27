@@ -8,11 +8,11 @@ import br.com.biopids.exception.ErrorException;
 
 public interface IControllerFilo<T extends Serializable, oid extends Serializable> extends IController<T, oid>{
 	
-	boolean isNew(Filo Filo, List<Filo> list);
+	boolean isNew(Filo filo, List<Filo> list);
 	
-	boolean isValid(Filo Filo);
+	boolean isValid(Filo filo);
 	
-	boolean isNotNull(Filo Filo);
+	boolean isNotNull(Filo filo);
 
-	boolean isFather(Filo Filo) throws ErrorException;
+	boolean isFather(Filo filo) throws ErrorException;
 }

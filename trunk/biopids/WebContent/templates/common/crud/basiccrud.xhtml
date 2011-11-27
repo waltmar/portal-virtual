@@ -70,8 +70,8 @@
 
 					<p:column headerText="#{msg.acoes}">
 						<center>
-							<p:commandLink action="#{mBean.loadObjectTable(object)}"
-								id="atualizar" update="valor" immediate="true">
+							<p:commandLink action="#{mBean.loadObjectTable(object)}" ajax="false"
+								id="atualizar" update="valor, areaInput">
 								<h:graphicImage url="/imagens/find.png" />
 							</p:commandLink>
 							<p:spacer height="10px" width="opx" />

@@ -18,19 +18,22 @@ public class Classe extends EntityPersist{
 	 */
 	private static final long serialVersionUID = 1L;
 	@ManyToOne(cascade={ CascadeType.ALL ,CascadeType.REMOVE }, fetch = FetchType.LAZY)
-	private Filo Filo;
+	private Filo filo;
 	private String valor;
 	
 	public Classe(){
 	}
 	
+	
 	public Filo getFilo() {
-		return Filo;
+		return filo;
 	}
 
-	public void setFilo(Filo Filo) {
-		this.Filo = Filo;
+
+	public void setFilo(Filo filo) {
+		this.filo = filo;
 	}
+
 
 	public String getValor() {
 		return valor;
