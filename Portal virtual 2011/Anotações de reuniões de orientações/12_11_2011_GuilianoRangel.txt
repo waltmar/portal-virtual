@@ -1,0 +1,15 @@
+Data: 12/11/2011
+INI: 11:20
+FIM:
+
+revisão sobre a questão da definição de uma arquitetura e preparação de uma base para o desenvolvimento fazendo uma curva de aprendizagem para poder elevar a capacidade de produção.
+
+Foi definido junto com todos que os requisitos de manter usuário e manter categoria, deveria ser passados os documentos de definição de requisitos, banco de dados e caso de uso para o Gerente(Guiliano) até segunda feira para serem consolidados e postados na pasta do projeto oficial,
+sendo que os documentos devem ser postados em PDF e odt/doc.
+
+Foi passado levantar todas as tabelas básicas que serão necessária para o projeto, baseando-se nos protótipos.
+
+Cally obeter instalação do SQL server(starndard) e windows 2008 r2(enterprise)
+
+
+

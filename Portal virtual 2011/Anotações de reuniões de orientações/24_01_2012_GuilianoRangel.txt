@@ -1,0 +1,78 @@
+Data: 24/01/2012
+INI: 15:36
+FIM: 18:36
+
+Reunião participantes:
+Helida, José Leonardo, Guiliano Rangel, Diego, Tiago Alan, Cally, Emile.
+
+Incluído os alunos e professores no grupo de pesquisa.
+
+
+José Leonardo.
+Inicia a apresentação do projeto e na reunião.
+inicia desculpando-se pelo inicio do projeto não estar presente.
+e apresentação da equipe do projeto de SI.
+Helida avisa que houve o repasse dos recursos.
+Definir as prioridades.
+
+Definir um calendário de produtos para ser entregue para a equipe de biologia.
+
+Helida,
+
+CNPQ, virgência termina em maio. mas a fapeg entrou com a virgência que vai ate a novembro.
+para pedir prorrogar o prazo precisa de um plano de trabalho. 
+Descrever um texto(um paragrafo) para poder pedir a prorrogação().
+JLeonardo, pedir a prorrogação quando? Helida diz para fazer antes de maio.
+JLeonardo as bolas iniciaram em outubro.(primeira virgência). inicio começou de fato depois que houve a liberação do recurso.
+Helida diz que apos a liberação do recurso foi feito também o processo de seleção dos bolsistas. 
+JLeonardo diz da hipotese pior. 
+Jleonardo pede para helida mandar o modelo que deve ser escrito para nós fazermos a nossa parte.
+Já existe um cronograma do inicio do projeto, devendo se fazer o desdobramento dele. 
+Helida pede para utilizar o laboratório de Redes, pois tem dois equipamentos para uso do projeto.
+Helida e José Leonardo solicita a utilização do espaço do laboratório de redes que foi adquirido
+Guiliano questiona, como é feito para ter acesso a essa chave do laboratório?
+JLeonardo diz que estava sobre responsabilidade do Stephany.
+** JLeonardo, pede para Guiliano conseguir o acesso ao laboratório buscando informações pelo NTI. 
+Jleonardo diz que os alunos que tiverem acesso ao laboratório ter responsabilidade de pegar a chave e devolver.
+Diego e Cally dizem que as reuniões de use foi difícil utilizar o laboratório, por isso foi para o laboratório de informática.
+Equipamentos do projeto devem estar na posse do projeto, vai ser solicitado a compra de um armário com chave para poder colocar os materiais pequenos do projeto.
+José Leonardo, urgente marcar com o NTI para reaver os itens do projeto.
+Helida diz que qualquer tentativa de acesso aos recursos durante a tarde procurar ela para ajudar no processo.
+José Leonardo, esperar até na outra semana a Stephany tiver retornado.
+
+Entrando na parte de discussão da execução.
+temos um encomenda, o portal, com passei virtual. 
+
+NO acesso aos passei informar nível de escolaridade, para poder mostrar informações contextualizada.
+** Helida tem, dois estagiários do ensino médio, eles estava no 2ano e agora estão no 3ano, já passaram um semestre em várias parte(triagem, identificação de ordem de insetos, catalogação de especie), eles também devem trabalhar no estágio na parte de TI.
+
+Olacir vei e fala sobre a chave ficar com os técnicos com uma lista de pessoas autorizadas e o controle do acesso a essa chave.
+Pensar na base de dados de forma ser expansível sem modificações do que existe.
+
+** Faz parte do escopo do projeto para poder fazer a migração do braims. 
+
+Definição do escopo do projeto é (José Leonardo) cadastro da Espécime, 
+** No processo de importação vai ter que ser utilizado como segundo sistema, onde os dados deverão ser importado constantemente.
+** O projeto vai ser utilizado inicialmente apenas para atender o portal. (depois ele com o uso e confiança ele poderá ser utilizado para controlar os laboratórios).
+** solicitar para passar o link do site do pesquisar da UNB
+** Elencar pontos pendentes para poder validar com a Helida.
+** Solicitar para a Helida a estrutura da chave de busca.
+
+## Discutir com a equipe, a questão de criação de situações necessárias mas que não podem ser feita atualmente.
+
+
+Equipe fala da falta de acessoa  internet.
+
+José Leonardo distribui tarefas:
+* Câmera, tripe com sistema de rotação, (Emile), ver questão de software.(Emile)
+* Servidor, José Leonardo vai passar a especificação para montar a especificação e orçamento. 
+* verificar questão de armazenamento de backup( )
+** Prazo 15/02/2011.
+
+** José Leonardo pede para validar o protótipo no estágio atual.
+
+* Produto final (portal rodando), para o maio.
+** Ver o prazo para 30 de Abril.
+*** Fazer Cronograma de processo.
+
+Solicitação de quadro branco para nossa sala.

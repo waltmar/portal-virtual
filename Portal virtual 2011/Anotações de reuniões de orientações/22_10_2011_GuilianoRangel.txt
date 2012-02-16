@@ -1,0 +1,31 @@
+Data: 22/10/2011
+INI: 11:12
+FIM: 12:04
+
+Reunião para definições.
+* Francis não tá mais no projeto como voluntário.
+* Semana destinada a trabalho para regularização dos itens pendentes.
+
+Definição para trabalhos da semana.
+* Especificação de caso de uso.
+** Especificaçaõ de Banco de dados.
+** diagrama de atividades por cenário.
+** Detalhamento de caso de uso.
+** Prototipo de Interface.
+
+## Atividade Postar template de especificação de banco, e de caso de uso.
+
+Grupos de trabaho
+Grupo 1 -> Caso de Manter Usuario
+* Cally, Deigo e Jhony, e Douglas.
+Grupo 2 -> Caso de manter Categoria de Usuário.
+* Fernando, Thiago, José Aparecido.
+
+Passado informação de como o é o detalhamento de caso de uso de de programas,
+Caso de uso -> visão de usuário.
+Programas -> visão de programador.
+
+Explicado o funcionamento do funcionamento de agora para frente, esse semana ficou a especificação dos casos de uso manter Categória e Manter usuario, 
+Na semana seguinte será feito a especificação de mais dois casos de uso.
+e na semana seguinte incia a implementação, apos o Diego ter terminado a arquitetura do projeto.
+

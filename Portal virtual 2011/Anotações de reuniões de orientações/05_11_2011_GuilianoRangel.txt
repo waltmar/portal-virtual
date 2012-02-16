@@ -1,0 +1,11 @@
+Data: 05/11/2011
+INI: 11:15
+FIM: 12:42
+
+Revisão da especificação do requisitos manter usuário.
+passando orientações sobre reuso de fluxo alternativo.
+
+
+Reunião com Diego sobre a arqueitura iniciado 12:44
+Discutido sobre a arquitetura dinamica para o manager bem com classe estrangeira.
+fim as 13:17

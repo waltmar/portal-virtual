@@ -1,0 +1,23 @@
+Data: 29/10/2011
+INI: 11:37
+FIM: 13:47
+
+
+Inicio da reunião com verificação das atividades:
+* Diego, tutorial com 53 páginas e ainda falta falar sobre o JSF.
+** Diego fez revisão do template de requisito de usuário.
+** Caly que fez o template de usuário.
+
+* Atividade para o Cally, e Diego, Definição do Caso de Uso Manter Usuário por Cenário.
+
+Foi discutido sobre os casos de uso manter usuário, especificando que vai ser necessário ter um caso de uso autenticar usuário.
+
+Foi discutido também que o caso de uso autenticar usuário vai bloquear o usuário que tiver na categoria que tem obrigação de ter CPF e vai ofertar a opção para ele digitar usuário e senha e o cpf que será validado da obrigatoriedade e da não duplicação.
+
+Foi explicado sobre especificação de banco de dados, só precisa ter uma para cada caso de uso, sendo que a especificação dos atributos das telas deve ter uma tabela para cada tela que estiver relacionado com o Caso de uso.
+
+Foi dito também que o template de banco de dados deve ter um itens para o MR e que todas as tabelas que estiverem envolidas no caso de uso devem ser representadas, incluindo sua ligações.
+
+Foi explicado também sobre o uso de um cenário e mais de um caso de uso, podendo fazer a chamada daquele cenário a partir de outro cenário ou mesmo caso de uso.
+
+Foi cobranda a atenção para o uso dos modelos de templates que foram repassados.
