@@ -1,0 +1,17 @@
+Reunião 03/03/2012
+
+Local: Laboratório de Redes
+Horário: 12:45 às 13:40
+
+Participantes: Guiliano/Diego/Tiago/José/Cally/Douglas/Fernando
+
+Reunião teve inicio discutindo sobre as pendências que ficaram em aberto e finalizado todas elas, corrigindo os documentos que continham no CODE. 
+Foi pedido uma dedicação mínima de 6 horas por integrantes. Foi repassado algumas informações da reunião que aconteceu com a professora Hélida, sendo importante:
+- O escopo do projeto foi reduzido, temos até Maio para entregar o cadastramento funcionando, foi incorporado a migração do Bhrams.
+
+As atividades em conjunto a partir de agora também tem um responsável, o qual todos fazem a atividade, passam para esse responsável e o mesmo analisa todas e faz um documento oficial para apresentação na semana seguinte e aprovação de todos.
+E assim foi designado a ativadade de construção do diagrama geral de caso de uso, responsável Douglas, e que todos passem o material para ele, até quarta feira.
+
+Guiliano designou para ele a tarefa de migração do banco de dados.
+Todos ficaram de instalar o Eclipse com suporte a tomcat e SVN para na próxima semana iniciarem a codificação.
+

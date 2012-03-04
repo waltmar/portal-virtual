@@ -1,0 +1,23 @@
+Reunião 05/11/2011
+
+Início: 11:15
+Término: 13:15
+Participantes: Cally
+	Diego
+	Fernando
+	Guiliano
+	José Aparecido
+	Tiago
+
+Guiliano abre o template de Manter Usuário para verificar se há necessidade de algumas correções.
+Ele informou que deve separar o tipo de permissão para uma nova guia ou janela, pois as permissões virão dinamicamente.
+Há um fluxo alternativo em adicionar usuário que é o cenário editar, e deve ser excluido.
+Para se cadastrar um usuário é necessário validar o CPF, caso exista criar um fluxo de excessão.
+É necessário criar referencia do fluxo alternativo de campos obrigatórios/inválidos no editar, referenciando o FA do adicionar usuário. Também adicionar o ator "usuário" que pode acessar esse cenário.
+Adicionar o passo de exibir mensagem de não exclusão no cenário de excluir, em seu fluxo alternativo.
+Necessário alterar a palavra "ação" descrita no cenário excluir para informações.
+
+Guiliano passa então para o template de Manter Categoria e passa correções para os desenvolvedores responsáveis.
+
+//Reunião de arquitetura
+Estudar binding do JSF
