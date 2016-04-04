@@ -1,0 +1,1 @@
+Projeto apresentado ao Departamento de Sistemas de Informação da Unidade Universitária de Ciências Exatas e Tecnológicas da Universidade Estadual de Goiás para obtenção da nota de quarta VA. Portal Virtual do Cerrado/Sistema de catalogação da Biodiversidade.
